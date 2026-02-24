@@ -709,6 +709,100 @@ body {
     font-size: 34px;
   }
 }
+
+
+
+/* ===============================
+   📘 EMI CONTENT SECTION
+================================ */
+
+.emi-content-section{
+max-width:1000px;
+margin:100px auto 60px;
+padding:50px 30px;
+background:#ffffff;
+border-radius:30px;
+box-shadow:0 20px 60px rgba(0,0,0,0.06);
+line-height:1.9;
+color:#334155;
+}
+
+.emi-content-section h2{
+font-size:28px;
+font-weight:800;
+margin:40px 0 20px;
+color:#0f172a;
+position:relative;
+}
+
+.emi-content-section h2:first-child{
+margin-top:0;
+}
+
+.emi-content-section p{
+font-size:16px;
+margin-bottom:18px;
+color:#475569;
+}
+
+.emi-content-section ul{
+margin:20px 0 25px 20px;
+padding-left:10px;
+}
+
+.emi-content-section ul li{
+margin-bottom:10px;
+font-size:15px;
+color:#475569;
+}
+
+.emi-content-section strong{
+color:#0f172a;
+}
+
+.emi-formula{
+background:linear-gradient(135deg,#eef2ff,#f8fafc);
+padding:18px 25px;
+border-radius:16px;
+font-size:18px;
+font-weight:600;
+margin:20px 0;
+text-align:center;
+color:#1e293b;
+box-shadow:0 10px 25px rgba(0,0,0,0.04);
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+.emi-content-section{
+padding:40px 25px;
+}
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+.emi-content-section{
+padding:30px 20px;
+margin:60px 15px;
+border-radius:20px;
+}
+
+.emi-content-section h2{
+font-size:22px;
+}
+
+.emi-content-section p,
+.emi-content-section ul li{
+font-size:14px;
+}
+
+.emi-formula{
+font-size:15px;
+padding:15px;
+}
+}
 </style>
 
 <br>
@@ -884,9 +978,54 @@ placeholder="Search month or date...">
     </div>
 
   </div>
-</section>   <!-- End of mini-showcase -->
+</section> 
+  <!-- End of mini-showcase -->
 
+<section class="emi-content-section">
 
+<h2>What is EMI?</h2>
+
+<p>
+EMI (Equated Monthly Installment) is the fixed amount a borrower pays every month to repay a loan.
+It includes both the principal amount and the interest charged by the lender.
+</p>
+
+<p>
+Using an EMI calculator helps you understand your monthly payment based on
+loan amount, interest rate, and tenure.
+</p>
+
+<h2>EMI Formula</h2>
+
+<p>The EMI is calculated using the following formula:</p>
+
+<div class="emi-formula">
+EMI = [P × R × (1+R)^N] / [(1+R)^N – 1]
+</div>
+
+<ul>
+<li><strong>P</strong> = Principal loan amount</li>
+<li><strong>R</strong> = Monthly interest rate</li>
+<li><strong>N</strong> = Loan tenure in months</li>
+</ul>
+
+<h2>Example Calculation</h2>
+
+<p>
+If you take a loan of ₹10,00,000 at 8.5% interest for 5 years,
+the EMI would be approximately ₹20,507 per month.
+</p>
+
+<h2>Benefits of EMI Planning</h2>
+
+<ul>
+<li>Helps manage monthly cash flow</li>
+<li>Allows comparison between loan offers</li>
+<li>Prevents financial overcommitment</li>
+<li>Supports smarter financial decisions</li>
+</ul>
+
+</section>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
 
