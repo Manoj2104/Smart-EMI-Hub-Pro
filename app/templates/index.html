@@ -1253,6 +1253,90 @@ border:none;
 border-radius:10px;
 cursor:pointer;
 }
+
+/* ===============================
+   FAQ PREMIUM DESIGN
+================================ */
+
+.faq-section{
+padding:100px 20px;
+background:#f8fafc;
+}
+
+.faq-title{
+text-align:center;
+font-size:42px;
+font-weight:800;
+margin-bottom:60px;
+}
+
+.faq-title span{
+color:#6366f1;
+}
+
+.faq-container{
+max-width:800px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.faq-item{
+background:#ffffff;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+overflow:hidden;
+transition:0.3s;
+}
+
+.faq-question{
+width:100%;
+padding:22px 25px;
+background:none;
+border:none;
+text-align:left;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.faq-question span{
+font-size:22px;
+transition:0.3s;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+padding:0 25px;
+font-size:15px;
+color:#64748b;
+transition:max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer{
+max-height:200px;
+padding:0 25px 20px;
+}
+
+.faq-item.active .faq-question span{
+transform:rotate(45deg);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+.faq-title{
+font-size:28px;
+}
+.faq-question{
+font-size:16px;
+}
+}
 </style>
 
 <!-- HERO -->
@@ -1604,6 +1688,54 @@ How we built a smarter <span>financial platform</span>
 </div>
 </section>
 
+<!-- ===============================
+     💬 PREMIUM FAQ SECTION
+================================ -->
+
+<section class="faq-section">
+  <div class="container">
+
+    <h2 class="faq-title">
+      Frequently Asked <span>Questions</span>
+    </h2>
+
+    <div class="faq-container">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What is EMI?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          EMI stands for Equated Monthly Installment. It is the fixed monthly payment made by a borrower to repay a loan.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How is EMI calculated?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          EMI is calculated using principal amount, interest rate, and loan tenure using a standard financial formula.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Is this EMI calculator free?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Yes, Smart EMI Hub Pro provides a free online EMI calculator with amortization schedule and detailed breakdown.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <!-- AD POPUP MODAL -->
 <div id="adPopup" class="ad-popup">
     <div class="ad-box">
@@ -1721,6 +1853,51 @@ function goToTools() {
         window.location.href = "/#tools-section";
     }
 
+}
+</script>
+
+
+<script>
+document.querySelectorAll(".faq-question").forEach(btn => {
+  btn.addEventListener("click", function() {
+    const item = this.parentElement;
+    item.classList.toggle("active");
+  });
+});
+</script>
+
+<!-- FAQ SCHEMA START -->
+<script type="application/ld+json">
+
+<!-- FAQ SCHEMA START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is EMI?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "EMI stands for Equated Monthly Installment. It is the fixed monthly payment made by a borrower to repay a loan."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "How is EMI calculated?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "EMI is calculated using principal amount, interest rate, and loan tenure using a standard financial formula."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Is this EMI calculator free?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, Smart EMI Hub Pro provides a free online EMI calculator with amortization schedule."
+    }
+  }]
 }
 </script>
 {% endblock %}
