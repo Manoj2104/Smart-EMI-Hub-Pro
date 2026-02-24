@@ -181,12 +181,122 @@ font-size:56px;
 }
 
 }
+
+/* ====== PROFESSIONAL CENTERED TITLE ====== */
+
+.gst-header{
+text-align:center;
+margin-bottom:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.gst-title{
+font-size:48px;
+font-weight:800;
+color:#111827;
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+.gst-title span{
+font-family:"Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:inherit;
+}
+
+.gst-subtitle{
+margin-top:15px;
+color:#6b7280;
+font-size:16px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* ===================================== */
+/* 📱 PERFECT MOBILE VIEW (Below 768px) */
+/* ===================================== */
+
+@media(max-width:768px){
+
+.gst-wrapper{
+margin:30px auto 70px;
+padding:0 16px;
+}
+
+/* Heading */
+
+.gst-header{
+margin-bottom:30px;
+}
+
+.gst-title{
+font-size:26px;
+}
+
+.gst-subtitle{
+font-size:14px;
+}
+
+/* Card */
+
+.gst-card{
+display:flex;
+flex-direction:column;
+padding:22px;
+gap:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+
+.input-group{
+margin-bottom:20px;
+}
+
+input, select{
+width:100%;
+max-width:100%;
+font-size:16px;
+padding:12px;
+border-radius:10px;
+}
+
+/* Result */
+
+.result-box{
+padding-top:10px;
+text-align:left;
+}
+
+.main-value{
+font-size:30px;
+}
+
+.stat-card{
+flex-direction:row;
+justify-content:space-between;
+font-size:14px;
+padding:14px;
+border-radius:12px;
+}
+
+}
 </style>
-
+<br><br>
 <div class="gst-wrapper">
-<h2>GST Calculator</h2>
-<p style="color:#6b7280;">See how GST affects your price instantly</p>
-
+<div class="gst-header">
+    <h1 class="gst-title">
+        GST <span>Calculator</span>
+    </h1>
+    <p class="gst-subtitle">
+        See how GST affects your price instantly
+    </p>
+</div>
 <div class="gst-card">
 
 <!-- LEFT SIDE -->

@@ -183,11 +183,129 @@ height:360px;
 }
 
 }
+
+/* ====== PROFESSIONAL CENTERED TITLE ====== */
+
+.lump-header{
+text-align:center;
+margin-bottom:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.lump-title{
+font-size:48px;
+font-weight:800;
+color:#111827;
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+.lump-title span{
+font-family:"Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:inherit;
+}
+
+.lump-subtitle{
+margin-top:15px;
+color:#6b7280;
+font-size:16px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* ===================================== */
+/* 📱 PERFECT MOBILE VIEW (Below 768px) */
+/* ===================================== */
+
+@media(max-width:768px){
+
+.lump-wrapper{
+margin:30px auto 70px;
+padding:0 16px;
+}
+
+/* Heading */
+
+.lump-header{
+margin-bottom:30px;
+}
+
+.lump-title{
+font-size:26px;
+}
+
+.lump-subtitle{
+font-size:14px;
+}
+
+/* Card */
+
+.lump-card{
+display:flex;
+flex-direction:column;
+padding:22px;
+gap:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+
+.input-group{
+margin-bottom:20px;
+}
+
+input[type=number]{
+width:100%;
+max-width:100%;
+font-size:16px;
+padding:12px;
+border-radius:10px;
+}
+
+input[type=range]{
+height:5px;
+}
+
+/* Result */
+
+.result-box{
+padding-top:10px;
+text-align:left;
+}
+
+.future-value{
+font-size:30px;
+}
+
+.chart-container{
+width:220px;
+height:220px;
+margin:20px auto;
+}
+
+.result-box p{
+font-size:14px;
+margin-top:8px;
+}
+
+}
 </style>
-
+<br><br>
 <div class="lump-wrapper">
-<h2>Lumpsum Investment Calculator</h2>
-
+<div class="lump-header">
+    <h1 class="lump-title">
+        Lumpsum <span>Investment</span> Calculator
+    </h1>
+    <p class="lump-subtitle">
+        Calculate future value of your one-time investment
+    </p>
+</div>
 <div class="lump-card">
 
 <!-- LEFT -->

@@ -151,12 +151,122 @@ font-size:48px;
 }
 
 }
+
+/* ====== PROFESSIONAL CENTERED TITLE ====== */
+
+.inf-header{
+text-align:center;
+margin-bottom:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.inf-title{
+font-size:48px;
+font-weight:800;
+color:#111827;
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+.inf-title span{
+font-family:"Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:inherit;
+}
+
+.inf-subtitle{
+margin-top:15px;
+color:#6b7280;
+font-size:16px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* ===================================== */
+/* 📱 PERFECT MOBILE VIEW (Below 768px) */
+/* ===================================== */
+
+@media(max-width:768px){
+
+.inf-wrapper{
+margin:30px auto 70px;
+padding:0 16px;
+}
+
+/* Heading */
+
+.inf-header{
+margin-bottom:30px;
+}
+
+.inf-title{
+font-size:26px;
+}
+
+.inf-subtitle{
+font-size:14px;
+}
+
+/* Card */
+
+.inf-card{
+display:flex;
+flex-direction:column;
+padding:22px;
+gap:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+
+.input-group{
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+max-width:100%;
+font-size:16px;
+padding:12px;
+border-radius:10px;
+}
+
+/* Result */
+
+.result-box{
+padding-top:10px;
+text-align:left;
+}
+
+.future-value{
+font-size:30px;
+}
+
+.stat-box{
+flex-direction:row;
+justify-content:space-between;
+font-size:14px;
+padding:14px;
+border-radius:12px;
+}
+
+}
 </style>
-
+<br><br>
 <div class="inf-wrapper">
-<h2>Inflation Calculator</h2>
-<p style="color:#6b7280;">See how inflation affects your money over time</p>
-
+<div class="inf-header">
+    <h1 class="inf-title">
+        Inflation <span>Calculator</span>
+    </h1>
+    <p class="inf-subtitle">
+        See how inflation affects your money over time
+    </p>
+</div>
 <div class="inf-card">
 
 <!-- LEFT -->

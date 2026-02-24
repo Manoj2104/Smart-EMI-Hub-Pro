@@ -173,12 +173,128 @@ height:300px;
 }
 
 }
+
+/* ====== PROFESSIONAL CENTERED TITLE ====== */
+
+.fd-header{
+text-align:center;
+margin-bottom:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.fd-title{
+font-size:48px;
+font-weight:800;
+color:#111827;
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+.fd-title span{
+font-family:"Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:inherit;
+}
+
+.fd-subtitle{
+margin-top:15px;
+color:#6b7280;
+font-size:16px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* ===================================== */
+/* 📱 PERFECT MOBILE VIEW (Below 768px) */
+/* ===================================== */
+
+@media(max-width:768px){
+
+.fd-wrapper{
+margin:30px auto 70px;
+padding:0 16px;
+}
+
+/* Heading */
+
+.fd-header{
+margin-bottom:30px;
+}
+
+.fd-title{
+font-size:26px;
+}
+
+.fd-subtitle{
+font-size:14px;
+}
+
+/* Card */
+
+.fd-card{
+display:flex;
+flex-direction:column;
+padding:22px;
+gap:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+
+.input-group{
+margin-bottom:20px;
+}
+
+input, select{
+width:100%;
+max-width:100%;
+font-size:16px;
+padding:12px;
+border-radius:10px;
+}
+
+/* Result */
+
+.result-box{
+padding-top:10px;
+text-align:left;
+}
+
+.main-value{
+font-size:30px;
+}
+
+.chart-container{
+width:220px;
+height:220px;
+margin:20px auto;
+}
+
+.stat-card{
+flex-direction:row;
+justify-content:space-between;
+font-size:14px;
+padding:14px;
+border-radius:12px;
+}
+
+}
 </style>
-
+<br><br>
 <div class="fd-wrapper">
-<h2>FD Calculator</h2>
-<p style="color:#6b7280;">Calculate maturity amount of your Fixed Deposit</p>
-
+<div class="fd-header">
+    <h1 class="fd-title">
+        Fixed Deposit <span>Calculator</span>
+    </h1>
+    <p class="fd-subtitle">
+        Calculate maturity amount of your Fixed Deposit
+    </p>
+</div>
 <div class="fd-card">
 
 <!-- LEFT -->

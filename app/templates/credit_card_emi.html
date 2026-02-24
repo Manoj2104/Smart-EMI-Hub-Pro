@@ -182,12 +182,133 @@ font-size:60px;
 
 }
 
+/* ====== PROFESSIONAL CENTERED TITLE ====== */
+
+.cc-header{
+text-align:center;
+margin-bottom:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.cc-title{
+font-size:48px;
+font-weight:800;
+color:#111827;
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+.cc-title span{
+font-family:"Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:inherit;
+}
+
+.cc-subtitle{
+margin-top:15px;
+color:#6b7280;
+font-size:16px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* ===================================== */
+/* 📱 PERFECT MOBILE VIEW (Below 768px) */
+/* ===================================== */
+
+@media(max-width:768px){
+
+body{
+padding:0;
+}
+
+.cc-wrapper{
+margin:30px auto;
+padding:0 16px;
+}
+
+/* Heading */
+
+.cc-header{
+margin-bottom:30px;
+}
+
+.cc-title{
+font-size:26px;
+line-height:1.3;
+text-align:center;
+}
+
+.cc-subtitle{
+font-size:14px;
+text-align:center;
+}
+
+/* Card */
+
+.cc-card{
+display:flex;
+flex-direction:column;
+padding:22px;
+gap:28px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+
+.input-group{
+margin-bottom:16px;
+}
+
+input{
+width:100%;
+max-width:100%;
+font-size:16px;
+padding:13px;
+border-radius:10px;
+}
+
+/* Result */
+
+.result-box{
+text-align:left;
+border-top:1px solid #f1f5f9;
+padding-top:20px;
+}
+
+.emi-value{
+font-size:32px;
+margin-bottom:5px;
+}
+
+.stat-box{
+flex-direction:row;
+justify-content:space-between;
+font-size:14px;
+padding:14px;
+border-radius:12px;
+margin-top:12px;
+}
+
+}
 </style>
+<br><br>
 
 <div class="cc-wrapper">
-<h2>Credit Card EMI Calculator</h2>
-<p style="color:#6b7280;">Calculate EMI for credit card purchases with reducing interest</p>
-
+    <br><br>
+<div class="cc-header">
+    <h1 class="cc-title">
+        Credit Card <span>EMI</span> Calculator
+    </h1>
+    <p class="cc-subtitle">
+        Calculate EMI for credit card purchases with reducing interest
+    </p>
+</div>
 <div class="cc-card">
 
 <!-- LEFT -->

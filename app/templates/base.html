@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>{{ seo.title if seo else "EMI Calculator Pro" }}</title>
+<title>{{ seo.title if seo else "Smart EMI Hub Pro" }}</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -41,13 +41,38 @@ padding:0 20px;
 
 /* ================= NAVBAR ================= */
 
+/* ===============================
+   TRANSPARENT PREMIUM NAVBAR
+================================ */
+
+/* ===============================
+   TRANSPARENT HERO NAVBAR
+================================ */
+
 .navbar{
-position:sticky;
+position:fixed;          /* Always fixed */
 top:0;
-background:rgba(255,255,255,0.85);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border);
+left:0;
+width:100%;
 z-index:1000;
+
+background:transparent;  /* Transparent initially */
+border:none;
+transition:all .3s ease;
+}
+
+/* When scrolling */
+.navbar.scrolled{
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(14px);
+box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+/* When scrolling */
+.navbar.scrolled{
+position:fixed;
+background:rgba(255,255,255,0.75);
+backdrop-filter:blur(16px);
+box-shadow:0 8px 30px rgba(0,0,0,0.08);
 }
 
 .nav-flex{
@@ -433,6 +458,293 @@ font-size:14px;
 
 }
 
+
+/* ===============================
+   PREMIUM CTA BANNER
+================================ */
+
+.footer-banner{
+padding:120px 20px 80px;
+background:#f3f4f6;
+}
+
+.banner-card{
+background:linear-gradient(135deg,#dbeafe,#fef3c7);
+padding:80px 40px;
+border-radius:30px;
+text-align:center;
+max-width:1100px;
+margin:auto;
+box-shadow:0 30px 80px rgba(0,0,0,0.05);
+}
+
+.banner-card h2{
+font-size:48px;
+font-weight:700;
+margin-bottom:20px;
+color:#111;
+}
+
+.banner-card h2 span{
+font-family:serif;
+font-style:italic;
+font-weight:400;
+}
+
+.banner-card p{
+max-width:650px;
+margin:0 auto 30px;
+color:#555;
+font-size:16px;
+}
+
+.banner-card button{
+background:#111;
+color:white;
+padding:14px 28px;
+border-radius:50px;
+border:none;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.banner-card button:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* ===============================
+   MODERN FOOTER
+================================ */
+
+.modern-footer{
+background:#f8fafc;
+padding:100px 20px 40px;
+border-top:1px solid #e5e7eb;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:60px;
+align-items:flex-start;
+}
+
+.footer-logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:800;
+font-size:18px;
+margin-bottom:20px;
+}
+
+.footer-brand p{
+color:#64748b;
+font-size:14px;
+max-width:320px;
+margin-bottom:20px;
+}
+
+.footer-social{
+display:flex;
+gap:15px;
+color:#64748b;
+font-size:14px;
+}
+
+.footer-grid h4{
+font-size:14px;
+margin-bottom:15px;
+font-weight:700;
+color:#000;        /* 🔥 Pure black */
+}
+
+.footer-grid a{
+display:block;
+text-decoration:none;
+color:#64748b;
+margin-bottom:8px;
+font-size:14px;
+transition:.3s;
+}
+
+.footer-grid a:hover{
+color:#00d09c;
+transform:translateX(4px);
+}
+
+.footer-grid p{
+font-size:14px;
+color:#64748b;
+margin-bottom:8px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:60px;
+font-size:13px;
+color:#94a3b8;
+border-top:1px solid #e5e7eb;
+padding-top:20px;
+}
+
+.footer-logo span{
+color:#000;   /* Make EMI Calculator text black */
+}
+
+.footer-logo strong{
+color:#000;   /* Make Pro also black */
+}
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media(max-width:992px){
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.banner-card h2{
+font-size:34px;
+}
+
+}
+
+@media(max-width:600px){
+
+.footer-grid{
+grid-template-columns:1fr;
+gap:30px;
+}
+
+.footer-banner{
+padding:80px 20px 40px;
+}
+
+.banner-card{
+padding:50px 20px;
+}
+
+.banner-card h2{
+font-size:26px;
+}
+
+.banner-card p{
+font-size:14px;
+}
+
+.modern-footer{
+padding:60px 20px 30px;
+}
+
+}
+
+/* =========================
+   MOBILE FOOTER FIX
+========================= */
+
+@media(max-width:600px){
+
+.modern-footer{
+padding:50px 20px 25px;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+gap:35px;
+text-align:left;          /* 🔥 Left align everything */
+}
+
+/* Brand section */
+
+.footer-brand{
+text-align:center;        /* Keep only brand centered */
+}
+
+.footer-logo{
+justify-content:center;
+}
+
+.footer-brand p{
+margin:15px auto;
+max-width:260px;
+font-size:14px;
+}
+
+/* Social icons center */
+.footer-social{
+justify-content:center;
+margin-top:10px;
+}
+
+/* Section headings */
+
+.footer-grid h4{
+font-size:14px;
+margin-bottom:12px;
+color:#000;
+}
+
+/* Links spacing */
+
+.footer-grid a{
+font-size:14px;
+margin-bottom:6px;
+}
+
+/* Contact spacing */
+
+.footer-grid p{
+margin-bottom:6px;
+}
+
+/* Bottom copyright */
+
+.footer-bottom{
+margin-top:35px;
+font-size:12px;
+text-align:center;
+}
+
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+.search-box{
+position:relative;
+}
+
+.search-results{
+position:absolute;
+top:40px;
+left:0;
+width:100%;
+background:white;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+display:none;
+max-height:300px;
+overflow-y:auto;
+z-index:999;
+}
+
+.search-results div{
+padding:10px 14px;
+font-size:14px;
+cursor:pointer;
+transition:.2s;
+}
+
+.search-results div:hover{
+background:#f1f5f9;
+color:#00d09c;
+}
 </style>
 
 <!-- Google AdSense Test Script -->
@@ -448,7 +760,7 @@ crossorigin="anonymous"></script>
 
 <div class="logo">
 <div class="logo-circle"></div>
-EMI Calculator <span style="color:var(--primary)">Pro</span>
+Smart EMI Hub<span style="color:var(--primary)">Pro</span>
 </div>
 
 <div class="nav-center">
@@ -494,12 +806,15 @@ EMI Calculator <span style="color:var(--primary)">Pro</span>
 </div>
 
 <div class="search-box">
-<input type="text" placeholder="Search tool...">
+<input type="text" id="navbarSearch" placeholder="Search tool..." autocomplete="off">
+<div class="search-results" id="searchResults"></div>
 </div>
 
 </div>
 
-<a href="/calculator/" class="nav-btn">Get Started</a>
+<a href="javascript:void(0)" class="nav-btn" onclick="goToTools()">
+Get Started
+</a>
 
 <div class="menu-toggle" onclick="toggleMobile()">☰</div>
 
@@ -513,12 +828,87 @@ EMI Calculator <span style="color:var(--primary)">Pro</span>
 </div>
 </div>
 
+
 {% block content %}{% endblock %}
 
-<footer>
-<strong>© 2026 EMI Calculator Pro</strong><br>
-Smart Financial Planning | Compare Smarter | Save More
+<!-- PREMIUM CTA BANNER -->
+<section class="footer-banner">
+<div class="container">
+
+<div class="banner-card">
+<h2>
+Innovative Financial Tools for <span>smart investors</span>
+</h2>
+
+<p>
+Make better EMI, SIP & retirement decisions with instant calculations and visual insights.
+</p>
+
+<button onclick="goToTools()">
+Start Calculating →
+</button>
+</div>
+
+</div>
+</section>
+
+<!-- PREMIUM FOOTER -->
+<footer class="modern-footer">
+<div class="container footer-grid">
+
+<!-- BRAND -->
+<div class="footer-brand">
+<div class="footer-logo">
+<div class="logo-circle"></div>
+<span>Smart EMI Hub <strong>Pro</strong></span>
+</div>
+
+<p>
+Smart financial tools built to simplify EMI,
+investment, retirement & tax planning decisions.
+</p>
+
+<div class="footer-social">
+<span>𝕏</span>
+<span>in</span>
+<span>◎</span>
+<span>🌐</span>
+</div>
+</div>
+
+<!-- CALCULATORS -->
+<div>
+<h4>Calculators</h4>
+<a href="/calculator/">EMI Calculator</a>
+<a href="/calculator/sip-calculator">SIP Calculator</a>
+<a href="/calculator/fd-calculator">FD Calculator</a>
+<a href="/calculator/retirement-calculator">Retirement Planner</a>
+</div>
+
+<!-- COMPANY -->
+<div>
+<h4>Company</h4>
+<a href="#">About Us</a>
+<a href="#">Contact</a>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Use</a>
+</div>
+
+<!-- CONTACT -->
+<div>
+<h4>Contact</h4>
+<p>Chennai, India</p>
+<p>support@emicalculatorpro.com</p>
+<p>+91 90000 00000</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Smart EMI Hub Pro — Built for Smart Financial Decisions.
+</div>
 </footer>
+
 
 <script>
 function toggleMobile(){
@@ -555,5 +945,94 @@ menu.classList.remove("active");
 });
 </script>
 
+<script>
+window.addEventListener("scroll", function(){
+const navbar = document.querySelector(".navbar");
+
+if(window.scrollY > 80){
+navbar.classList.add("scrolled");
+}else{
+navbar.classList.remove("scrolled");
+}
+});
+</script>
+
+<script>
+function goToTools() {
+    if (window.location.pathname === "/") {
+        // Already on home page
+        document.getElementById("tools-section").scrollIntoView({
+            behavior: "smooth"
+        });
+    } else {
+        // Redirect to home with anchor
+        window.location.href = "/#tools-section";
+    }
+}
+</script>
+
+<script>
+const tools = [
+    { name: "EMI Calculator", url: "/calculator/" },
+    { name: "Prepayment Calculator", url: "/calculator/prepayment-calculator" },
+    { name: "Home Loan Eligibility", url: "/calculator/home-loan-eligibility" },
+    { name: "DTI Calculator", url: "/calculator/dti-calculator" },
+    { name: "Credit Card EMI", url: "/calculator/credit-card-emi" },
+    { name: "SIP Calculator", url: "/calculator/sip-calculator" },
+    { name: "Lumpsum Calculator", url: "/calculator/lumpsum-calculator" },
+    { name: "FD Calculator", url: "/calculator/fd-calculator" },
+    { name: "RD Calculator", url: "/calculator/rd-calculator" },
+    { name: "Retirement Planner", url: "/calculator/retirement-calculator" },
+    { name: "GST Calculator", url: "/calculator/gst-calculator" },
+    { name: "Inflation Calculator", url: "/calculator/inflation-calculator" },
+    { name: "Loan Comparison", url: "/loan-comparison-calculator" }
+];
+
+const searchInput = document.getElementById("navbarSearch");
+const resultsBox = document.getElementById("searchResults");
+
+searchInput.addEventListener("input", function() {
+    const query = this.value.toLowerCase();
+    resultsBox.innerHTML = "";
+
+    if (query.length === 0) {
+        resultsBox.style.display = "none";
+        return;
+    }
+
+    const filtered = tools.filter(tool =>
+        tool.name.toLowerCase().includes(query)
+    );
+
+    filtered.forEach(tool => {
+        const div = document.createElement("div");
+        div.textContent = tool.name;
+        div.onclick = () => window.location.href = tool.url;
+        resultsBox.appendChild(div);
+    });
+
+    resultsBox.style.display = filtered.length ? "block" : "none";
+});
+
+// Enter key redirect
+searchInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        const query = this.value.toLowerCase();
+        const match = tools.find(tool =>
+            tool.name.toLowerCase().includes(query)
+        );
+        if (match) {
+            window.location.href = match.url;
+        }
+    }
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function(e) {
+    if (!document.querySelector(".search-box").contains(e.target)) {
+        resultsBox.style.display = "none";
+    }
+});
+</script>
 </body>
 </html>

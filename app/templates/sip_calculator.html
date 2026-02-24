@@ -247,12 +247,132 @@ height:360px;
 
 }
 
-</style>
+/* ====== PROFESSIONAL CENTERED TITLE ====== */
 
+.sip-header{
+text-align:center;
+margin-bottom:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.sip-title{
+font-size:48px;
+font-weight:800;
+color:#111827;
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+.sip-title span{
+font-family:"Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:inherit;
+}
+
+.sip-subtitle{
+margin-top:15px;
+color:#6b7280;
+font-size:16px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* ===================================== */
+/* 📱 PERFECT MOBILE VIEW (Below 768px) */
+/* ===================================== */
+
+@media(max-width:768px){
+
+.sip-wrapper{
+margin:30px auto 70px;
+padding:0 16px;
+}
+
+/* Heading */
+
+.sip-header{
+margin-bottom:30px;
+}
+
+.sip-title{
+font-size:26px;
+}
+
+.sip-subtitle{
+font-size:14px;
+}
+
+/* Card */
+
+.sip-card{
+display:flex;
+flex-direction:column;
+padding:22px;
+gap:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+
+.input-group{
+margin-bottom:20px;
+}
+
+input[type=number]{
+width:100%;
+max-width:100%;
+font-size:16px;
+padding:12px;
+border-radius:10px;
+}
+
+input[type=range]{
+height:5px;
+}
+
+/* Result */
+
+.result-box{
+padding-top:10px;
+}
+
+.future-value{
+font-size:30px;
+}
+
+.subtext{
+font-size:14px;
+}
+
+.chart-container{
+width:220px;
+height:220px;
+}
+
+.breakdown{
+font-size:14px;
+text-align:left;
+margin-top:15px;
+}
+
+}
+</style>
+<br><br>
 <div class="sip-wrapper">
 
-<h2>SIP Calculator</h2><br><br>
-
+<div class="sip-header">
+    <h1 class="sip-title">
+        SIP <span>Calculator</span>
+    </h1>
+    <p class="sip-subtitle">
+        Calculate future value of your systematic investment plan
+    </p>
+</div>
 <div class="sip-card">
 
 <!-- LEFT -->

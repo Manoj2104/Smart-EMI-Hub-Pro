@@ -2,95 +2,142 @@
 {% block content %}
 
 <style>
+
+
 body{
 background:#f8fafc;
 font-family:Inter,sans-serif;
 color:#0f172a;
 }
 
-/* ===== HERO ===== */
+/* =========================
+   PREMIUM AWAKE STYLE HERO
+========================= */
 
 .hero{
 position:relative;
-padding:170px 0 150px;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-background:linear-gradient(135deg,#ecfeff,#eef2ff,#f8fafc);
+padding:220px 20px 120px;
+background:linear-gradient(120deg,#cfe9e6 0%, #e8e2d3 100%);
 overflow:hidden;
 }
+
+/* Soft gradient overlay */
 
 .hero::before{
 content:"";
 position:absolute;
-width:700px;
-height:700px;
-background:radial-gradient(circle,#10b98133,transparent 70%);
-top:-200px;
-left:-200px;
+inset:0;
+background:radial-gradient(circle at 20% 20%, #00d09c33, transparent 50%),
+           radial-gradient(circle at 80% 80%, #2563eb22, transparent 50%);
+z-index:0;
 }
 
-.hero::after{
-content:"";
-position:absolute;
-width:600px;
-height:600px;
-background:radial-gradient(circle,#2563eb33,transparent 70%);
-bottom:-200px;
-right:-200px;
-}
+/* HERO HEADING */
 
 .hero h1{
-font-size:64px;
-font-weight:900;
-letter-spacing:-2px;
-margin-bottom:25px;
+font-size:90px;
+font-weight:800;
+line-height:1.05;
+letter-spacing:-3px;
+color:#111;
 position:relative;
-z-index:1;
+z-index:2;
 }
+
+/* Italic highlight word */
+
+.hero h1 span{
+font-family:serif;
+font-style:italic;
+font-weight:500;
+}
+
+/* Subtitle */
 
 .hero p{
-font-size:20px;
 max-width:720px;
-margin:auto;
-color:#475569;
+margin:30px auto 40px;
+font-size:18px;
+color:#555;
 position:relative;
-z-index:1;
+z-index:2;
 }
 
-.cta{
-margin-top:50px;
+/* CTA */
+
+.hero-buttons{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
 position:relative;
-z-index:1;
+z-index:2;
 }
 
-.btn-primary{
-background:#10b981;
-padding:16px 36px;
-border-radius:16px;
-border:none;
+/* Primary pill button */
+
+.primary-btn{
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
 color:white;
+padding:18px 38px;
+border-radius:999px;
 font-weight:600;
-box-shadow:0 20px 50px rgba(16,185,129,0.35);
-transition:.3s;
-margin-right:15px;
+font-size:16px;
+border:none;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:10px;
+transition:.3s ease;
+box-shadow:0 15px 40px rgba(79,70,229,0.4);
 }
 
-.btn-primary:hover{
-transform:translateY(-4px);
+.primary-btn:hover{
+transform:translateY(-3px);
 }
 
-.btn-secondary{
+/* Arrow circle */
+
+.primary-btn span{
 background:white;
-border:1px solid #e2e8f0;
-padding:16px 36px;
-border-radius:16px;
-font-weight:600;
-transition:.3s;
+color:black;
+width:28px;
+height:28px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:14px;
 }
 
-.btn-secondary:hover{
-background:#f1f5f9;
+/* Responsive */
+
+@media(max-width:992px){
+.hero h1{
+font-size:52px;
+}
 }
 
+@media(max-width:600px){
+.hero{
+padding:160px 20px 80px;
+}
+.hero h1{
+font-size:34px;
+letter-spacing:-1px;
+}
+.hero p{
+font-size:15px;
+}
+.hero-buttons{
+flex-direction:column;
+}
+}
 
 /* SECTION */
 .section{
@@ -339,545 +386,1101 @@ grid-template-columns:repeat(3,1fr);
 }
 }
 
-/* ===============================
-   🚀 ULTIMATE LOAN DESIGN
-=============================== */
+/* =================================
+   SEPARATE AWAKE STYLE TOOL SECTIONS
+================================= */
 
-.loan-ultimate{
-padding:90px 20px;
-background:linear-gradient(180deg,#f8fafc,#eef2ff);
+.tool-category{
+padding:120px 0;
+background:#f5f5f3;
+text-align:center;
 }
 
-.loan-title{
-font-size:36px;
-font-weight:900;
-margin-bottom:50px;
-color:#0f172a;
+.tool-category:nth-child(even){
+background:#ffffff;
 }
 
-.loan-title span{
-display:block;
-font-size:15px;
-font-weight:500;
-color:#64748b;
-margin-top:8px;
+.tool-category h2{
+font-size:52px;
+font-weight:600;
+margin-bottom:60px;
+color:#111;
 }
 
-.loan-grid-ultimate{
+.tool-category h2 span{
+font-family:serif;
+font-style:italic;
+font-weight:400;
+}
+
+/* GRID */
+
+.tool-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(4,1fr);
 gap:30px;
 }
 
 /* CARD */
 
-.loan-card-ultimate{
-background:white;
-padding:35px 25px;
+.tool-card{
+padding:40px 25px;
+border-radius:26px;
+text-align:left;
+cursor:pointer;
+transition:.3s ease;
+}
+
+.tool-card:hover{
+transform:translateY(-6px);
+}
+
+/* Pastel Colors */
+
+.bg-purple{ background:#e8dff4; }
+.bg-pink{ background:#f3dcdc; }
+.bg-blue{ background:#dbe6f2; }
+.bg-beige{ background:#f1e4d6; }
+.bg-green{ background:#dde9d7; }
+
+.tool-card .icon{
+font-size:28px;
+}
+
+.tool-card h3{
+font-size:18px;
+font-weight:600;
+margin-top:18px;
+color:#222;
+}
+
+/* Responsive */
+
+@media(max-width:1200px){
+.tool-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:600px){
+.tool-category{
+padding:80px 20px;
+}
+.tool-category h2{
+font-size:30px;
+}
+.tool-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+}
+/* ==============================
+   💎 PREMIUM GLASS TOOL SLIDER
+============================== */
+
+.tools-slider-section{
+padding:70px 0;
+background:linear-gradient(135deg,#f3f6fa,#eef2ff);
+overflow:hidden;
+}
+
+.tools-slider{
+display:flex;
+gap:25px;
+overflow-x:auto;
+padding:20px 10px;
+scroll-behavior:smooth;
+-webkit-overflow-scrolling:touch;
+}
+
+.tools-slider::-webkit-scrollbar{
+display:none;
+}
+
+/* CARD */
+
+.tool-slide{
+flex:0 0 auto;
+min-width:260px;
+padding:25px;
 border-radius:24px;
 cursor:pointer;
 position:relative;
-overflow:hidden;
+display:flex;
+align-items:flex-start;
+gap:18px;
 transition:.35s ease;
-border:1px solid #e2e8f0;
-box-shadow:0 10px 35px rgba(0,0,0,0.05);
+
+background:rgba(255,255,255,0.65);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.4);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
 
-.loan-card-ultimate:hover{
+/* Hover Glow */
+
+.tool-slide:hover{
 transform:translateY(-8px);
-box-shadow:0 25px 60px rgba(16,185,129,0.15);
+box-shadow:0 30px 60px rgba(79,70,229,0.25);
 }
 
-/* ICON BADGE */
+/* ICON BUBBLE */
 
-.loan-icon-ultimate{
-width:55px;
-height:55px;
+.tool-icon{
+width:60px;
+height:60px;
 border-radius:18px;
-background:linear-gradient(135deg,#10b981,#2563eb);
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:24px;
+font-size:26px;
 color:white;
-margin-bottom:18px;
-box-shadow:0 8px 20px rgba(16,185,129,0.4);
+flex-shrink:0;
+box-shadow:0 15px 30px rgba(79,70,229,0.4);
 }
 
 /* TEXT */
 
-.loan-card-ultimate h3{
+.tool-slide h4{
 font-size:18px;
-font-weight:800;
-margin-bottom:10px;
-color:#0f172a;
+font-weight:700;
+margin:0;
+color:#111;
 }
 
-.loan-card-ultimate p{
+.tool-slide p{
 font-size:14px;
-color:#64748b;
-line-height:1.6;
+margin-top:6px;
+color:#555;
 }
 
-/* HOVER GLOW EFFECT */
+/* MOBILE */
 
-.loan-card-ultimate::after{
-content:"";
-position:absolute;
-width:200px;
-height:200px;
-background:radial-gradient(circle,#10b98133,transparent 70%);
-top:-60px;
-right:-60px;
-opacity:0;
-transition:.4s;
+@media(max-width:600px){
+
+.tool-slide{
+min-width:220px;
+padding:20px;
 }
 
-.loan-card-ultimate:hover::after{
-opacity:1;
+.tool-icon{
+width:50px;
+height:50px;
+font-size:22px;
 }
+
+}
+/* =======================================
+   🎨 PROMO SECTION - DESKTOP
+======================================= */
+
+.promo-section{
+padding:80px 0;
+}
+
+.promo-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.promo-card{
+border-radius:30px;
+padding:60px 40px;
+color:white;
+position:relative;
+overflow:hidden;
+transition:.4s ease;
+min-height:240px;
+display:flex;
+align-items:center;
+}
+
+.promo-card:hover{
+transform:translateY(-8px);
+box-shadow:0 30px 70px rgba(0,0,0,0.25);
+}
+
+.promo-content h2{
+font-size:28px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.promo-content p{
+font-size:16px;
+opacity:0.9;
+margin-bottom:20px;
+}
+
+.promo-card button{
+background:white;
+color:#000;
+border:none;
+padding:12px 28px;
+border-radius:50px;
+font-weight:600;
+transition:.3s;
+}
+
+.promo-card button:hover{
+background:#000;
+color:white;
+}
+
+/* 🎨 Color Variants */
+
+.promo-green{
+background:linear-gradient(135deg,#10b981,#06b6d4);
+}
+
+.promo-purple{
+background:linear-gradient(135deg,#4928FD,#BA81EE);
+}
+
+.promo-orange{
+background:linear-gradient(135deg,#FFAF68,#f97316);
+}
+
 
 /* =========================================
-   🔥 FINAL CLEAN MOBILE LOAN GRID
+   📱 BALANCED MOBILE PROMO SLIDER
 ========================================= */
 
-@media (max-width:768px){
+@media screen and (max-width:768px){
 
-.loan-ultimate{
-padding:20px 12px 40px;
-background:#f3f6fa;
+.promo-section{
+padding:25px 12px !important;
 }
 
-/* Title */
-
-.loan-title{
-font-size:19px;
-font-weight:800;
-margin-bottom:16px;
+.promo-grid{
+display:flex !important;
+gap:14px;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding:8px 2px;
 }
 
-.loan-title span{
+.promo-grid::-webkit-scrollbar{
 display:none;
 }
 
-/* Grid */
+/* Balanced vertical rectangle */
 
-.loan-grid-ultimate{
-display:grid;
-grid-template-columns:repeat(3, 1fr);
-gap:10px;
-}
-
-/* Card */
-
-.loan-card-ultimate{
-background:#ffffff;
-border-radius:14px;
-padding:12px 6px;
-aspect-ratio:1/1;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
+.promo-card{
+flex:0 0 auto !important;
+width:130px !important;
+height:105px !important;
+min-height:unset !important;
+padding:12px !important;
+border-radius:18px !important;
+display:flex !important;
+align-items:center !important;
+justify-content:center !important;
 text-align:center;
-border:1px solid #edf1f5;
-box-shadow:0 2px 8px rgba(0,0,0,0.04);
-transition:.15s ease;
+box-shadow:0 6px 18px rgba(0,0,0,0.08) !important;
 }
 
-/* Remove heavy hover */
-.loan-card-ultimate:hover{
-transform:none;
-box-shadow:0 2px 8px rgba(0,0,0,0.04);
-}
-
-.loan-card-ultimate:active{
-transform:scale(0.95);
-}
-
-/* Icon */
-
-.loan-icon-ultimate{
-width:34px;
-height:34px;
-border-radius:10px;
-font-size:14px;
-margin-bottom:6px;
-background:linear-gradient(135deg,#10b981,#2563eb);
-display:flex;
-align-items:center;
-justify-content:center;
-color:#fff;
-}
-
-/* Title */
-
-.loan-card-ultimate h3{
-font-size:11.5px;
+.promo-content h2{
+font-size:12px !important;
 font-weight:700;
-line-height:1.15;
+line-height:1.2;
 margin:0;
 }
 
-/* 🔥 REMOVE DESCRIPTION COMPLETELY FOR MOBILE */
+.promo-content p,
+.promo-card button{
+display:none !important;
+}
 
-.loan-card-ultimate p{
+}
+
+
+/* =========================================
+   🎬 UNIVERSAL PROMO SLIDER ANIMATION
+========================================= */
+
+.promo-grid{
+scroll-snap-type: x mandatory;
+}
+
+.promo-card{
+scroll-snap-align: center;
+transition: transform .3s ease;
+}
+
+/* Slight hover scale (desktop) */
+.promo-card:hover{
+transform: scale(1.05);
+}
+
+/* Hide scrollbar all devices */
+.promo-grid::-webkit-scrollbar{
 display:none;
 }
 
+.promo-grid{
+-ms-overflow-style:none;
+scrollbar-width:none;
 }
 
-/* ===================================== */
-/* 📱 MOBILE (Below 600px) */
-/* ===================================== */
-@media (max-width:600px){
+/* ================================
+   🖥 DESKTOP (1025px and above)
+================================ */
+
+@media (min-width:1025px){
 
 .hero{
-padding:110px 20px 90px;
+padding:220px 20px 140px;
 }
 
 .hero h1{
-font-size:30px;
+font-size:90px;
+}
+
+.tool-grid{
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.section{
+padding:120px 0;
+}
+
+.dark{
+padding:140px 0;
+}
+
+.promo-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.tools-slider{
+gap:25px;
+}
+
+}
+
+/* ================================
+   📲 TABLET (601px – 1024px)
+================================ */
+
+@media (min-width:601px) and (max-width:1024px){
+
+.hero{
+padding:170px 20px 110px;
+min-height:auto;
+}
+
+.hero h1{
+font-size:52px;
 letter-spacing:-1px;
 }
 
 .hero p{
-font-size:15px;
+font-size:16px;
 }
 
-.btn-primary,
-.btn-secondary{
-width:100%;
-margin:10px 0;
+.hero-buttons{
+flex-direction:row;
 }
 
-/* Sections */
-.section,
-.loan-ultimate,
-.trust,
+.section{
+padding:90px 20px;
+}
+
+.tool-grid{
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.tool-card{
+padding:30px 20px;
+}
+
+.promo-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
 .dark{
-padding:60px 15px;
+padding:100px 20px;
 }
 
-.loan-title{
-font-size:20px;
-margin-bottom:20px;
+.tools-slider{
+gap:20px;
 }
 
-.loan-title span{
-display:none;
+.tool-slide{
+min-width:240px;
 }
 
-/* 3 column compact mobile grid */
-.loan-grid-ultimate{
-grid-template-columns:repeat(3,1fr);
-gap:10px;
 }
 
-.loan-card-ultimate{
-padding:12px 6px;
-border-radius:14px;
-aspect-ratio:1/1;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
+
+/* ================================
+   📱 MOBILE (Below 600px)
+================================ */
+
+@media (max-width:600px){
+
+/* HERO */
+
+.hero{
+padding:140px 20px 80px;
+min-height:auto;
 }
 
-.loan-card-ultimate h3{
-font-size:11px;
-margin:0;
+.hero h1{
+font-size:34px;
+letter-spacing:-1px;
 }
 
-.loan-card-ultimate p{
-display:none;
-}
-
-.loan-icon-ultimate{
-width:32px;
-height:32px;
+.hero p{
 font-size:14px;
-margin-bottom:6px;
+margin:20px auto 30px;
+}
+
+.hero-buttons{
+flex-direction:column;
+gap:15px;
+}
+
+.primary-btn{
+width:100%;
+justify-content:center;
+}
+
+/* TOOL SECTIONS */
+
+.tool-category{
+padding:70px 20px;
+}
+
+.tool-category h2{
+font-size:28px;
+margin-bottom:40px;
+}
+
+.tool-grid{
+grid-template-columns:1fr;
+gap:16px;
+}
+
+.tool-card{
+padding:25px 18px;
+border-radius:20px;
+}
+
+/* PROMO SECTION */
+
+.promo-section{
+padding:30px 15px;
+}
+
+.promo-grid{
+display:flex;
+overflow-x:auto;
+gap:15px;
+}
+
+.promo-card{
+flex:0 0 auto;
+width:180px;
+height:140px;
+padding:15px;
+border-radius:20px;
+}
+
+.promo-content h2{
+font-size:14px;
+}
+
+.promo-content p,
+.promo-card button{
+display:none;
+}
+
+/* DARK CTA */
+
+.dark{
+padding:80px 20px;
 }
 
 .dark h2{
 font-size:24px;
 }
 
+/* TRUST */
+
+.trust{
+padding:60px 20px;
 }
 
-
-/* ===================================== */
-/* 📲 TABLET (601px – 1024px) */
-/* ===================================== */
-@media (min-width:601px) and (max-width:1024px){
-
-.hero{
-padding:140px 20px 120px;
+.badges{
+gap:15px;
+font-size:13px;
 }
 
-.hero h1{
+/* SLIDER */
+
+.tools-slider{
+gap:15px;
+}
+
+.tool-slide{
+min-width:220px;
+padding:18px;
+}
+
+.tool-icon{
+width:48px;
+height:48px;
+font-size:20px;
+}
+
+}
+
+/* =====================================
+   📱 MOBILE ONLY – CHANGE LAYOUT ONLY
+===================================== */
+
+@media (max-width:600px){
+
+.tool-grid{
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:14px;
+}
+
+/* Make card square */
+.tool-card{
+aspect-ratio:1/1;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:15px;
+}
+
+/* Center icon */
+.tool-card .icon{
+margin-bottom:8px;
+}
+
+/* Smaller title for fit */
+.tool-card h3{
+font-size:12px;
+line-height:1.2;
+margin:0;
+}
+
+}
+
+/* =====================================
+   📱 MOBILE PERFECT CENTER FIX
+===================================== */
+
+@media (max-width:600px){
+
+.tool-category{
+padding:40px 12px;
+}
+
+.tool-grid{
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:12px;
+width:100%;
+margin:0 auto;
+}
+
+/* Remove extra container side spacing */
+.tool-category .container{
+padding-left:0 !important;
+padding-right:0 !important;
+}
+
+/* Force square + center */
+.tool-card{
+aspect-ratio:1/1;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:14px;
+margin:0 auto;
+}
+
+/* Icon center fix */
+.tool-card .icon{
+margin:0 auto 8px auto;
+}
+
+/* Title center */
+.tool-card h3{
+font-size:12px;
+line-height:1.2;
+margin:0;
+text-align:center;
+}
+
+}
+
+/* =====================================
+   📱 MOBILE PERFECT EDGE ALIGN FIX
+===================================== */
+
+@media (max-width:600px){
+
+/* Reduce container padding ONLY for tool sections */
+.tool-category .container{
+padding-left:12px !important;
+padding-right:12px !important;
+}
+
+/* Ensure grid takes full width */
+.tool-grid{
+width:100%;
+margin:0;
+}
+
+/* Make spacing mathematically equal */
+.tool-grid{
+grid-template-columns:repeat(3, 1fr);
+gap:12px;
+}
+
+/* Remove accidental overflow */
+body{
+overflow-x:hidden;
+}
+
+}
+
+/* ==============================
+   AUTO INFINITE TOOL SLIDER
+============================== */
+
+.tools-slider{
+display:flex;
+gap:25px;
+overflow:hidden;              /* hide scrollbar */
+scroll-behavior:auto;
+}
+
+.tool-slide{
+flex:0 0 auto;
+min-width:260px;
+}
+
+/* Mobile width */
+@media(max-width:600px){
+.tool-slide{
+min-width:220px;
+}
+}
+
+/* =====================================
+   💼 PREMIUM SHOWCASE SECTION
+===================================== */
+
+.showcase-section{
+padding:140px 0;
+background:#f8fafc;
+text-align:center;
+}
+
+.showcase-title{
+font-size:56px;
+font-weight:700;
+margin-bottom:80px;
+color:#111;
+}
+
+.showcase-title span{
+font-family:serif;
+font-style:italic;
+font-weight:400;
+color:#777;
+}
+
+/* GRID */
+
+.showcase-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+/* CARD */
+
+.showcase-card{
+border-radius:32px;
+padding:40px;
+text-align:left;
+position:relative;
+overflow:hidden;
+transition:.4s ease;
+}
+
+.showcase-card:hover{
+transform:translateY(-10px);
+}
+
+/* Soft backgrounds */
+
+.bg-soft-green{
+background:linear-gradient(135deg,#dff5e7,#eafaf1);
+}
+
+.bg-soft-purple{
+background:linear-gradient(135deg,#ece9f8,#f3f1fc);
+}
+
+/* IMAGE */
+
+.showcase-card img{
+width:100%;
+border-radius:24px;
+margin-bottom:25px;
+transform:rotate(-3deg);
+transition:.4s ease;
+}
+
+.showcase-card:hover img{
+transform:rotate(0deg) scale(1.03);
+}
+
+/* TEXT */
+
+.showcase-card h3{
+font-size:26px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.showcase-card p{
+color:#555;
+font-size:15px;
+line-height:1.6;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+
+@media(max-width:1024px){
+.showcase-title{
 font-size:42px;
 }
-
-.section,
-.loan-ultimate,
-.trust,
-.dark{
-padding:90px 30px;
+.showcase-grid{
+grid-template-columns:1fr;
+}
 }
 
-.loan-title{
+@media(max-width:600px){
+.showcase-section{
+padding:80px 20px;
+}
+.showcase-title{
 font-size:28px;
+margin-bottom:40px;
 }
-
-.loan-grid-ultimate{
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-}
-
-.loan-card-ultimate{
+.showcase-card{
 padding:25px;
+border-radius:24px;
+}
 }
 
-.dark h2{
-font-size:36px;
+.card-icon{
+width:70px;
+height:70px;
+margin-bottom:20px;
 }
 
+.card-icon img{
+width:100%;
+height:100%;
+object-fit:contain;
 }
 
-
-/* ===================================== */
-/* 🖥 DESKTOP (1025px and above) */
-/* ===================================== */
-@media (min-width:1025px){
-
-.hero h1{
-font-size:64px;
+.ad-popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
 }
 
-.loan-grid-ultimate{
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+.ad-box{
+background:white;
+width:90%;
+max-width:400px;
+border-radius:20px;
+padding:25px;
+position:relative;
+text-align:center;
+animation:popupFade .3s ease;
 }
 
-.loan-card-ultimate{
-padding:35px 25px;
+@keyframes popupFade{
+from{transform:scale(.9);opacity:0;}
+to{transform:scale(1);opacity:1;}
 }
 
-.dark h2{
-font-size:48px;
+.close-ad{
+position:absolute;
+top:10px;
+right:15px;
+cursor:pointer;
+font-size:18px;
 }
 
+.continue-btn{
+margin-top:15px;
+background:#111;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
 }
-
 </style>
 
 <!-- HERO -->
 <section class="hero">
 <div class="container">
-<h1>All Financial Calculators in One Platform</h1>
-<p>EMI, SIP, Tax, Investment, Retirement, Loan Eligibility, Prepayment & more — built for smart financial decisions.</p>
-<div class="cta">
-<button class="btn-primary" onclick="window.location='/calculator/'">
+
+<h1>
+All Financial Calculators<br>
+in One <span>Platform</span>
+</h1>
+
+<p>
+EMI, SIP, Tax, Investment, Retirement, Loan Eligibility, Prepayment & more —
+built for smart financial decisions.
+</p>
+
+<div class="hero-buttons">
+<button class="primary-btn" onclick="goToTools()">
 Start Calculating
-</button>
-<button class="btn-secondary" onclick="window.location='/calculator/home-loan-emi-calculator'">
-Home Loan EMI
+<span>↗</span>
 </button>
 </div>
+
 </div>
 </section>
 
+<!-- 🎨 COLORFUL PROMO BANNERS -->
+<section class="promo-section container">
+
+<div class="promo-grid">
+
+<div class="promo-card promo-green">
+<div class="promo-content">
+<h2>Calculate EMI in Seconds</h2>
+<p>Smart breakdown with charts & schedule.</p>
+<button onclick="window.location='/calculator/'">Try Now</button>
+</div>
+</div>
+
+<div class="promo-card promo-purple">
+<div class="promo-content">
+<h2>Grow Wealth with SIP</h2>
+<p>Track returns & plan investments easily.</p>
+<button onclick="window.location='/calculator/sip-calculator'">Start SIP</button>
+</div>
+</div>
+
+<div class="promo-card promo-orange">
+<div class="promo-content">
+<h2>Save Tax Smarter</h2>
+<p>Compare regimes & optimize deductions.</p>
+<button>Coming Soon</button>
+</div>
+</div>
+
+</div>
+
+</section>
 
 <!-- 🚀 LOAN TOOLS – ULTIMATE DESIGN -->
-<section class="loan-ultimate container">
-    
+<section id="tools-section" class="tool-category">
+<div class="container">
 
-<h2 class="loan-title">
-💼 Loan Calculators
-<span>Smart tools to optimize your borrowing</span>
-</h2>
+<h2>Loan <span>Calculators</span></h2>
 
-<div class="loan-grid-ultimate">
+<div class="tool-grid">
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/'">
-<div class="loan-icon-ultimate">💰</div>
+<div class="tool-card bg-purple" onclick="window.location='/calculator/'">
+<div class="icon">💰</div>
 <h3>Loan EMI Calculator</h3>
-<p>EMI breakdown with full amortization schedule.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/prepayment-calculator'">
-<div class="loan-icon-ultimate">🔁</div>
+<div class="tool-card bg-pink" onclick="window.location='/calculator/prepayment-calculator'">
+<div class="icon">🔁</div>
 <h3>Prepayment Calculator</h3>
-<p>Simulate early repayments & save interest.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/home-loan-eligibility'">
-<div class="loan-icon-ultimate">🏠</div>
+<div class="tool-card bg-blue" onclick="window.location='/calculator/home-loan-eligibility'">
+<div class="icon">🏠</div>
 <h3>Home Loan Eligibility</h3>
-<p>Check maximum loan you can get instantly.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/loan-eligibility-by-salary'">
-<div class="loan-icon-ultimate">💼</div>
+<div class="tool-card bg-beige" onclick="window.location='/calculator/loan-eligibility-by-salary'">
+<div class="icon">💼</div>
 <h3>Eligibility by Salary</h3>
-<p>Know your EMI affordability range.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/dti-calculator'">
-<div class="loan-icon-ultimate">📊</div>
+<div class="tool-card bg-green" onclick="window.location='/calculator/dti-calculator'">
+<div class="icon">📊</div>
 <h3>Debt-to-Income (DTI)</h3>
-<p>Evaluate your financial health ratio.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/credit-card-emi'">
-<div class="loan-icon-ultimate">💳</div>
+<div class="tool-card bg-purple" onclick="window.location='/calculator/credit-card-emi'">
+<div class="icon">💳</div>
 <h3>Credit Card EMI</h3>
-<p>Convert outstanding amount to EMI instantly.</p>
 </div>
 
+</div>
 </div>
 </section>
 
-<section class="loan-ultimate container">
+<section class="tool-category">
+<div class="container">
 
-<h2 class="loan-title">
-📈 Investment Calculators
-<span>Grow your wealth smarter</span>
-</h2>
+<h2>Investment <span>Calculators</span></h2>
 
-<div class="loan-grid-ultimate">
+<div class="tool-grid">
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/sip-calculator'">
-<div class="loan-icon-ultimate">💰</div>
+<div class="tool-card bg-green" onclick="window.location='/calculator/sip-calculator'">
+<div class="icon">📈</div>
 <h3>SIP Calculator</h3>
-<p>Estimate mutual fund returns.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/lumpsum-calculator'">
-<div class="loan-icon-ultimate">📊</div>
+<div class="tool-card bg-blue" onclick="window.location='/calculator/lumpsum-calculator'">
+<div class="icon">💹</div>
 <h3>Lumpsum Calculator</h3>
-<p>One-time investment growth.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/compound-interest-calculator'">
-<div class="loan-icon-ultimate">📈</div>
+<div class="tool-card bg-purple" onclick="window.location='/calculator/compound-interest-calculator'">
+<div class="icon">📊</div>
 <h3>Compound Interest</h3>
-<p>See power of compounding.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/fd-calculator'">
-<div class="loan-icon-ultimate">🏦</div>
+<div class="tool-card bg-beige" onclick="window.location='/calculator/fd-calculator'">
+<div class="icon">🏦</div>
 <h3>FD Calculator</h3>
-<p>Fixed deposit maturity value.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/rd-calculator'">
-<div class="loan-icon-ultimate">📅</div>
+<div class="tool-card bg-pink" onclick="window.location='/calculator/rd-calculator'">
+<div class="icon">📅</div>
 <h3>RD Calculator</h3>
-<p>Recurring deposit returns.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/retirement-calculator'">
-<div class="loan-icon-ultimate">👴</div>
+<div class="tool-card bg-green" onclick="window.location='/calculator/retirement-calculator'">
+<div class="icon">👴</div>
 <h3>Retirement Planner</h3>
-<p>Plan your future wealth.</p>
 </div>
 
+</div>
 </div>
 </section>
 
-<section class="loan-ultimate container">
+<section class="tool-category">
+<div class="container">
 
-<h2 class="loan-title">
-🧾 Tax & Business Tools
-<span>Optimize taxes & business finance</span>
-</h2>
+<h2>Tax & <span>Business Tools</span></h2>
 
-<div class="loan-grid-ultimate">
+<div class="tool-grid">
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/gst-calculator'">
-<div class="loan-icon-ultimate">🧮</div>
+<div class="tool-card bg-beige" onclick="window.location='/calculator/gst-calculator'">
+<div class="icon">🧮</div>
 <h3>GST Calculator</h3>
-<p>Quick GST inclusive/exclusive calculation.</p>
 </div>
 
-<div class="loan-card-ultimate" onclick="window.location='/calculator/inflation-calculator'">
-<div class="loan-icon-ultimate">📉</div>
+<div class="tool-card bg-green" onclick="window.location='/calculator/inflation-calculator'">
+<div class="icon">📉</div>
 <h3>Inflation Calculator</h3>
-<p>Future value adjusted for inflation.</p>
 </div>
 
-<div class="loan-card-ultimate">
-<div class="loan-icon-ultimate">💼</div>
+<div class="tool-card bg-blue">
+<div class="icon">💼</div>
 <h3>Income Tax</h3>
-<p>Regime comparison (Coming Soon).</p>
 </div>
 
-<div class="loan-card-ultimate">
-<div class="loan-icon-ultimate">🏢</div>
+<div class="tool-card bg-purple">
+<div class="icon">🏢</div>
 <h3>Business Loan EMI</h3>
-<p>Commercial financing estimation.</p>
 </div>
 
+</div>
 </div>
 </section>
 
-<section class="loan-ultimate container">
+<section class="tool-category">
+<div class="container">
 
-<h2 class="loan-title">
-🚀 Pro Features
-<span>Advanced financial tools</span>
-</h2>
+<h2>🚀 Pro <span>Features</span></h2>
 
-<div class="loan-grid-ultimate">
+<div class="tool-grid">
 
-<div class="loan-card-ultimate">
-<div class="loan-icon-ultimate">📊</div>
+<div class="tool-card bg-purple">
+<div class="icon">📊</div>
 <h3>Loan Comparison</h3>
-<p>Compare multiple loan offers.</p>
 </div>
 
-<div class="loan-card-ultimate">
-<div class="loan-icon-ultimate">📄</div>
+<div class="tool-card bg-pink">
+<div class="icon">📄</div>
 <h3>PDF Export</h3>
-<p>Download EMI schedule.</p>
 </div>
 
-<div class="loan-card-ultimate">
-<div class="loan-icon-ultimate">💾</div>
+<div class="tool-card bg-blue">
+<div class="icon">💾</div>
 <h3>Save Calculations</h3>
-<p>Track your EMI plans.</p>
 </div>
 
-<div class="loan-card-ultimate">
-<div class="loan-icon-ultimate">🌍</div>
+<div class="tool-card bg-beige">
+<div class="icon">🌍</div>
 <h3>Currency Convert</h3>
-<p>Multi-currency EMI calculation.</p>
 </div>
 
-<div class="loan-card-ultimate">
-<div class="loan-icon-ultimate">📈</div>
+<div class="tool-card bg-green">
+<div class="icon">📈</div>
 <h3>Charts & Analytics</h3>
-<p>Interactive visual breakdown.</p>
 </div>
 
-<div class="loan-card-ultimate">
-<div class="loan-icon-ultimate">✨</div>
+<div class="tool-card bg-purple">
+<div class="icon">✨</div>
 <h3>Ad-Free Premium</h3>
-<p>Upgrade for clean experience.</p>
 </div>
 
+</div>
 </div>
 </section>
-
 <!-- FINAL CTA -->
 <section class="dark">
 <div class="container">
-<h2>Smart Financial Decisions Start Here</h2>
-<button onclick="window.location='/calculator/'">
-Try All Calculators Now
+<h2>
+Find the Best <span style="font-family:serif;font-style:italic;">
+Loan Deal
+</span> for You
+</h2>
+
+<p style="max-width:600px;margin:15px auto 25px;color:#64748b;">
+Compare multiple bank offers, interest rates and EMIs instantly.
+</p>
+
+<button onclick="window.location='/loan-comparison-calculator'">
+Start Comparing →
 </button>
 </div>
 </section>
@@ -895,4 +1498,229 @@ Try All Calculators Now
 </div>
 </section>
 
+<!-- 🔥 TOOLS SLIDER -->
+<section  class="tools-slider-section">
+<div class="container tools-slider-wrapper">
+
+<div class="tools-slider">
+
+<div class="tool-slide" onclick="window.location='/calculator/'">
+<div class="tool-icon">💰</div>
+<div>
+<h4>Loan EMI</h4>
+<p>EMI with schedule</p>
+</div>
+</div>
+
+<div class="tool-slide" onclick="window.location='/calculator/prepayment-calculator'">
+<div class="tool-icon">🔁</div>
+<div>
+<h4>Prepayment</h4>
+<p>Interest saving tool</p>
+</div>
+</div>
+
+<div class="tool-slide" onclick="window.location='/calculator/home-loan-eligibility'">
+<div class="tool-icon">🏠</div>
+<div>
+<h4>Home Eligibility</h4>
+<p>Loan approval estimate</p>
+</div>
+</div>
+
+<div class="tool-slide" onclick="window.location='/calculator/sip-calculator'">
+<div class="tool-icon">📈</div>
+<div>
+<h4>SIP Calculator</h4>
+<p>Mutual fund returns</p>
+</div>
+</div>
+
+<div class="tool-slide" onclick="window.location='/calculator/fd-calculator'">
+<div class="tool-icon">🏦</div>
+<div>
+<h4>FD Calculator</h4>
+<p>Maturity value</p>
+</div>
+</div>
+
+<div class="tool-slide" onclick="window.location='/calculator/gst-calculator'">
+<div class="tool-icon">🧾</div>
+<div>
+<h4>GST Calculator</h4>
+<p>GST inclusive/exclusive</p>
+</div>
+</div>
+
+<div class="tool-slide">
+<div class="tool-icon">📊</div>
+<div>
+<h4>Loan Compare</h4>
+<p>Compare loan offers</p>
+</div>
+</div>
+
+<div class="tool-slide">
+<div class="tool-icon">✨</div>
+<div>
+<h4>Premium Tools</h4>
+<p>Advanced features</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- 💼 FEATURED PROJECT SHOWCASE -->
+<section class="showcase-section">
+<div class="container">
+
+<h2 class="showcase-title">
+How we built a smarter <span>financial platform</span>
+</h2>
+
+<div class="showcase-grid">
+
+<!-- LEFT CARD -->
+<div class="showcase-card bg-soft-green">
+<div class="card-icon">
+    <img src="/static/images/payment.png" alt="EMI Preview">
+</div><h3>EMI Calculator Pro</h3>
+<p>Advanced EMI breakdown with amortization schedule, charts & export tools.</p>
+</div>
+
+<!-- RIGHT CARD -->
+<div class="showcase-card bg-soft-purple">
+<div class="card-icon">
+    <img src="/static/images/dashboard.png" alt="EMI Preview">
+</div>
+<h3>Investment Dashboard</h3>
+<p>Track SIP, FD & retirement planning with interactive analytics.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- AD POPUP MODAL -->
+<div id="adPopup" class="ad-popup">
+    <div class="ad-box">
+        <span class="close-ad" onclick="closeAd()">✕</span>
+
+        <div class="ad-content">
+            <!-- Google AdSense Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-xxxxxxxxxxxx"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
+        <button class="continue-btn" onclick="continueAction()">
+            Continue →
+        </button>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const slider = document.querySelector(".tools-slider");
+if (!slider) return;
+
+let autoScroll;
+let speed = 0.3;   // 🔥 LOWER = SLOWER (0.2 - 0.5 perfect)
+let isPaused = false;
+
+function startAutoScroll() {
+autoScroll = setInterval(() => {
+
+if (!isPaused) {
+slider.scrollLeft += speed;
+
+if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+slider.scrollLeft = 0;
+}
+}
+
+}, 20);  // smoother timing
+}
+
+function stopAutoScroll() {
+clearInterval(autoScroll);
+}
+
+/* Pause on touch */
+slider.addEventListener("touchstart", () => isPaused = true);
+slider.addEventListener("touchend", () => isPaused = false);
+
+/* Pause on hover (desktop) */
+slider.addEventListener("mouseenter", () => isPaused = true);
+slider.addEventListener("mouseleave", () => isPaused = false);
+
+startAutoScroll();
+
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const slider = document.querySelector(".tools-slider");
+if (!slider) return;
+
+/* 🔥 Clone slides for seamless infinite */
+slider.innerHTML += slider.innerHTML;
+
+let scrollSpeed = 0.5;   // Lower = slower
+let scrollPos = 0;
+let isPaused = false;
+
+function autoScroll(){
+if(!isPaused){
+scrollPos += scrollSpeed;
+slider.scrollLeft = scrollPos;
+
+/* Reset smoothly */
+if(scrollPos >= slider.scrollWidth / 2){
+scrollPos = 0;
+}
+}
+requestAnimationFrame(autoScroll);
+}
+
+/* Pause on hover (desktop) */
+slider.addEventListener("mouseenter", () => isPaused = true);
+slider.addEventListener("mouseleave", () => isPaused = false);
+
+/* Pause on touch (mobile) */
+slider.addEventListener("touchstart", () => isPaused = true);
+slider.addEventListener("touchend", () => isPaused = false);
+
+autoScroll();
+
+});
+</script>
+
+<script>
+function goToTools() {
+
+    if (window.location.pathname === "/") {
+        // If already on home page
+        const section = document.getElementById("tools-section");
+        if (section) {
+            section.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    } else {
+        // Redirect to home and scroll
+        window.location.href = "/#tools-section";
+    }
+
+}
+</script>
 {% endblock %}

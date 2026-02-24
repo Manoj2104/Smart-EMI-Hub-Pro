@@ -201,12 +201,128 @@ height:320px;
 }
 
 }
+
+/* ====== PROFESSIONAL CENTERED TITLE ====== */
+
+.ret-header{
+text-align:center;
+margin-bottom:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.ret-title{
+font-size:48px;
+font-weight:800;
+color:#111827;
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+.ret-title span{
+font-family:"Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:inherit;
+}
+
+.ret-subtitle{
+margin-top:15px;
+color:#6b7280;
+font-size:16px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* ===================================== */
+/* 📱 PERFECT MOBILE VIEW (Below 768px) */
+/* ===================================== */
+
+@media(max-width:768px){
+
+.ret-wrapper{
+margin:30px auto 70px;
+padding:0 16px;
+}
+
+/* Heading */
+
+.ret-header{
+margin-bottom:30px;
+}
+
+.ret-title{
+font-size:26px;
+}
+
+.ret-subtitle{
+font-size:14px;
+}
+
+/* Card */
+
+.ret-card{
+display:flex;
+flex-direction:column;
+padding:22px;
+gap:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+
+.input-group{
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+max-width:100%;
+font-size:16px;
+padding:12px;
+border-radius:10px;
+}
+
+/* Result */
+
+.result-box{
+padding-top:10px;
+text-align:left;
+}
+
+.future-value{
+font-size:30px;
+}
+
+.chart-container{
+width:220px;
+height:220px;
+margin:20px auto;
+}
+
+.stat-box{
+flex-direction:row;
+justify-content:space-between;
+font-size:14px;
+padding:14px;
+border-radius:12px;
+}
+
+}
 </style>
-
+<br><br>
 <div class="ret-wrapper">
-<h2>Retirement Calculator</h2>
-<p class="subtitle">Plan inflation-adjusted retirement corpus realistically</p>
-
+<div class="ret-header">
+    <h1 class="ret-title">
+        Retirement <span>Calculator</span>
+    </h1>
+    <p class="ret-subtitle">
+        Plan inflation-adjusted retirement corpus realistically
+    </p>
+</div>
 <div class="ret-card">
 
 <!-- LEFT -->

@@ -144,13 +144,60 @@ padding:50px;
 
 }
 
+
+/* ====== GREEN CENTERED PROFESSIONAL TITLE ====== */
+
+.eligibility-header{
+text-align:center;
+margin:80px auto 50px;
+max-width:900px;
+}
+
+.main-title{
+font-size:48px;
+font-weight:800;
+color:#16a34a;   /* Full green heading */
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+.main-title span{
+font-family:"Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:#22c55e;   /* Slight lighter green */
+}
+
+.subtitle{
+margin-top:15px;
+color:#6b7280;
+font-size:16px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;   /* Perfect center */
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+.main-title{
+font-size:32px;
+}
+.subtitle{
+font-size:14px;
+}
+}
 </style>
-
+<br><br>
 <div class="salary-container">
-
-<h2>💼 Loan Eligibility by Salary</h2>
-<p>Find how much loan you can get based on your monthly salary.</p>
-
+<div class="eligibility-header">
+    <h1 class="main-title">
+        Home Loan <span>Eligibility</span> Calculator
+    </h1>
+    <p class="subtitle">
+        Instantly estimate the maximum home loan amount you qualify for based on your income and financial commitments.
+    </p>
+</div>
 <div class="salary-card">
 
 <div class="salary-grid">

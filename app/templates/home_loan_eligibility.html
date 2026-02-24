@@ -2,61 +2,247 @@
 {% block content %}
 
 <style>
+/* ============================= */
+/* 💎 EMI Calculator Pro Theme */
+/* ============================= */
+
+:root{
+--primary:#2563eb;
+--primary-light:#3b82f6;
+--dark:#0f172a;
+--text:#1e293b;
+--muted:#64748b;
+--border:#e2e8f0;
+--bg:#f8fafc;
+--card:#ffffff;
+--success:#16a34a;
+--danger:#dc2626;
+}
+
+/* Background */
+body{
+background:linear-gradient(135deg,#f1f5f9,#eef2ff);
+font-family:'Inter',sans-serif;
+color:var(--text);
+}
+
+/* Container */
 .eligibility-container{
-max-width:1000px;
-margin:60px auto;
+max-width:1100px;
+margin:90px auto;
 padding:20px;
 }
 
-.eligibility-card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,0.05);
+/* Header */
+.eligibility-container h2{
+font-size:40px;
+font-weight:800;
+color:var(--dark);
+margin-bottom:6px;
 }
 
+.eligibility-container p{
+color:var(--muted);
+margin-bottom:45px;
+font-size:15px;
+}
+
+/* Card */
+.eligibility-card{
+background:var(--card);
+padding:45px;
+border-radius:24px;
+box-shadow:0 25px 60px rgba(15,23,42,0.08);
+border:1px solid var(--border);
+transition:0.3s ease;
+}
+
+.eligibility-card:hover{
+box-shadow:0 30px 70px rgba(15,23,42,0.12);
+}
+
+/* Grid */
 .eligibility-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:25px;
+gap:35px;
 }
 
+/* Labels */
+label{
+font-size:13px;
+font-weight:600;
+color:var(--muted);
+}
+
+/* Inputs */
 input{
 width:100%;
-padding:12px;
-border:1px solid #e5e7eb;
-border-radius:10px;
-margin-bottom:15px;
+padding:14px 16px;
+border-radius:12px;
+border:1px solid var(--border);
+margin-top:6px;
+margin-bottom:22px;
+font-size:14px;
+background:#f8fafc;
+transition:0.25s;
 }
 
+input:focus{
+border-color:var(--primary);
+background:#fff;
+box-shadow:0 0 0 4px rgba(37,99,235,0.1);
+outline:none;
+}
+
+/* Button */
 button{
-background:#00d09c;
+background:var(--primary);
 color:white;
 border:none;
-padding:14px 30px;
-border-radius:10px;
-font-weight:600;
+padding:16px;
+border-radius:14px;
+font-weight:700;
+font-size:15px;
 cursor:pointer;
+transition:0.3s;
+box-shadow:0 10px 25px rgba(37,99,235,0.25);
+width:100%;
 }
 
+button:hover{
+background:var(--primary-light);
+transform:translateY(-2px);
+box-shadow:0 15px 35px rgba(37,99,235,0.35);
+}
+
+/* Result Box */
 .result-box{
-margin-top:30px;
-background:#f0fdf4;
-padding:20px;
-border-radius:15px;
+margin-top:40px;
+padding:35px;
+border-radius:20px;
+background:#ffffff;
+box-shadow:0 15px 40px rgba(0,0,0,0.06);
+border:1px solid var(--border);
+animation:fadeIn .4s ease;
 }
 
+.result-box h3{
+margin-bottom:15px;
+font-weight:700;
+}
+
+.result-box p{
+font-size:15px;
+margin-bottom:12px;
+line-height:1.6;
+}
+
+/* Animation */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(15px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* Responsive */
 @media(max-width:768px){
 .eligibility-grid{
 grid-template-columns:1fr;
 }
+.eligibility-card{
+padding:25px;
+}
+.eligibility-container h2{
+font-size:28px;
+}
+}
+
+/* ================= HERO DESIGN ================= */
+
+.eligibility-header{
+text-align:center;
+margin-bottom:60px;
+position:relative;
+}
+
+/* Small top badge */
+.badge{
+display:inline-block;
+background:linear-gradient(135deg,#e0f2fe,#eef2ff);
+color:#2563eb;
+font-size:13px;
+font-weight:600;
+padding:8px 16px;
+border-radius:30px;
+margin-bottom:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Main Title */
+.main-title{
+font-size:46px;
+font-weight:800;
+color:#0f172a;
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+/* Highlight word */
+.main-title span{
+color:#2563eb;
+font-style:italic;
+position:relative;
+}
+
+/* Underline animation */
+.main-title span::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:100%;
+height:6px;
+background:linear-gradient(90deg,#3b82f6,#60a5fa);
+border-radius:10px;
+opacity:0.3;
+}
+
+/* Subtitle */
+.subtitle{
+margin-top:15px;
+font-size:16px;
+color:#64748b;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.6;
+}
+
+/* Responsive */
+@media(max-width:768px){
+.main-title{
+font-size:30px;
+}
+.subtitle{
+font-size:14px;
+}
 }
 </style>
-
+<br><br>
 <div class="eligibility-container">
 
-<h2>🏠 Home Loan Eligibility Calculator</h2>
-<p>Check how much home loan you can get instantly.</p>
+<div class="eligibility-header">
+    <div class="badge">🏠 Smart Loan Planning</div>
+
+    <h1 class="main-title">
+        Home Loan <span>Eligibility</span> Calculator
+    </h1>
+
+    <p class="subtitle">
+        Instantly estimate the maximum home loan amount you qualify for
+        based on your income and financial commitments.
+    </p>
+</div>
 
 <div class="eligibility-card">
 

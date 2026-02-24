@@ -173,12 +173,128 @@ height:300px;
 }
 
 }
+
+/* ====== PROFESSIONAL CENTERED TITLE ====== */
+
+.ci-header{
+text-align:center;
+margin-bottom:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.ci-title{
+font-size:48px;
+font-weight:800;
+color:#111827;
+letter-spacing:-1px;
+line-height:1.2;
+}
+
+.ci-title span{
+font-family:"Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:inherit;
+}
+
+.ci-subtitle{
+margin-top:15px;
+color:#6b7280;
+font-size:16px;
+max-width:650px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* ===================================== */
+/* 📱 PERFECT MOBILE VIEW (Below 768px) */
+/* ===================================== */
+
+@media(max-width:768px){
+
+.ci-wrapper{
+margin:30px auto 70px;
+padding:0 16px;
+}
+
+/* Heading */
+
+.ci-header{
+margin-bottom:30px;
+}
+
+.ci-title{
+font-size:26px;
+}
+
+.ci-subtitle{
+font-size:14px;
+}
+
+/* Card */
+
+.ci-card{
+display:flex;
+flex-direction:column;
+padding:22px;
+gap:30px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* Inputs */
+
+.input-group{
+margin-bottom:20px;
+}
+
+input, select{
+width:100%;
+max-width:100%;
+font-size:16px;
+padding:12px;
+border-radius:10px;
+}
+
+/* Result */
+
+.result-box{
+padding-top:10px;
+text-align:left;
+}
+
+.main-value{
+font-size:30px;
+}
+
+.chart-container{
+width:220px;
+height:220px;
+margin:20px auto;
+}
+
+.stat-card{
+flex-direction:row;
+justify-content:space-between;
+font-size:14px;
+padding:14px;
+border-radius:12px;
+}
+
+}
 </style>
 
 <div class="ci-wrapper">
-<h2>Compound Interest Calculator</h2>
-<p style="color:#6b7280;">See how your investment grows over time</p>
-
+<div class="ci-header">
+    <h1 class="ci-title">
+        Compound <span>Interest</span> Calculator
+    </h1>
+    <p class="ci-subtitle">
+        See how your investment grows over time
+    </p>
+</div>
 <div class="ci-card">
 
 <!-- LEFT -->

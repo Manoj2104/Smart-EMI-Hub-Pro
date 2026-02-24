@@ -323,12 +323,61 @@ grid-template-columns:repeat(3,1fr);
 font-size:24px;
 }
 }
-</style>
 
+/* ====== PROFESSIONAL TITLE STYLE ====== */
+
+.prepay-header{
+text-align:center;
+margin-bottom:50px;
+}
+
+.main-title{
+font-size:48px;
+font-weight:800;
+color:#111827;
+letter-spacing:-1px;
+}
+
+.main-title span{
+font-family: "Georgia", serif;
+font-style:italic;
+font-weight:500;
+color:#6366f1;
+}
+
+.subtitle{
+margin-top:10px;
+color:#6b7280;
+font-size:16px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+.main-title{
+font-size:32px;
+}
+.subtitle{
+font-size:14px;
+}
+}
+</style>
+<br><br>
 <div class="prepay-container">
 
-<h2>💰 Loan Prepayment Calculator</h2>
-<p>See how extra payments reduce interest & tenure.</p>
+<div class="prepay-header">
+    
+    <p class="subtitle">
+        <div class="prepay-header">
+    <h1 class="main-title">
+        Loan <span>Prepayment</span> Calculator
+    </h1>
+    <p class="subtitle">
+        Discover how extra payments can reduce your interest burden and close your loan faster.
+    </p>
+</div>
+    </p>
+</div>    
 
 <div class="prepay-card">
 
