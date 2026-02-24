@@ -859,7 +859,22 @@ placeholder="Search month or date...">
 
   </div>
 </section>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Loan EMI Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "url": "https://smart-emi-hub-pro.onrender.com/calculator/",
+  "description": "Free online EMI calculator with amortization schedule and prepayment simulation.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  }
+}
+</script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
 
