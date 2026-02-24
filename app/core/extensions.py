@@ -11,6 +11,7 @@ from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_migrate import Migrate
+from flask_mail import Mail
 
 
 # ==============================
@@ -31,7 +32,7 @@ db = SQLAlchemy(
 
 login_manager = LoginManager()
 login_manager.session_protection = "strong"
-login_manager.login_view = "auth.login"  # must match your auth blueprint
+login_manager.login_view = "auth.login"
 login_manager.login_message_category = "warning"
 
 
@@ -60,6 +61,13 @@ migrate = Migrate()
 
 
 # ==============================
+# MAIL SYSTEM (NEW)
+# ==============================
+
+mail = Mail()
+
+
+# ==============================
 # EXTENSION INITIALIZER
 # ==============================
 
@@ -73,9 +81,10 @@ def init_extensions(app):
     cache.init_app(app)
     limiter.init_app(app)
     migrate.init_app(app, db)
+    mail.init_app(app)   # ✅ Mail initialized here
 
     # ==============================
-    # USER LOADER (CRITICAL FIX)
+    # USER LOADER
     # ==============================
     from app.models.user import User
 

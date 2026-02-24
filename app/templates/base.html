@@ -4,8 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>{{ seo.title if seo else "Smart EMI Hub Pro" }}</title>
+<title>
+{% if seo and seo.title %}
+    {{ seo.title }}
+{% else %}
+    Smart EMI Hub Pro – EMI & Financial Calculators India
+{% endif %}
+</title>
 
+<meta name="description"
+      content="{% if seo and seo.description %}
+                {{ seo.description }}
+               {% else %}
+                Free EMI, SIP, FD & Loan calculators for smart financial planning in India.
+               {% endif %}">
+
+<meta name="keywords"
+      content="EMI calculator India, SIP calculator, loan EMI calculator, FD calculator, GST calculator, Smart EMI Hub Pro">
+
+<link rel="canonical"
+      href="{% if seo and seo.url %}{{ seo.url }}{% else %}https://smart-emi-hub-pro.onrender.com{% endif %}">
+
+<!-- Open Graph (For WhatsApp, LinkedIn preview) -->
+<meta property="og:title"
+      content="{{ seo.title if seo else 'Smart EMI Hub Pro' }}">
+
+<meta property="og:description"
+      content="{{ seo.description if seo else 'Smart financial calculators for EMI, SIP and loans.' }}">
+
+<meta property="og:type" content="website">
+<meta property="og:url"
+      content="{{ seo.url if seo else 'https://smart-emi-hub-pro.onrender.com' }}">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
@@ -745,6 +774,74 @@ transition:.2s;
 background:#f1f5f9;
 color:#00d09c;
 }
+
+.flash-popup {
+    position: fixed;
+    top: 100px;
+    right: 30px;
+    background: #10b981;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 0.4s forwards;
+    z-index: 9999;
+}
+
+.flash-popup.danger {
+    background: #ef4444;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   COMPANY DROPDOWN
+================================ */
+
+.dropdown-menu{
+position:absolute;
+top:55px;
+left:0;
+background:white;
+padding:15px 0;
+border-radius:14px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+display:none;
+flex-direction:column;
+min-width:220px;
+opacity:0;
+transform:translateY(10px);
+transition:all .25s ease;
+z-index:1000;
+}
+
+.dropdown-menu a{
+padding:10px 20px;
+text-decoration:none;
+color:var(--gray);
+font-size:14px;
+display:block;
+transition:.2s;
+}
+
+.dropdown-menu a:hover{
+background:#f1f5f9;
+color:var(--primary);
+}
+
+.dropdown-menu.active{
+display:flex;
+opacity:1;
+transform:translateY(0);
+}
 </style>
 
 <!-- Google AdSense Test Script -->
@@ -802,6 +899,18 @@ Smart EMI Hub<span style="color:var(--primary)">Pro</span>
 </div>
 
 <a href="/loan-comparison-calculator">Compare</a>
+<div class="nav-item" id="companyMenu">
+<a href="#" id="companyTrigger">Company ▾</a>
+
+<div class="dropdown-menu">
+
+<a href="/about">About Us</a>
+<a href="/contact">Contact</a>
+<a href="/privacy-policy">Privacy Policy</a>
+<a href="/terms">Terms & Conditions</a>
+<a href="/disclaimer">Disclaimer</a>
+</div>
+</div>
 
 </div>
 
@@ -888,10 +997,11 @@ investment, retirement & tax planning decisions.
 <!-- COMPANY -->
 <div>
 <h4>Company</h4>
-<a href="#">About Us</a>
-<a href="#">Contact</a>
-<a href="#">Privacy Policy</a>
-<a href="#">Terms of Use</a>
+<a href="/about">About Us</a>
+<a href="/contact">Contact</a>
+<a href="/privacy-policy">Privacy Policy</a>
+<a href="/terms">Terms of Use</a>
+<a href="/disclaimer">Disclaimer</a>
 </div>
 
 <!-- CONTACT -->
@@ -909,6 +1019,14 @@ investment, retirement & tax planning decisions.
 </div>
 </footer>
 
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div id="flashPopup" class="flash-popup {{ messages[0][0] }}">
+        {{ messages[0][1] }}
+    </div>
+  {% endif %}
+{% endwith %}
 
 <script>
 function toggleMobile(){
@@ -1032,6 +1150,48 @@ document.addEventListener("click", function(e) {
     if (!document.querySelector(".search-box").contains(e.target)) {
         resultsBox.style.display = "none";
     }
+});
+</script>
+
+<script>
+setTimeout(function() {
+    const popup = document.getElementById("flashPopup");
+    if (popup) {
+        popup.style.transition = "all 0.4s ease";
+        popup.style.opacity = "0";
+        popup.style.transform = "translateY(-20px)";
+        setTimeout(() => popup.remove(), 400);
+    }
+}, 3000);
+</script>
+
+<script>
+const companyTrigger = document.getElementById("companyTrigger");
+const companyMenu = document.querySelector("#companyMenu .dropdown-menu");
+const companyWrapper = document.getElementById("companyMenu");
+
+let companyTimeout;
+
+companyTrigger.addEventListener("mouseenter", () => {
+clearTimeout(companyTimeout);
+companyMenu.classList.add("active");
+});
+
+companyWrapper.addEventListener("mouseenter", () => {
+clearTimeout(companyTimeout);
+companyMenu.classList.add("active");
+});
+
+companyWrapper.addEventListener("mouseleave", () => {
+companyTimeout = setTimeout(() => {
+companyMenu.classList.remove("active");
+}, 200);
+});
+
+document.addEventListener("click", function(e){
+if(!companyWrapper.contains(e.target)){
+companyMenu.classList.remove("active");
+}
 });
 </script>
 </body>

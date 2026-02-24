@@ -65,3 +65,56 @@ def home():
         features=features,
         adsense_client=config["ADSENSE_CLIENT_ID"]
     )
+
+from flask import Blueprint, render_template, current_app, Response
+from datetime import datetime
+
+@web_main_bp.route("/sitemap.xml", methods=["GET"])
+def sitemap():
+
+    base_url = current_app.config.get("SITE_URL", "https://smart-emi-hub-pro.onrender.com")
+
+    pages = []
+
+    # Static Pages
+    static_urls = [
+        "",
+        "/calculator/",
+        "/calculator/home-loan-emi-calculator",
+        "/calculator/car-loan-emi-calculator",
+        "/calculator/personal-loan-emi-calculator",
+        "/calculator/sip-calculator",
+        "/calculator/fd-calculator",
+        "/calculator/rd-calculator",
+        "/calculator/gst-calculator",
+        "/calculator/retirement-calculator",
+        "/about",
+        "/contact",
+        "/privacy",
+        "/terms",
+        "/disclaimer"
+    ]
+
+    for url in static_urls:
+        pages.append({
+            "loc": f"{base_url}{url}",
+            "lastmod": datetime.utcnow().date().isoformat()
+        })
+
+    sitemap_xml = render_template("sitemap.xml", pages=pages)
+
+    return Response(sitemap_xml, mimetype="application/xml") 
+
+@web_main_bp.route("/robots.txt")
+def robots():
+
+    base_url = current_app.config.get("SITE_URL", "https://smart-emi-hub-pro.onrender.com")
+
+    content = f"""
+User-agent: *
+Allow: /
+
+Sitemap: {base_url}/sitemap.xml
+"""
+
+    return Response(content, mimetype="text/plain")  

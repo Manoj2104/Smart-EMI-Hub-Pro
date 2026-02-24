@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.about-hero{
+padding:140px 20px 80px;
+text-align:center;
+background:linear-gradient(135deg,#ecfeff,#f0fdf4,#fef9c3);
+}
+
+.about-hero h1{
+font-size:48px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.about-hero p{
+max-width:750px;
+margin:auto;
+font-size:18px;
+color:#475569;
+}
+
+.about-section{
+padding:100px 20px;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about-card{
+background:#ffffff;
+padding:40px;
+border-radius:20px;
+box-shadow:0 25px 60px rgba(0,0,0,0.05);
+transition:.3s;
+}
+
+.about-card:hover{
+transform:translateY(-6px);
+}
+
+.about-card h3{
+margin-bottom:15px;
+font-size:22px;
+}
+
+.about-card p{
+color:#64748b;
+font-size:15px;
+}
+
+.stats-section{
+background:#0f172a;
+color:white;
+padding:100px 20px;
+text-align:center;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:40px;
+margin-top:60px;
+}
+
+.stat h2{
+font-size:36px;
+font-weight:800;
+margin-bottom:10px;
+color:#00d09c;
+}
+
+.stat p{
+color:#cbd5e1;
+font-size:14px;
+}
+
+@media(max-width:992px){
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.stats-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.about-hero h1{
+font-size:36px;
+}
+
+}
+
+@media(max-width:600px){
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+
+<!-- HERO -->
+<section class="about-hero">
+<h1>About Smart EMI Hub Pro</h1>
+<p>
+Smart EMI Hub Pro is a modern financial calculator platform built to simplify
+loan and investment decisions with instant, accurate calculations.
+</p>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="about-section">
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-card">
+<h3>🎯 Our Mission</h3>
+<p>
+To make financial planning simple, fast, and accessible for everyone.
+We aim to empower users with intelligent tools for EMI, SIP,
+retirement, and loan comparison decisions.
+</p>
+</div>
+
+<div class="about-card">
+<h3>🚀 Our Vision</h3>
+<p>
+To become India’s most trusted financial calculator platform,
+helping millions make smarter money decisions through clean design
+and powerful calculation engines.
+</p>
+</div>
+
+<div class="about-card">
+<h3>⚡ Why Choose Us?</h3>
+<p>
+• Instant EMI calculations<br>
+• Clean, distraction-free UI<br>
+• Advanced amortization schedules<br>
+• Future-ready financial planning tools
+</p>
+</div>
+
+<div class="about-card">
+<h3>🔒 Secure & Reliable</h3>
+<p>
+We focus on privacy-first architecture,
+secure infrastructure, and high performance to ensure
+a seamless financial planning experience.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section">
+<div class="container">
+
+<h2>Growing With Smart Investors</h2>
+
+<div class="stats-grid">
+
+<div class="stat">
+<h2>10K+</h2>
+<p>Monthly Users</p>
+</div>
+
+<div class="stat">
+<h2>25+</h2>
+<p>Financial Tools</p>
+</div>
+
+<div class="stat">
+<h2>99.9%</h2>
+<p>Calculation Accuracy</p>
+</div>
+
+<div class="stat">
+<h2>Fast</h2>
+<p>Performance Focused</p>
+</div>
+
+</div>
+</div>
+</section>
+
+{% endblock %}

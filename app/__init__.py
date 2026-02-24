@@ -60,9 +60,6 @@ def create_app(config_name=None):
 # ==========================================
 
 def register_blueprints(app):
-    """
-    Register all application blueprints.
-    """
 
     from app.routes.web.main import web_main_bp
     from app.routes.web.calculator import calculator_bp
@@ -73,23 +70,25 @@ def register_blueprints(app):
     from app.routes.api.prepayment_api import prepayment_api_bp
     from app.routes.api.comparison_api import comparison_api_bp
     from app.routes.api.history_api import history_api_bp
+
+    from app.routes.web.pages import pages_bp   # ✅ ADD THIS
+
     from app.core.caching import init_cache
     
     init_cache(app)
+
     # Web routes
     app.register_blueprint(web_main_bp)
     app.register_blueprint(calculator_bp)
     app.register_blueprint(comparison_bp)
     app.register_blueprint(reports_bp)
-    
+    app.register_blueprint(pages_bp)        # ✅ ADD THIS
 
     # API routes
     app.register_blueprint(emi_api_bp, url_prefix="/api")
     app.register_blueprint(prepayment_api_bp, url_prefix="/api")
     app.register_blueprint(comparison_api_bp, url_prefix="/api")
     app.register_blueprint(history_api_bp, url_prefix="/api")
-
-
 # ==========================================
 # ERROR HANDLERS
 # ==========================================
