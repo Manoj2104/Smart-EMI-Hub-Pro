@@ -117,4 +117,11 @@ Allow: /
 Sitemap: {base_url}/sitemap.xml
 """
 
-    return Response(content, mimetype="text/plain")  
+    return Response(content, mimetype="text/plain")
+
+@web_main_bp.route("/ads.txt")
+def ads_txt():
+    return Response(
+        "google.com, pub-2031854006818432, DIRECT, f08c47fec0942fa0",
+        mimetype="text/plain"
+    )  
