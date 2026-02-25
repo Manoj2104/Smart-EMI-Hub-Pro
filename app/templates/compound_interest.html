@@ -284,7 +284,49 @@ border-radius:12px;
 }
 
 }
+
+.ci-offer-banner{
+margin-top:25px;
+padding:20px;
+background:linear-gradient(135deg,#111827,#1f2937);
+color:white;
+border-radius:16px;
+text-align:center;
+}
+
+.ci-offer-banner h4{
+margin-bottom:6px;
+}
+
+.ci-offer-btn{
+display:inline-block;
+margin-top:12px;
+background:#00d09c;
+color:#111;
+padding:10px 20px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+}
+
+.ci-cta-strip{
+max-width:1100px;
+margin:40px auto;
+padding:20px;
+background:#ecfdf5;
+border-radius:16px;
+text-align:center;
+font-weight:600;
+}
+
+.ci-cta-strip a{
+margin-left:10px;
+color:#00a87d;
+text-decoration:none;
+}
 </style>
+
+
 
 <div class="ci-wrapper">
 <div class="ci-header">
@@ -348,6 +390,166 @@ border-radius:12px;
 </div>
 </div>
 </div>
+
+
+<section class="ci-invest-section">
+
+<style>
+/* ================================
+   INVEST PREMIUM STAT SECTION
+================================ */
+
+.ci-invest-section{
+max-width:1200px;
+margin:120px auto;
+padding:0 20px;
+text-align:center;
+}
+
+.ci-invest-header h2{
+font-size:42px;
+font-weight:800;
+color:#111827;
+line-height:1.2;
+}
+
+.ci-invest-header h2 span{
+color:#9ca3af;
+font-weight:500;
+}
+
+.ci-tags{
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.tag{
+padding:8px 18px;
+border-radius:50px;
+font-size:14px;
+font-weight:600;
+}
+
+.tag.purple{
+background:#ede9fe;
+color:#7c3aed;
+}
+
+.tag.blue{
+background:#dbeafe;
+color:#2563eb;
+}
+
+.tag.orange{
+background:#ffedd5;
+color:#ea580c;
+}
+
+/* STATS GRID */
+
+.ci-stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-top:70px;
+align-items:center;
+}
+
+.ci-stat{
+position:relative;
+}
+
+.ci-number{
+font-size:90px;
+font-weight:900;
+color:#111827;
+}
+
+.ci-stat p{
+margin-top:10px;
+color:#6b7280;
+font-size:15px;
+}
+
+/* CTA */
+
+.ci-invest-cta{
+margin-top:70px;
+}
+
+.ci-invest-cta a{
+display:inline-block;
+padding:16px 40px;
+background:#111827;
+color:white;
+border-radius:12px;
+font-weight:700;
+text-decoration:none;
+transition:.3s;
+}
+
+.ci-invest-cta a:hover{
+background:#00d09c;
+color:#111;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.ci-invest-header h2{
+font-size:26px;
+}
+
+.ci-number{
+font-size:50px;
+}
+
+}
+
+
+</style>    
+
+    <div class="ci-invest-header">
+        <h2>
+            Grow your wealth with disciplined investing
+            <span>and long term compounding power</span>
+        </h2>
+
+        <div class="ci-tags">
+            <span class="tag purple">📈 SIP Growth</span>
+            <span class="tag blue">💡 Smart Investing</span>
+            <span class="tag orange">🚀 Long Term Strategy</span>
+        </div>
+    </div>
+
+    <div class="ci-stats-grid">
+
+        <div class="ci-stat">
+            <div class="ci-number">+12%</div>
+            <p>Average Equity Returns</p>
+        </div>
+
+        <div class="ci-stat">
+            <div class="ci-number">+15</div>
+            <p>Years of Compounding Power</p>
+        </div>
+
+        <div class="ci-stat">
+            <div class="ci-number">+3X</div>
+            <p>Potential Wealth Growth</p>
+        </div>
+
+    </div>
+
+    <div class="ci-invest-cta">
+        <a href="/out/investment-app">Start SIP Today →</a>
+    </div>
+
+</section>
 
 <div class="calculator-ad" style="max-width:1100px;margin:40px auto;">
     <!-- Compound intrest page 1 -->

@@ -289,6 +289,74 @@ cursor:pointer;
 .tenure-type label{
 cursor:pointer;
 }
+
+.apply-btn{
+background:#111827;
+color:white;
+padding:8px 14px;
+border-radius:8px;
+text-decoration:none;
+font-size:13px;
+font-weight:600;
+display:inline-block;
+transition:.3s;
+}
+
+.apply-btn:hover{
+background:#00d09c;
+}
+
+.sticky-affiliate{
+margin:40px auto;
+padding:25px;
+background:linear-gradient(135deg,#111827,#1f2937);
+color:white;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.sticky-affiliate a{
+background:#00d09c;
+color:#111;
+padding:12px 20px;
+border-radius:10px;
+text-decoration:none;
+font-weight:700;
+}
+
+.bank-logos{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-bottom:30px;
+flex-wrap:wrap;
+}
+
+.bank-logos img{
+height:35px;
+opacity:.8;
+}
+
+
+.bank-logos a{
+transition:0.3s;
+display:inline-block;
+}
+
+.bank-logos a:hover{
+transform:scale(1.1);
+opacity:1;
+}
+
+.bank-logos img{
+height:35px;
+opacity:.8;
+transition:.3s;
+}
 </style>
 
 <div class="compare-hero">
@@ -392,6 +460,7 @@ Compare Loans
 <th>Monthly EMI</th>
 <th>Total Interest</th>
 <th>Total Payment</th>
+<th>Apply</th>
 </tr>
 </thead>
 <tbody id="resultBody"></tbody>
@@ -405,6 +474,33 @@ Compare Loans
 
 </div>
 
+<div class="bank-logos">
+
+    <a href="/out/hdfc-loan" target="_blank">
+        <img src="/static/images/hdfc.png" alt="HDFC Bank Personal Loan">
+    </a>
+
+    <a href="/out/icici-loan" target="_blank">
+        <img src="/static/images/icici.png" alt="ICICI Bank Personal Loan">
+    </a>
+
+    <a href="/out/sbi-loan" target="_blank">
+        <img src="/static/images/sbi.png" alt="SBI Personal Loan">
+    </a>
+
+    <a href="/out/axis-loan" target="_blank">
+        <img src="/static/images/axis.png" alt="Axis Bank Personal Loan">
+    </a>
+
+</div>
+<div class="sticky-affiliate">
+    <div>
+        <strong>Found a Better EMI?</strong>
+        Switch to lower interest & save more.
+    </div>
+
+    <a href="/out/loan-offer">Compare Bank Offers →</a>
+</div>
 <!-- <div class="calculator-ad">
     
     <ins class="adsbygoogle"
@@ -733,6 +829,11 @@ resultBody.innerHTML+=`
 </td>
 <td>₹ ${r.totalInterest.toFixed(2)}</td>
 <td>₹ ${r.totalPayment.toFixed(2)}</td>
+<td>
+<a href="/out/loan-offer" class="apply-btn">
+Apply Now →
+</a>
+</td>
 </tr>
 `;
 

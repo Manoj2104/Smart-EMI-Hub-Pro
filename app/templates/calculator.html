@@ -853,6 +853,116 @@ font-size:18px;
 from{transform:scale(.9);opacity:0;}
 to{transform:scale(1);opacity:1;}
 }
+/* ===============================
+   EMI SPLIT PREMIUM SECTION
+================================ */
+
+.emi-split-section{
+    margin:100px auto;
+    max-width:1200px;
+    padding:0 20px;
+}
+
+.emi-split-container{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:30px;
+}
+
+/* LEFT IMAGE CARD */
+
+.emi-split-left{
+    position:relative;
+    border-radius:24px;
+    overflow:hidden;
+    background:url('/static/images/loan-bg.jpg') center/cover no-repeat;
+    min-height:400px;
+    display:flex;
+    align-items:flex-end;
+}
+
+.emi-split-left::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.2));
+}
+
+.emi-overlay{
+    position:relative;
+    padding:40px;
+    color:white;
+    z-index:2;
+}
+
+.emi-small-label{
+    font-size:12px;
+    letter-spacing:1px;
+    opacity:.8;
+}
+
+.emi-overlay h2{
+    font-size:26px;
+    margin:15px 0;
+    line-height:1.3;
+}
+
+.emi-overlay p{
+    font-size:14px;
+    opacity:.9;
+    margin-bottom:20px;
+}
+
+.emi-overlay-btn{
+    background:white;
+    color:#111;
+    padding:12px 20px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.emi-overlay-btn:hover{
+    background:#6366f1;
+    color:white;
+}
+
+/* RIGHT STATS CARD */
+
+.emi-split-right{
+    background:#e9d77e;
+    border-radius:24px;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.emi-facts-label{
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:20px;
+}
+
+.emi-big-number{
+    font-size:60px;
+    font-weight:700;
+    margin:10px 0;
+}
+
+.emi-split-right p{
+    font-size:16px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+    .emi-split-container{
+        grid-template-columns:1fr;
+    }
+}
+
 </style>
 
 <br>
@@ -937,8 +1047,8 @@ to{transform:scale(1);opacity:1;}
 
     </div>
 
-    <div class="calculator-ad">
-      <!-- Home page ads 3 -->
+    <!-- <div class="calculator-ad">
+     
       <ins class="adsbygoogle"
           style="display:block"
           data-ad-client="ca-pub-2031854006818432"
@@ -947,7 +1057,7 @@ to{transform:scale(1);opacity:1;}
           data-full-width-responsive="true"></ins>
       <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      </script> -->
 
 
   </div>
@@ -955,8 +1065,6 @@ to{transform:scale(1);opacity:1;}
   </div>
 
 </div>
-
-
 
 
 <!-- TOGGLE -->
@@ -964,7 +1072,54 @@ to{transform:scale(1);opacity:1;}
 <button id="toggleScheduleBtn" class="schedule-toggle-btn">
 View Repayment Schedule
 </button>
+
 </div>
+
+
+<section class="emi-split-section">
+
+    <div class="emi-split-container">
+
+        <!-- LEFT IMAGE CARD -->
+        <div class="emi-split-left">
+            <div class="emi-overlay">
+                <span class="emi-small-label">SMART SAVINGS</span>
+
+                <h2>
+                    Switch to a Lower Interest Rate
+                    and Reduce Your EMI Today.
+                </h2>
+
+                <p>
+                    Compare top bank offers and optimize your loan cost
+                    with smarter financial decisions.
+                </p>
+
+                <a href="/out/loan-offer" class="emi-overlay-btn">
+                    Compare Better Rates →
+                </a>
+            </div>
+        </div>
+
+        <!-- RIGHT STATS CARD -->
+        <div class="emi-split-right">
+
+            <span class="emi-facts-label">FACTS & NUMBERS</span>
+
+            <h3>Up to</h3>
+            <div class="emi-big-number">2%</div>
+
+            <p>
+                lower interest rates available
+                compared to standard bank offers.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 <!-- SCHEDULE -->
 <div id="scheduleSection" class="schedule-card">
@@ -1004,53 +1159,52 @@ placeholder="Search month or date...">
 
 </div>
 
-<!-- 💎 COMPACT LOAN SHOWCASE -->
+<!-- 💎 COMPACT LOAN SHOWCASE
 <section class="mini-showcase">
   <div class="container">
 
     <h2 class="mini-title">
-      Smart Loan <span>Tools</span>
+      Reduce EMI <span>Smarter</span>
     </h2>
 
     <div class="mini-grid">
 
-      <!-- YELLOW CARD -->
+      
       <div class="mini-card yellow">
-        <div class="mini-badge">Calculator</div>
+        <div class="mini-badge">Save Money</div>
 
-        <h3>Core Features</h3>
+        <h3>Lower Your Loan Cost</h3>
 
         <ul>
-          <li>✓ Instant EMI</li>
-          <li>✓ Amortization</li>
-          <li>✓ Interactive Chart</li>
-          <li>✓ Prepayment</li>
-          <li>✓ Export Excel</li>
+          <li>✓ Compare Lower Interest Rates</li>
+          <li>✓ Reduce Monthly EMI Burden</li>
+          <li>✓ Optimize Loan Tenure</li>
+          <li>✓ Identify Hidden Charges</li>
+          <li>✓ Maximize Savings Over Time</li>
         </ul>
       </div>
 
-      <!-- PURPLE CARD -->
+      
       <div class="mini-card purple">
-        <div class="mini-badge dark">Advanced</div>
+        <div class="mini-badge dark">Upgrade</div>
 
-        <h3>Advanced Insights</h3>
+        <h3>Switch to Better Offers</h3>
 
         <ul>
-          <li>✓ Interest Graph</li>
-          <li>✓ Custom Tenure</li>
-          <li>✓ Start Date Calc</li>
-          <li>✓ Balance Projection</li>
-          <li>✓ Secure & Fast</li>
+          <li>✓ Check Latest Bank Rates</li>
+          <li>✓ Free Eligibility Assessment</li>
+          <li>✓ Instant Rate Comparison</li>
+          <li>✓ Smart EMI Optimization</li>
+          <li>✓ Secure & Trusted Process</li>
         </ul>
       </div>
 
     </div>
 
   </div>
-</section> 
-  <!-- End of mini-showcase -->
+</section> -->
 
-<section class="emi-content-section">
+<section class="emi-content-section"> 
 
 <h2>What is EMI?</h2>
 

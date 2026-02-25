@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect
 
 pages_bp = Blueprint("pages", __name__)
 
@@ -156,3 +156,19 @@ from flask import send_from_directory
 @pages_bp.route("/ads.txt")
 def ads_txt():
     return send_from_directory("static", "ads.txt")
+
+@pages_bp.route("/out/loan-offer")
+def loan_offer_redirect():
+    return redirect("YOUR_REAL_AFFILIATE_LINK")
+
+@pages_bp.route("/out/<bank>")
+def outgoing(bank):
+
+    affiliate_links = {
+        "hdfc-loan": "https://your-affiliate-link-hdfc",
+        "icici-loan": "https://your-affiliate-link-icici",
+        "sbi-loan": "https://your-affiliate-link-sbi",
+        "axis-loan": "https://your-affiliate-link-axis"
+    }
+
+    return redirect(affiliate_links.get(bank, "/"))
