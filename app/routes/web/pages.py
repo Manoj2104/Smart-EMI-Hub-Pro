@@ -149,3 +149,10 @@ def banks_calculate_emi():
 @pages_bp.route("/faq")
 def faq():
     return render_template("faq.html")
+
+
+from flask import send_from_directory
+
+@pages_bp.route("/ads.txt")
+def ads_txt():
+    return send_from_directory("static", "ads.txt")
