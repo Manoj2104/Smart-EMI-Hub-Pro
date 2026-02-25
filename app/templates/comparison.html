@@ -338,6 +338,18 @@ Monthly EMI: <span class="emi-preview">₹ 0</span>
 Compare Loans
 </button>
 
+<div class="calculator-ad">
+    <!-- Compae loan page -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2031854006818432"
+        data-ad-slot="5154960301"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
 </div>
 
 
@@ -392,11 +404,67 @@ Compare Loans
 </div>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="calculator-ad">
+    <!-- Compare loan page 2 -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2031854006818432"
+        data-ad-slot="8291425385"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div id="compareAdModal" class="emi-ad-modal">
+  <div class="emi-ad-box">
+    <span class="emi-ad-close" onclick="closeCompareAd()">✕</span>
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2031854006818432"
+         data-ad-slot="3039098702"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+</div>
+
+
 <script>
 
+    let compareCount = 0;
+let compareAdLoaded = false;
+
+function showCompareAd(){
+    document.getElementById("compareAdModal").style.display="flex";
+
+    if(!compareAdLoaded){
+        try{
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            compareAdLoaded = true;
+        }catch(e){}
+    }
+}
+
+function closeCompareAd(){
+    document.getElementById("compareAdModal").style.display="none";
+}
+</script>
+
+
+
+
+
+<script>
 function calculateEMI(P, rate, N){
 const R = rate/12/100;
+
+if(R === 0){
+    return P / N;
+}
+
 return (P * R * Math.pow(1+R,N)) / (Math.pow(1+R,N)-1);
 }
 
@@ -437,6 +505,7 @@ resultBody.innerHTML="";
 let results=[];
 let lowestEMI=Infinity;
 let bestIndex=-1;
+
 
 /* ===== Collect Data ===== */
 
@@ -482,6 +551,20 @@ alert("Please enter valid loan details.");
 return;
 }
 
+compareCount++;
+
+if(compareCount % 3 === 0){
+
+    const resultSection = document.querySelector(".result-section");
+
+    if(resultSection){
+        resultSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    setTimeout(()=>{
+        showCompareAd();
+    }, 1500);
+}
 /* ===== Reset card styles ===== */
 
 cards.forEach(c=>{

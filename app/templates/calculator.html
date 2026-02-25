@@ -803,6 +803,56 @@ font-size:15px;
 padding:15px;
 }
 }
+
+.calculator-ad{
+margin:60px auto;
+max-width:1100px;
+padding:30px;
+background:linear-gradient(145deg,#ffffff,#f8fafc);
+border-radius:24px;
+box-shadow:0 20px 50px rgba(0,0,0,0.06);
+text-align:center;
+transition:.3s ease;
+}
+
+.calculator-ad:hover{
+transform:translateY(-4px);
+box-shadow:0 30px 70px rgba(0,0,0,0.08);
+}
+
+
+.emi-ad-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.5);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.emi-ad-box{
+background:white;
+width:90%;
+max-width:500px;
+border-radius:24px;
+padding:30px;
+position:relative;
+animation:fadeIn .3s ease;
+}
+
+.emi-ad-close{
+position:absolute;
+top:12px;
+right:18px;
+cursor:pointer;
+font-size:18px;
+}
+
+@keyframes fadeIn{
+from{transform:scale(.9);opacity:0;}
+to{transform:scale(1);opacity:1;}
+}
 </style>
 
 <br>
@@ -857,6 +907,8 @@ padding:15px;
 
     </div>
 
+
+
     <!-- RESULT CARD -->
     <div class="calc-card result-card">
 
@@ -885,11 +937,28 @@ padding:15px;
 
     </div>
 
+    <div class="calculator-ad">
+      <!-- Home page ads 3 -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-2031854006818432"
+          data-ad-slot="8574137623"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+
   </div>
 
   </div>
 
 </div>
+
+
+
+
 <!-- TOGGLE -->
 <div class="schedule-toggle-wrapper">
 <button id="toggleScheduleBtn" class="schedule-toggle-btn">
@@ -997,7 +1066,24 @@ loan amount, interest rate, and tenure.
 
 <h2>EMI Formula</h2>
 
+
+<div class="calculator-ad">
+    <!-- Home page ads 2 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2031854006818432"
+         data-ad-slot="3513382630"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+</div>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 <p>The EMI is calculated using the following formula:</p>
+
+
 
 <div class="emi-formula">
 EMI = [P × R × (1+R)^N] / [(1+R)^N – 1]
@@ -1026,6 +1112,40 @@ the EMI would be approximately ₹20,507 per month.
 </ul>
 
 </section>
+
+<div id="emiAdModal" class="emi-ad-modal">
+  <div class="emi-ad-box">
+    <span class="emi-ad-close" onclick="closeEmiAd()">✕</span>
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2031854006818432"
+         data-ad-slot="2460514204"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+
+  </div>
+</div>
+<script>
+let emiAdLoaded = false;
+
+function showEmiAd(){
+    const modal = document.getElementById("emiAdModal");
+    modal.style.display = "flex";
+
+    if(!emiAdLoaded){
+        try{
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            emiAdLoaded = true;
+        }catch(e){}
+    }
+}
+
+function closeEmiAd(){
+    document.getElementById("emiAdModal").style.display = "none";
+}
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
 

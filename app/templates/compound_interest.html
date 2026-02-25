@@ -349,9 +349,56 @@ border-radius:12px;
 </div>
 </div>
 
+<div class="calculator-ad" style="max-width:1100px;margin:40px auto;">
+    <!-- Compound intrest page 1 -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-2031854006818432"
+        data-ad-slot="8136346866"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+
+<div id="ciAdModal" class="emi-ad-modal">
+  <div class="emi-ad-box">
+    <span class="emi-ad-close" onclick="closeCiAd()">✕</span>
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2031854006818432"
+         data-ad-slot="5318611836"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+
+
+let ciChangeCount = 0;
+let ciAdLoaded = false;
+
+function showCiAd(){
+    document.getElementById("ciAdModal").style.display="flex";
+
+    if(!ciAdLoaded){
+        try{
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            ciAdLoaded = true;
+        }catch(e){}
+    }
+}
+
+function closeCiAd(){
+    document.getElementById("ciAdModal").style.display="none";
+}
+
 document.addEventListener("DOMContentLoaded", function(){
 
 const ctx = document.getElementById("ciChart").getContext("2d");
@@ -365,15 +412,31 @@ let t = parseFloat(document.getElementById("years").value);
 let n = parseFloat(document.getElementById("frequency").value);
 
 if(!P || P<=0 || !t || t<=0){
-updateUI(0,0);
-return;
+    updateUI(0,0);
+    return;
 }
 
-let A = P * Math.pow((1 + r/n), n*t);
+let A;
+
+if(r === 0){
+    A = P;
+}else{
+    A = P * Math.pow((1 + r/n), n*t);
+}
+
 let interest = A - P;
 
 updateUI(A, interest);
 renderChart(P, interest);
+
+/* 🔥 Move modal trigger HERE */
+
+ciChangeCount++;
+
+if(ciChangeCount % 5 === 0){
+    setTimeout(()=>{ showCiAd(); }, 1200);
+}
+
 }
 
 function updateUI(final, interest){
@@ -409,7 +472,7 @@ plugins:{legend:{position:"bottom"}}
 }
 
 document.querySelectorAll("input, select").forEach(el=>{
-el.addEventListener("input", calculateCI);
+    el.addEventListener("change", calculateCI);
 });
 
 calculateCI();

@@ -9,6 +9,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const downloadBtn = document.getElementById("downloadExcel");
     const shareBtn = document.getElementById("shareBtn");
 
+
+    let calculationCount = 0;
+
+    function triggerModalAd(){
+        calculationCount++;
+
+        // Show modal every 3rd calculation (safer for finance niche)
+        if(calculationCount % 3 === 0){
+            if(typeof showEmiAd === "function"){
+                setTimeout(() => {
+                    showEmiAd();
+                }, 1200);
+            }
+        }
+    }
+
     // ========================
     // EMI CALCULATION
     // ========================
@@ -47,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             renderChart(P, totalInterest);
             generateSchedule(P, R, EMI, N);
+            triggerModalAd();
         });
     }
 
@@ -229,3 +246,4 @@ Total Payment: ${total}`;
     }
 
 });
+
