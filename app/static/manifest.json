@@ -1,0 +1,15 @@
+{
+  "name": "Smart EMI Hub Pro",
+  "short_name": "EMI Pro",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00d09c",
+  "icons": [
+    {
+      "src": "/static/images/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

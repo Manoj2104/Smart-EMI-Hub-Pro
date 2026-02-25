@@ -16,14 +16,20 @@ color:#0f172a;
 
 .hero{
 position:relative;
-min-height:100vh;
+min-height:85vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:220px 20px 120px;
+padding:180px 20px 100px;
 background:linear-gradient(120deg,#cfe9e6 0%, #e8e2d3 100%);
 overflow:hidden;
+}
+
+.hero-subtitle{
+font-size:56px;
+font-weight:800;
+margin-top:10px;
 }
 
 /* Soft gradient overlay */
@@ -40,13 +46,20 @@ z-index:0;
 /* HERO HEADING */
 
 .hero h1{
-font-size:90px;
+font-size:64px;
 font-weight:800;
-line-height:1.05;
-letter-spacing:-3px;
+line-height:1.1;
+letter-spacing:-1.5px;
 color:#111;
 position:relative;
 z-index:2;
+}
+
+.hero-subtitle{
+font-size:40px;
+font-weight:700;
+margin-top:12px;
+color:#111;
 }
 
 /* Italic highlight word */
@@ -1372,9 +1385,12 @@ text-decoration:underline;
 <div class="container">
 
 <h1>
-Free <span>EMI Calculator India (2026)</span><br>
-Loan, SIP & Investment Tools Online
+Free <span>EMI Calculator India (2026)</span>
 </h1>
+
+<h2 class="hero-subtitle">
+Loan, SIP & Investment Tools Online
+</h2>
 
 <p>
 EMI, SIP, Tax, Investment, Retirement, Loan Eligibility, Prepayment & more —
