@@ -1,0 +1,542 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.guide-container{
+max-width:950px;
+margin:140px auto;
+padding:0 20px;
+}
+
+.guide-container h1{
+font-size:42px;
+font-weight:800;
+margin-bottom:30px;
+}
+
+.guide-container h2{
+margin-top:60px;
+font-size:26px;
+font-weight:700;
+}
+
+.guide-container p{
+margin-top:18px;
+line-height:1.8;
+color:#374151;
+font-size:16px;
+}
+
+.highlight-box{
+background:#eef2ff;
+padding:25px;
+border-radius:18px;
+margin:30px 0;
+}
+
+.formula-box{
+background:#111827;
+color:white;
+padding:20px;
+border-radius:15px;
+margin:25px 0;
+font-family:monospace;
+overflow-x:auto;
+}
+
+.compare-table{
+width:100%;
+border-collapse:collapse;
+margin:30px 0;
+}
+
+.compare-table th,
+.compare-table td{
+border:1px solid #e5e7eb;
+padding:15px;
+text-align:left;
+}
+
+.compare-table th{
+background:#f3f4f6;
+}
+
+.cta-box{
+margin:80px 0;
+padding:40px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+border-radius:25px;
+color:white;
+text-align:center;
+}
+
+.cta-box a{
+background:white;
+color:black;
+padding:12px 28px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:15px;
+}
+
+@media(max-width:768px){
+.guide-container{
+margin:100px auto;
+}
+.guide-container h1{font-size:28px;}
+.guide-container h2{font-size:22px;}
+}
+
+
+
+/* ===============================
+   BASE LAYOUT
+================================ */
+
+.guide-container{
+max-width:1000px;
+margin:160px auto;
+padding:0 20px;
+}
+
+.guide-container h1{
+font-size:46px;
+font-weight:800;
+margin-bottom:35px;
+line-height:1.2;
+}
+
+.guide-container h2{
+margin-top:70px;
+font-size:28px;
+font-weight:700;
+}
+
+.guide-container p{
+margin-top:18px;
+line-height:1.9;
+color:#374151;
+font-size:17px;
+}
+
+ul{
+margin-top:20px;
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+line-height:1.7;
+}
+
+/* ===============================
+   HIGHLIGHT BOX
+================================ */
+
+.highlight-box{
+background:linear-gradient(135deg,#eef2ff,#f8fafc);
+padding:30px;
+border-radius:20px;
+margin:40px 0;
+font-size:16px;
+}
+
+/* ===============================
+   FORMULA BOX
+================================ */
+
+.formula-box{
+background:#111827;
+color:white;
+padding:25px;
+border-radius:18px;
+margin:30px 0;
+font-family:monospace;
+overflow-x:auto;
+font-size:15px;
+}
+
+/* ===============================
+   TABLE DESIGN
+================================ */
+
+.compare-table{
+width:100%;
+border-collapse:collapse;
+margin:40px 0;
+font-size:15px;
+}
+
+.compare-table th,
+.compare-table td{
+border:1px solid #e5e7eb;
+padding:16px;
+text-align:left;
+}
+
+.compare-table th{
+background:#f3f4f6;
+font-weight:600;
+}
+
+/* Make table scrollable on small screens */
+.table-wrapper{
+overflow-x:auto;
+}
+
+/* ===============================
+   CTA SECTION
+================================ */
+
+.cta-box{
+margin:100px 0;
+padding:50px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+border-radius:28px;
+color:white;
+text-align:center;
+}
+
+.cta-box h3{
+font-size:26px;
+margin-bottom:10px;
+}
+
+.cta-box p{
+color:#f1f5f9;
+}
+
+.cta-box a{
+background:white;
+color:black;
+padding:14px 32px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:20px;
+transition:.3s;
+}
+
+.cta-box a:hover{
+transform:translateY(-3px);
+}
+
+/* =========================================
+   🖥 LARGE DESKTOP (1440px+)
+========================================= */
+
+@media (min-width:1440px){
+
+.guide-container{
+max-width:1100px;
+}
+
+.guide-container h1{
+font-size:52px;
+}
+
+.guide-container h2{
+font-size:30px;
+}
+
+}
+
+/* =========================================
+   💻 LAPTOP (1025px – 1439px)
+========================================= */
+
+@media (min-width:1025px) and (max-width:1439px){
+
+.guide-container{
+margin:150px auto;
+}
+
+}
+
+/* =========================================
+   📲 TABLET (601px – 1024px)
+========================================= */
+
+@media (min-width:601px) and (max-width:1024px){
+
+.guide-container{
+margin:120px auto;
+padding:0 30px;
+}
+
+.guide-container h1{
+font-size:36px;
+}
+
+.guide-container h2{
+font-size:24px;
+margin-top:50px;
+}
+
+.guide-container p{
+font-size:16px;
+}
+
+.highlight-box{
+padding:25px;
+}
+
+.cta-box{
+padding:35px;
+}
+
+}
+
+/* =========================================
+   📱 MOBILE (Below 600px)
+========================================= */
+
+@media (max-width:600px){
+
+.guide-container{
+margin:100px auto;
+padding:0 18px;
+}
+
+.guide-container h1{
+font-size:28px;
+line-height:1.3;
+}
+
+.guide-container h2{
+font-size:20px;
+margin-top:40px;
+}
+
+.guide-container p{
+font-size:15px;
+line-height:1.8;
+}
+
+.highlight-box{
+padding:20px;
+font-size:14px;
+}
+
+.formula-box{
+font-size:13px;
+padding:18px;
+}
+
+.compare-table th,
+.compare-table td{
+padding:12px;
+font-size:13px;
+}
+
+.cta-box{
+padding:25px;
+margin:70px 0;
+}
+
+.cta-box h3{
+font-size:18px;
+}
+
+.cta-box a{
+padding:12px 24px;
+font-size:14px;
+}
+
+}
+
+/* =========================================
+   📱 SMALL MOBILE (Below 400px)
+========================================= */
+
+@media (max-width:400px){
+
+.guide-container{
+padding:0 14px;
+}
+
+.guide-container h1{
+font-size:24px;
+}
+
+.guide-container h2{
+font-size:18px;
+}
+
+.guide-container p{
+font-size:14px;
+}
+
+}
+
+</style>
+
+
+<div class="guide-container">
+
+<h1>Amortization Schedule Explained – Complete EMI Breakdown Guide (2026)</h1>
+
+<p>
+An <strong>amortization schedule</strong> is a detailed table that shows the complete repayment structure of your loan. It breaks down every EMI into two parts — principal repayment and interest payment — for the entire loan tenure.
+</p>
+
+<div class="highlight-box">
+💡 In simple terms: An amortization schedule tells you exactly how much interest and principal you pay every month.
+</div>
+
+<h2>What is an Amortization Schedule?</h2>
+
+<p>
+When you take a loan such as a home loan, car loan, or personal loan, banks calculate EMI using the reducing balance method. Although your EMI amount remains fixed, the portion of interest and principal changes every month.
+</p>
+
+<p>
+In the early months, a large portion of EMI goes toward interest. Over time, interest reduces and principal repayment increases.
+</p>
+
+<h2>How Amortization Works</h2>
+
+<p>
+Let’s assume:
+</p>
+
+<ul>
+<li>Loan Amount: ₹10,00,000</li>
+<li>Interest Rate: 8% per annum</li>
+<li>Tenure: 20 years (240 months)</li>
+</ul>
+
+<p>
+Your EMI may remain fixed, but interest reduces gradually as outstanding principal reduces.
+</p>
+
+<div class="formula-box">
+Outstanding Principal ↓  
+Interest Component ↓  
+Principal Component ↑  
+EMI = Fixed
+</div>
+
+<h2>Amortization Schedule Table Example</h2>
+
+<table class="compare-table">
+<tr>
+<th>Month</th>
+<th>EMI</th>
+<th>Interest</th>
+<th>Principal</th>
+<th>Balance</th>
+</tr>
+<tr>
+<td>1</td>
+<td>₹8,364</td>
+<td>₹6,667</td>
+<td>₹1,697</td>
+<td>₹9,98,303</td>
+</tr>
+<tr>
+<td>2</td>
+<td>₹8,364</td>
+<td>₹6,656</td>
+<td>₹1,708</td>
+<td>₹9,96,595</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</table>
+
+<h2>Why Amortization Schedule is Important</h2>
+
+<p>
+Understanding amortization helps you:
+</p>
+
+<ul>
+<li>Know total interest paid</li>
+<li>Plan prepayments smartly</li>
+<li>Reduce loan tenure</li>
+<li>Calculate interest savings</li>
+</ul>
+
+<h2>How Prepayment Affects Amortization</h2>
+
+<p>
+When you make a prepayment, the outstanding principal reduces immediately. This reduces future interest calculation and shifts amortization structure.
+</p>
+
+<p>
+This is why early prepayments save maximum interest.
+</p>
+
+<h2>Amortization vs EMI Calculator</h2>
+
+<table class="compare-table">
+<tr>
+<th>Feature</th>
+<th>EMI Calculator</th>
+<th>Amortization Schedule</th>
+</tr>
+<tr>
+<td>Shows Monthly EMI</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Shows Interest Breakdown</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Shows Balance Each Month</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</table>
+
+<h2>Common Questions About Amortization</h2>
+
+<p><strong>Is amortization only for home loans?</strong><br>
+No, it applies to all loans with EMIs.
+</p>
+
+<p><strong>Can amortization schedule change?</strong><br>
+Yes, if you make prepayment or if interest rate changes.
+</p>
+
+<p><strong>Is amortization schedule useful?</strong><br>
+Yes, it helps you understand loan structure clearly.
+</p>
+
+<div class="cta-box">
+<h3>Want Full Amortization Breakdown?</h3>
+<p>Use our advanced EMI calculator with downloadable amortization schedule.</p>
+<a href="/calculator/">Calculate EMI Now →</a>
+</div>
+
+</div>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [{
+   "@type": "Question",
+   "name": "What is amortization schedule?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Amortization schedule is a month-by-month breakdown of EMI showing principal and interest components."
+   }
+ }]
+}
+</script>
+
+{% endblock %}

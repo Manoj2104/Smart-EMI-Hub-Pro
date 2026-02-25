@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.guide-wrapper{
+max-width:1000px;
+margin:140px auto;
+padding:0 20px;
+}
+
+.guide-wrapper h1{
+font-size:44px;
+font-weight:800;
+line-height:1.2;
+}
+
+.guide-wrapper h2{
+margin-top:70px;
+font-size:30px;
+font-weight:700;
+}
+
+.guide-wrapper h3{
+margin-top:40px;
+font-size:22px;
+font-weight:600;
+}
+
+.guide-wrapper p{
+margin-top:18px;
+line-height:1.9;
+font-size:17px;
+color:#374151;
+}
+
+.highlight-box{
+background:#eef2ff;
+padding:25px;
+border-radius:18px;
+margin:30px 0;
+}
+
+.formula-box{
+background:#111827;
+color:white;
+padding:25px;
+border-radius:18px;
+font-family:monospace;
+margin:30px 0;
+overflow-x:auto;
+}
+
+.compare-table{
+width:100%;
+border-collapse:collapse;
+margin:30px 0;
+}
+
+.compare-table th,
+.compare-table td{
+border:1px solid #e5e7eb;
+padding:15px;
+text-align:left;
+}
+
+.compare-table th{
+background:#f3f4f6;
+}
+
+.cta-section{
+margin:90px 0;
+padding:50px;
+background:linear-gradient(135deg,#10b981,#2563eb);
+border-radius:30px;
+color:white;
+text-align:center;
+}
+
+.cta-section a{
+display:inline-block;
+background:white;
+color:black;
+padding:14px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+margin-top:15px;
+}
+
+@media(max-width:768px){
+.guide-wrapper h1{font-size:28px;}
+.guide-wrapper h2{font-size:22px;}
+.guide-wrapper p{font-size:15px;}
+.compare-table{display:block;overflow-x:auto;}
+.cta-section{padding:25px;}
+}
+</style>
+
+<div class="guide-wrapper">
+
+<h1>What is EMI? Complete 2026 Guide to Equated Monthly Installment in India</h1>
+
+<p>
+EMI (Equated Monthly Installment) is the fixed monthly payment a borrower makes to repay a loan over a specified tenure. It includes both principal repayment and interest charged by the lender. Understanding EMI is essential before taking any loan such as home loan, personal loan, car loan or business loan.
+</p>
+
+<div class="highlight-box">
+💡 EMI helps convert large loan amounts into manageable monthly payments over time.
+</div>
+
+<!-- SECTION 1 -->
+<h2>1. EMI Meaning Explained in Depth</h2>
+
+<p>
+When you borrow money from a bank, you agree to repay it over time instead of in one lump sum. The bank calculates a fixed monthly payment amount based on loan amount, interest rate and tenure. This monthly payment is EMI.
+</p>
+
+<p>
+Each EMI consists of two parts:
+</p>
+
+<ul>
+<li>Principal – original loan amount</li>
+<li>Interest – cost of borrowing money</li>
+</ul>
+
+<p>
+In early years, interest portion is higher. In later years, principal portion increases.
+</p>
+
+<!-- SECTION 2 -->
+<h2>2. EMI Formula and Mathematical Calculation</h2>
+
+<p>The standard EMI formula used across banks:</p>
+
+<div class="formula-box">
+EMI = [P × R × (1+R)^N] / [(1+R)^N – 1]
+</div>
+
+<p>
+Where:
+P = Principal  
+R = Monthly Interest Rate  
+N = Loan Tenure (months)
+</p>
+
+<h3>Example Calculation</h3>
+
+<p>
+Loan: ₹20,00,000  
+Interest: 8% per annum  
+Tenure: 20 years (240 months)
+</p>
+
+<p>
+Monthly EMI ≈ ₹16,729
+</p>
+
+<!-- SECTION 3 -->
+<h2>3. Reducing Balance vs Flat Interest Method</h2>
+
+<table class="compare-table">
+<tr>
+<th>Feature</th>
+<th>Reducing Balance</th>
+<th>Flat Rate</th>
+</tr>
+<tr>
+<td>Interest Applied On</td>
+<td>Outstanding Loan</td>
+<td>Total Principal</td>
+</tr>
+<tr>
+<td>Total Interest</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+<tr>
+<td>Common For</td>
+<td>Home Loans</td>
+<td>Some Car Loans</td>
+</tr>
+</table>
+
+<p>
+Reducing balance method is more transparent and cost-effective.
+</p>
+
+<!-- SECTION 4 -->
+<h2>4. Factors That Affect EMI</h2>
+
+<ul>
+<li>Loan Amount</li>
+<li>Interest Rate</li>
+<li>Loan Tenure</li>
+<li>Credit Score</li>
+<li>Type of Interest (Fixed/Floating)</li>
+</ul>
+
+<p>
+Higher loan amount or interest leads to higher EMI.
+</p>
+
+<!-- SECTION 5 -->
+<h2>5. How Banks Calculate EMI in India</h2>
+
+<p>
+Banks use automated systems based on reducing balance formula. They also consider borrower income, CIBIL score, employment type and debt ratio.
+</p>
+
+<p>
+EMI approval also depends on Debt-to-Income (DTI) ratio. Ideally EMI should not exceed 40% of monthly income.
+</p>
+
+<!-- SECTION 6 -->
+<h2>6. How to Reduce EMI Legally</h2>
+
+<ul>
+<li>Increase loan tenure</li>
+<li>Make partial prepayment</li>
+<li>Negotiate lower interest</li>
+<li>Transfer balance to lower rate bank</li>
+</ul>
+
+<!-- CTA -->
+<div class="cta-section">
+<h3>Calculate Your EMI Instantly</h3>
+<p>Use our advanced EMI calculator with amortization schedule and charts.</p>
+<a href="/calculator/">Use EMI Calculator →</a>
+</div>
+
+<!-- SECTION 7 -->
+<h2>7. EMI vs Rent Comparison</h2>
+
+<p>
+Many borrowers compare EMI with rent. EMI builds ownership while rent does not create asset value.
+</p>
+
+<!-- SECTION 8 -->
+<h2>8. EMI and Tax Benefits</h2>
+
+<p>
+Under Indian Income Tax:
+Section 80C – Principal deduction  
+Section 24(b) – Interest deduction
+</p>
+
+<!-- SECTION 9 -->
+<h2>9. Common EMI Mistakes to Avoid</h2>
+
+<ul>
+<li>Choosing maximum tenure blindly</li>
+<li>Ignoring processing fees</li>
+<li>Not checking foreclosure charges</li>
+<li>Taking loan without emergency fund</li>
+</ul>
+
+<!-- SECTION 10 -->
+<h2>10. Frequently Asked Questions</h2>
+
+<h3>Is EMI fixed every month?</h3>
+<p>Yes for fixed loans. Floating loans may change.</p>
+
+<h3>Can EMI change?</h3>
+<p>Yes, if interest rate changes.</p>
+
+<h3>Is EMI tax deductible?</h3>
+<p>Yes for home loans under specific conditions.</p>
+
+<h3>Can EMI be prepaid?</h3>
+<p>Yes, most banks allow partial prepayment.</p>
+
+<h3>Does EMI affect credit score?</h3>
+<p>Timely EMI payments improve credit score.</p>
+
+</div>
+
+<!-- FAQ SCHEMA -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [{
+   "@type": "Question",
+   "name": "What is EMI?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "EMI stands for Equated Monthly Installment. It is the fixed monthly payment made to repay a loan."
+   }
+ }]
+}
+</script>
+
+{% endblock %}

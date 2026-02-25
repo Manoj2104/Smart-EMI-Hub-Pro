@@ -1354,6 +1354,16 @@ transition:.3s ease;
 transform:translateY(-4px);
 box-shadow:0 35px 80px rgba(0,0,0,0.08);
 }
+
+.faq-link{
+color:#6366f1;
+font-weight:600;
+text-decoration:none;
+}
+
+.faq-link:hover{
+text-decoration:underline;
+}
 </style>
 
 <!-- HERO -->
@@ -1361,8 +1371,8 @@ box-shadow:0 35px 80px rgba(0,0,0,0.08);
 <div class="container">
 
 <h1>
-All Financial Calculators<br>
-in One <span>Platform</span>
+Free <span>EMI Calculator India (2026)</span><br>
+Loan, SIP & Investment Tools Online
 </h1>
 
 <p>
@@ -1732,12 +1742,33 @@ How we built a smarter <span>financial platform</span>
 </script>
 
 
-
 <!-- ===============================
      💬 PREMIUM FAQ SECTION
 ================================ -->
 
+<style>
+.faq-view-all{
+text-align:center;
+margin-top:40px;
+}
 
+.view-all-btn{
+display:inline-block;
+background:linear-gradient(135deg,#6366f1,#4f46e5);
+color:white;
+padding:14px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.3s ease;
+box-shadow:0 15px 35px rgba(79,70,229,0.3);
+}
+
+.view-all-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 20px 50px rgba(79,70,229,0.4);
+}
+</style>
 <section class="faq-section">
   <div class="container">
 
@@ -1747,6 +1778,7 @@ How we built a smarter <span>financial platform</span>
 
     <div class="faq-container">
 
+      <!-- FAQ 1 -->
       <div class="faq-item">
         <button class="faq-question">
           What is EMI?
@@ -1754,35 +1786,46 @@ How we built a smarter <span>financial platform</span>
         </button>
         <div class="faq-answer">
           EMI stands for Equated Monthly Installment. It is the fixed monthly payment made by a borrower to repay a loan.
+          <br><br>
+          <a href="/guide/what-is-emi" class="faq-link">View Detailed Guide →</a>
         </div>
       </div>
 
+      <!-- FAQ 2 -->
       <div class="faq-item">
         <button class="faq-question">
           How is EMI calculated?
           <span>+</span>
         </button>
         <div class="faq-answer">
-          EMI is calculated using principal amount, interest rate, and loan tenure using a standard financial formula.
+          EMI is calculated using principal amount, interest rate and tenure using a standard financial formula.
+          <br><br>
+          <a href="/guide/how-emi-is-calculated" class="faq-link">View Detailed Guide →</a>
         </div>
       </div>
 
+      <!-- FAQ 3 -->
       <div class="faq-item">
         <button class="faq-question">
           Is this EMI calculator free?
           <span>+</span>
         </button>
         <div class="faq-answer">
-          Yes, Smart EMI Hub Pro provides a free online EMI calculator with amortization schedule and detailed breakdown.
+          Yes, Smart EMI Hub Pro provides a free online EMI calculator with amortization schedule.
+          <br><br>
+          <a href="/guide/is-emi-calculator-free" class="faq-link">Read More →</a>
         </div>
       </div>
 
     </div>
 
   </div>
+  <div class="faq-view-all">
+  <a href="/faq" class="view-all-btn">
+    View All Questions →
+  </a>
+</div>
 </section>
-
-
 
 
 <script>

@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+.faq-page{
+max-width:1000px;
+margin:140px auto;
+padding:0 20px;
+}
+
+.faq-page h1{
+font-size:42px;
+font-weight:800;
+margin-bottom:60px;
+text-align:center;
+}
+
+/* Accordion Style */
+
+.faq-container{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.faq-item{
+background:#ffffff;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+overflow:hidden;
+transition:0.3s;
+}
+
+.faq-question{
+width:100%;
+padding:22px 25px;
+background:none;
+border:none;
+text-align:left;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.faq-question span{
+font-size:22px;
+transition:0.3s;
+}
+
+.faq-answer{
+max-height:0;
+overflow:hidden;
+padding:0 25px;
+font-size:15px;
+color:#64748b;
+transition:max-height 0.4s ease, padding 0.3s ease;
+line-height:1.7;
+}
+
+.faq-item.active .faq-answer{
+max-height:500px;
+padding:0 25px 20px;
+}
+
+.faq-item.active .faq-question span{
+transform:rotate(45deg);
+}
+
+.faq-link{
+display:inline-block;
+margin-top:15px;
+color:#6366f1;
+font-weight:600;
+text-decoration:none;
+}
+
+.faq-link:hover{
+text-decoration:underline;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+.faq-page{
+margin:100px auto;
+}
+.faq-page h1{
+font-size:28px;
+}
+.faq-question{
+font-size:16px;
+}
+}
+</style>
+
+<div class="faq-page">
+
+<h1>EMI Calculator – Frequently Asked Questions (2026)</h1>
+
+<div class="faq-container">
+
+<div class="faq-item">
+<button class="faq-question">1. What is EMI?<span>+</span></button>
+<div class="faq-answer">
+EMI stands for Equated Monthly Installment. It is the fixed amount paid monthly to repay a loan.
+<br><br>
+<a href="/guide/what-is-emi" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">2. How is EMI calculated?<span>+</span></button>
+<div class="faq-answer">
+EMI is calculated using principal amount, interest rate and tenure with reducing balance formula.
+<br><br>
+<a href="/guide/how-emi-is-calculated" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">3. Is EMI calculator free?<span>+</span></button>
+<div class="faq-answer">
+Yes, Smart EMI Hub Pro offers completely free EMI calculation tools.
+<br><br>
+<a href="/guide/is-emi-calculator-free" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">4. What is amortization schedule?<span>+</span></button>
+<div class="faq-answer">
+It is a month-wise breakdown of principal and interest components of EMI.
+<br><br>
+<a href="/guide/amortization-schedule-explained" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">5. Can EMI change?<span>+</span></button>
+<div class="faq-answer">
+Yes, floating rate loans may change when interest rates are revised.
+<br><br>
+<a href="/guide/fixed-vs-floating-interest-rate" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">6. What is reducing balance method?<span>+</span></button>
+<div class="faq-answer">
+Interest is calculated only on outstanding principal amount.
+<br><br>
+<a href="/guide/reducing-vs-flat-interest" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">7. Does EMI affect credit score?<span>+</span></button>
+<div class="faq-answer">
+Timely EMI payments improve credit score while missed payments reduce it.
+<br><br>
+<a href="/guide/emi-and-credit-score" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">8. How to reduce EMI?<span>+</span></button>
+<div class="faq-answer">
+Increase tenure, make prepayment or refinance at lower interest rate.
+<br><br>
+<a href="/guide/how-to-reduce-emi" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">9. What is prepayment?<span>+</span></button>
+<div class="faq-answer">
+Prepayment means paying part of loan before due date to reduce interest burden.
+<br><br>
+<a href="/guide/prepayment-explained" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+<div class="faq-item">
+<button class="faq-question">10. Is EMI tax deductible?<span>+</span></button>
+<div class="faq-answer">
+Home loan interest may qualify for tax deduction under Section 24(b).
+<br><br>
+<a href="/guide/home-loan-tax-benefits" class="faq-link">View Detailed Guide →</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+document.querySelectorAll(".faq-question").forEach(btn => {
+  btn.addEventListener("click", function() {
+    const item = this.parentElement;
+    item.classList.toggle("active");
+  });
+});
+</script>
+
+{% endblock %}

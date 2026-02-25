@@ -1,0 +1,297 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+/* ===============================
+   BASE LAYOUT
+================================ */
+
+.guide-container{
+max-width:1000px;
+margin:160px auto;
+padding:0 20px;
+}
+
+.guide-container h1{
+font-size:44px;
+font-weight:800;
+margin-bottom:30px;
+line-height:1.2;
+}
+
+.guide-container h2{
+margin-top:60px;
+font-size:26px;
+font-weight:700;
+}
+
+.guide-container h3{
+margin-top:35px;
+font-size:20px;
+font-weight:600;
+}
+
+.guide-container p{
+margin-top:18px;
+line-height:1.9;
+color:#374151;
+font-size:17px;
+}
+
+ul{
+margin-top:18px;
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+line-height:1.7;
+}
+
+/* ===============================
+   HIGHLIGHT BOX
+================================ */
+
+.highlight-box{
+background:linear-gradient(135deg,#eef2ff,#f8fafc);
+padding:30px;
+border-radius:20px;
+margin:40px 0;
+font-size:16px;
+}
+
+/* ===============================
+   FORMULA BOX
+================================ */
+
+.formula-box{
+background:#111827;
+color:white;
+padding:25px;
+border-radius:18px;
+margin:30px 0;
+font-family:monospace;
+overflow-x:auto;
+}
+
+/* ===============================
+   TABLE
+================================ */
+
+.table-wrapper{
+overflow-x:auto;
+margin:40px 0;
+}
+
+.compare-table{
+width:100%;
+border-collapse:collapse;
+min-width:650px;
+}
+
+.compare-table th,
+.compare-table td{
+border:1px solid #e5e7eb;
+padding:16px;
+text-align:left;
+}
+
+.compare-table th{
+background:#f3f4f6;
+font-weight:600;
+}
+
+/* ===============================
+   CTA
+================================ */
+
+.cta-box{
+margin:90px 0;
+padding:50px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+border-radius:28px;
+color:white;
+text-align:center;
+}
+
+.cta-box h3{
+font-size:26px;
+}
+
+.cta-box a{
+background:white;
+color:black;
+padding:14px 30px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+margin-top:20px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media(max-width:768px){
+
+.guide-container{
+margin:110px auto;
+}
+
+.guide-container h1{
+font-size:28px;
+}
+
+.guide-container h2{
+font-size:20px;
+}
+
+.guide-container p{
+font-size:15px;
+}
+
+.cta-box{
+padding:30px;
+}
+
+}
+
+</style>
+
+<div class="guide-container">
+
+<h1>Loan Prepayment Explained – How It Saves Interest & Reduces EMI (2026 Guide)</h1>
+
+<p>
+Loan prepayment means paying a part of your outstanding loan amount before its scheduled due date. It helps reduce your principal balance, which directly lowers future interest calculations.
+</p>
+
+<div class="highlight-box">
+💡 Early prepayment = Maximum interest savings.  
+Prepaying in initial years gives the biggest benefit.
+</div>
+
+<h2>What is Loan Prepayment?</h2>
+
+<p>
+When you take a loan, interest is calculated on the outstanding principal. By making a lump sum payment toward principal, you reduce the base amount on which interest is calculated.
+</p>
+
+<h2>Types of Prepayment</h2>
+
+<h3>1️⃣ Partial Prepayment</h3>
+<ul>
+<li>Pay a lump sum amount</li>
+<li>Reduces EMI or tenure</li>
+<li>Most common option</li>
+</ul>
+
+<h3>2️⃣ Full Prepayment (Foreclosure)</h3>
+<ul>
+<li>Close entire loan early</li>
+<li>Saves remaining interest</li>
+<li>May involve foreclosure charges</li>
+</ul>
+
+<h2>How Prepayment Saves Interest</h2>
+
+<p>
+Interest in reducing balance loans is highest in early years. Therefore, prepaying during initial tenure significantly cuts total interest.
+</p>
+
+<div class="formula-box">
+Interest = Outstanding Principal × Rate × Time  
+Lower Principal → Lower Future Interest
+</div>
+
+<h2>Example of Interest Saving</h2>
+
+<p>
+Loan: ₹10,00,000  
+Interest: 8%  
+Tenure: 20 years
+</p>
+
+<p>
+If you prepay ₹1,00,000 in year 3, you may save several lakhs in total interest over the remaining tenure.
+</p>
+
+<h2>Should You Reduce EMI or Tenure?</h2>
+
+<div class="table-wrapper">
+<table class="compare-table">
+<tr>
+<th>Option</th>
+<th>Best For</th>
+<th>Interest Saving</th>
+</tr>
+<tr>
+<td>Reduce EMI</td>
+<td>Monthly cash flow relief</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Reduce Tenure</td>
+<td>Long-term saving</td>
+<td>Maximum</td>
+</tr>
+</table>
+</div>
+
+<h2>Are There Prepayment Charges?</h2>
+
+<ul>
+<li>Floating home loans → Usually no charges</li>
+<li>Fixed rate loans → May have penalties</li>
+<li>Personal loans → Often have foreclosure fees</li>
+</ul>
+
+<h2>When Should You Prepay?</h2>
+
+<ul>
+<li>When you receive bonus or surplus income</li>
+<li>If interest rate is high</li>
+<li>Early years of loan tenure</li>
+</ul>
+
+<h2>When Should You Avoid Prepayment?</h2>
+
+<ul>
+<li>If penalty charges are high</li>
+<li>If you lack emergency savings</li>
+<li>If investment returns are higher than loan interest</li>
+</ul>
+
+<h2>Final Verdict</h2>
+
+<p>
+Prepayment is one of the smartest strategies to reduce total interest burden — especially for long-term home loans.
+</p>
+
+<div class="cta-box">
+<h3>Check Prepayment Impact Instantly</h3>
+<p>Use our prepayment calculator to see how much interest you can save.</p>
+<a href="/calculator/prepayment-calculator">Calculate Now →</a>
+</div>
+
+</div>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [{
+   "@type": "Question",
+   "name": "Is loan prepayment good?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Loan prepayment reduces principal, lowers interest burden and can shorten loan tenure."
+   }
+ }]
+}
+</script>
+
+{% endblock %}
