@@ -110,7 +110,7 @@ box-shadow:0 8px 30px rgba(0,0,0,0.08);
 display:flex;
 justify-content:space-between;
 align-items:center;
-height:75px;
+height:95px;
 }
 
 .logo{
@@ -407,7 +407,7 @@ margin-top:15px;
 /* NAVBAR HEIGHT */
 
 .nav-flex{
-height:65px;
+height:70px;
 }
 
 /* LOGO */
@@ -841,11 +841,18 @@ transform:translateY(0);
 }
 
 .logo-img{
-height:42px;
+height:60px;
 width:auto;
 object-fit:contain;
+display:block;
+filter: drop-shadow(0 8px 18px rgba(0,0,0,0.15));
 }
 
+@media(max-width:768px){
+.logo-img{
+height:38px;
+}
+}
 @media(max-width:768px){
 .logo-img{
 height:32px;
