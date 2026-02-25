@@ -108,21 +108,45 @@ box-shadow:0 8px 30px rgba(0,0,0,0.08);
 
 .nav-flex{
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 height:95px;
+position:relative;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:10px;
-font-weight:800;
-font-size:20px;
+flex-shrink:0;
 }
 
+.logo-img{
+height:72px;     /* 🔥 Bigger */
+width:auto;
+object-fit:contain;
+display:block;
+}
 
+@media(max-width:768px){
+.logo-img{
+height:48px;
+}
+}
 
+.nav-center{
+flex:1;
+justify-content:center;   /* 🔥 Center menu properly */
+}
+
+.logo-img{
+height:72px;
+filter: drop-shadow(0 8px 20px rgba(0,0,0,0.18));
+transition:transform .3s ease;
+}
+
+.logo-img:hover{
+transform:scale(1.05);
+}
 /* CENTER NAV */
 
 .nav-center{
@@ -840,22 +864,51 @@ opacity:1;
 transform:translateY(0);
 }
 
-.logo-img{
-height:60px;
-width:auto;
-object-fit:contain;
-display:block;
-filter: drop-shadow(0 8px 18px rgba(0,0,0,0.15));
+.nav-flex{
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+/* ===== LOGO SYSTEM ===== */
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
 }
 
+.logo-icon{
+height:54px;
+width:auto;
+display:block;
+object-fit:contain;
+filter: drop-shadow(0 8px 18px rgba(0,0,0,0.15));
+transition:transform .3s ease;
+}
+
+.logo-icon:hover{
+transform:scale(1.05);
+}
+
+.logo-text{
+font-size:20px;
+font-weight:700;
+color:#0f172a;
+letter-spacing:-0.3px;
+}
+
+.logo-text strong{
+color:var(--primary);
+}
+
+/* Mobile */
+
 @media(max-width:768px){
-.logo-img{
+.logo-icon{
 height:38px;
 }
-}
-@media(max-width:768px){
-.logo-img{
-height:32px;
+.logo-text{
+font-size:16px;
 }
 }
 </style>
@@ -874,9 +927,10 @@ height:32px;
 <div class="container nav-flex">
 
 <div class="logo">
-<img src="/static/images/logo.png" 
-     alt="Smart EMI Hub Pro – EMI Calculator India" 
-     class="logo-img">
+  <img src="/static/images/icon.png" class="logo-icon">
+  <span class="logo-text">
+     Smart EMI Hub <strong>Pro</strong>
+  </span>
 </div>
 
 <div class="nav-center">
