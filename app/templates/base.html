@@ -121,12 +121,7 @@ font-weight:800;
 font-size:20px;
 }
 
-.logo-circle{
-width:34px;
-height:34px;
-border-radius:50%;
-background:linear-gradient(135deg,#2563eb,var(--primary));
-}
+
 
 /* CENTER NAV */
 
@@ -844,6 +839,18 @@ display:flex;
 opacity:1;
 transform:translateY(0);
 }
+
+.logo-img{
+height:42px;
+width:auto;
+object-fit:contain;
+}
+
+@media(max-width:768px){
+.logo-img{
+height:32px;
+}
+}
 </style>
 
 
@@ -860,8 +867,9 @@ transform:translateY(0);
 <div class="container nav-flex">
 
 <div class="logo">
-<div class="logo-circle"></div>
-Smart EMI Hub<span style="color:var(--primary)">Pro</span>
+<img src="/static/images/logo.png" 
+     alt="Smart EMI Hub Pro – EMI Calculator India" 
+     class="logo-img">
 </div>
 
 <div class="nav-center">
@@ -972,7 +980,7 @@ Start Calculating →
 <!-- BRAND -->
 <div class="footer-brand">
 <div class="footer-logo">
-<div class="logo-circle"></div>
+
 <span>Smart EMI Hub <strong>Pro</strong></span>
 </div>
 
