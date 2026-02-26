@@ -1,0 +1,311 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ======================================= -->
+<!-- 🎯 HERO -->
+<!-- ======================================= -->
+
+<section class="eligibility-hero">
+  <div class="container">
+    <h1>Eligibility Check</h1>
+    <p>Know your approval chances early before applying.</p>
+  </div>
+</section>
+
+
+<!-- ======================================= -->
+<!-- 📋 ELIGIBILITY FORM -->
+<!-- ======================================= -->
+
+<section class="eligibility-section">
+  <div class="container eligibility-grid">
+
+    <!-- FORM -->
+    <div class="eligibility-form">
+
+      <h3>Enter Basic Details</h3>
+
+      <label>Monthly Income (₹)</label>
+      <input type="number" id="income" placeholder="50000">
+
+      <label>Existing EMIs (₹)</label>
+      <input type="number" id="existingEmi" placeholder="10000">
+
+      <label>Credit Score</label>
+      <input type="number" id="creditScore" placeholder="750">
+
+      <label>Employment Type</label>
+      <select id="employment">
+        <option value="salaried">Salaried</option>
+        <option value="self">Self Employed</option>
+      </select>
+
+      <button onclick="checkEligibility()">
+        Check Eligibility →
+      </button>
+
+    </div>
+
+
+    <!-- RESULT -->
+    <div class="eligibility-result">
+
+      <h3>Your Approval Probability</h3>
+
+      <div class="approval-score">
+        <span id="approvalPercent">0%</span>
+      </div>
+
+      <p id="approvalMessage">
+        Enter details to calculate eligibility.
+      </p>
+
+      <div class="recommendations" id="recommendations"></div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================= -->
+<!-- 💎 AFFILIATE CTA -->
+<!-- ======================================= -->
+
+<section class="eligibility-cta">
+  <div class="container">
+    <h2>Ready to Apply?</h2>
+    <p>Apply securely through our verified bank partners.</p>
+
+    <div class="cta-buttons">
+
+  <a href="https://www.hdfcbank.com/personal"
+     target="_blank"
+     rel="nofollow noopener"
+     class="cta-btn">
+    Apply HDFC →
+  </a>
+
+  <a href="https://www.icicibank.com/personal-banking/loans/personal-loan"
+     target="_blank"
+     rel="nofollow noopener"
+     class="cta-btn green">
+    Apply ICICI →
+  </a>
+
+  <a href="/loan-comparison" class="cta-btn outline">
+    Compare All Banks →
+  </a>
+
+</div>
+  </div>
+</section>
+
+
+<style>
+
+/* HERO */
+.eligibility-hero{
+padding:150px 20px 80px;
+background:linear-gradient(135deg,#f8fafc,#eef2ff);
+text-align:center;
+}
+
+.eligibility-hero h1{
+font-size:48px;
+font-weight:800;
+}
+
+.eligibility-hero p{
+font-size:18px;
+color:#64748b;
+}
+
+/* GRID */
+.eligibility-section{
+padding:100px 20px;
+background:white;
+}
+
+.eligibility-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+}
+
+/* FORM */
+.eligibility-form{
+background:#f8fafc;
+padding:40px;
+border-radius:28px;
+}
+
+.eligibility-form label{
+display:block;
+margin-top:15px;
+font-size:14px;
+}
+
+.eligibility-form input,
+.eligibility-form select{
+width:100%;
+padding:12px;
+margin-top:6px;
+border-radius:12px;
+border:1px solid #e5e7eb;
+}
+
+.eligibility-form button{
+margin-top:25px;
+width:100%;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+padding:14px;
+border:none;
+border-radius:999px;
+cursor:pointer;
+}
+
+/* RESULT */
+.eligibility-result{
+background:#eef2ff;
+padding:40px;
+border-radius:28px;
+text-align:center;
+}
+
+.approval-score{
+font-size:50px;
+font-weight:800;
+color:#4f46e5;
+margin:20px 0;
+}
+
+.recommendations{
+margin-top:20px;
+text-align:left;
+font-size:14px;
+}
+
+/* CTA */
+.eligibility-cta{
+padding:140px 20px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+text-align:center;
+}
+
+.cta-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.cta-btn{
+background:white;
+color:#4f46e5;
+padding:14px 28px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.cta-btn.green{
+background:#10b981;
+color:white;
+}
+
+.cta-btn.outline{
+background:transparent;
+border:2px solid white;
+color:white;
+}
+
+.cta-btn:hover{
+transform:translateY(-3px);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.eligibility-grid{
+grid-template-columns:1fr;
+gap:40px;
+}
+.eligibility-hero{
+padding:100px 16px 60px;
+}
+.eligibility-hero h1{
+font-size:28px;
+}
+}
+
+</style>
+
+
+<script>
+
+function checkEligibility(){
+
+let income = parseFloat(document.getElementById("income").value);
+let existingEmi = parseFloat(document.getElementById("existingEmi").value);
+let creditScore = parseFloat(document.getElementById("creditScore").value);
+let employment = document.getElementById("employment").value;
+
+if(!income || !creditScore){
+alert("Please enter required details");
+return;
+}
+
+/* FOIR Calculation */
+let foir = (existingEmi/income)*100;
+let score = 0;
+
+/* Basic logic */
+if(creditScore > 750) score += 40;
+else if(creditScore > 700) score += 30;
+else score += 15;
+
+if(foir < 40) score += 30;
+else if(foir < 50) score += 20;
+else score += 10;
+
+if(employment === "salaried") score += 20;
+else score += 10;
+
+if(income > 50000) score += 10;
+
+let approvalPercent = Math.min(score,95);
+
+document.getElementById("approvalPercent").innerText =
+approvalPercent + "%";
+
+/* Message */
+let message = "";
+if(approvalPercent > 75){
+message = "High approval chances! You can confidently apply.";
+}
+else if(approvalPercent > 50){
+message = "Moderate chances. Consider improving credit score.";
+}
+else{
+message = "Low chances. Reduce EMIs or improve score before applying.";
+}
+
+document.getElementById("approvalMessage").innerText = message;
+
+/* Recommendations */
+let rec = "";
+if(foir > 50) rec += "• Reduce existing EMI burden.<br>";
+if(creditScore < 750) rec += "• Improve credit score before applying.<br>";
+if(income < 40000) rec += "• Consider co-applicant for better approval.<br>";
+
+document.getElementById("recommendations").innerHTML = rec;
+
+}
+
+</script>
+
+{% endblock %}

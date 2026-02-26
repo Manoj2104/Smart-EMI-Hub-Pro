@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect
+from app.models.loan_offer import LoanOffer
 
 pages_bp = Blueprint("pages", __name__)
 
@@ -63,6 +64,10 @@ def terms():
 @pages_bp.route("/disclaimer")
 def disclaimer():
     return render_template("disclaimer.html")
+
+@pages_bp.route("/design")
+def design():
+    return render_template("design.html")
 
 # ================================
 # 🔥 SEO GUIDE PAGES (2000+ Words)
@@ -142,6 +147,7 @@ def banks_calculate_emi():
     return render_template("guide/how-banks-calculate-emi.html")
 
 
+
 # ================================
 # 📄 FAQ PAGE
 # ================================
@@ -172,3 +178,85 @@ def outgoing(bank):
     }
 
     return redirect(affiliate_links.get(bank, "/"))
+
+@pages_bp.route("/apply-loan")
+def apply_loan():
+    offers = LoanOffer.query.order_by(LoanOffer.interest_rate.asc()).all()
+    return render_template("apply_loan.html", offers=offers)
+
+
+# ============================
+# BANKING FEATURE PAGES
+# ============================
+
+@pages_bp.route("/credit-score")
+def credit_score():
+    return render_template(
+        "features/feature_page.html",
+        icon="💳",
+        title="Credit Score",
+        subtitle="Check & monitor your credit instantly."
+    )
+
+@pages_bp.route("/loan-comparison")
+def loan_comparison():
+    return render_template(
+        "features/loan_comparison.html",
+        icon="📊",
+        title="Loan Comparison",
+        subtitle="Compare multiple banks in seconds."
+    )
+
+@pages_bp.route("/balance-transfer")
+def balance_transfer():
+    return render_template(
+        "features/balance-transfer.html",
+        icon="🏦",
+        title="Balance Transfer",
+        subtitle="Reduce EMI with smarter transfers."
+    )
+
+@pages_bp.route("/emi-analytics")
+def emi_analytics():
+    return render_template(
+        "features/emi-analytics.html",
+        icon="📈",
+        title="EMI Analytics",
+        subtitle="Visual charts & breakdown insights."
+    )
+
+@pages_bp.route("/instant-approval")
+def instant_approval():
+    return render_template(
+        "features/instant_approval.html",
+        icon="⚡",
+        title="Instant Approval",
+        subtitle="Fast-track your loan application."
+    )
+
+@pages_bp.route("/prepayment-tool")
+def prepayment_tool():
+    return render_template(
+        "features/prepayment_tool.html",
+        icon="🧾",
+        title="Prepayment Tool",
+        subtitle="Plan early closures & save interest."
+    )
+
+@pages_bp.route("/secure-process")
+def secure_process():
+    return render_template(
+        "features/secure-process.html",
+        icon="🔒",
+        title="Secure Process",
+        subtitle="Bank-level encryption & safety."
+    )
+
+@pages_bp.route("/eligibility-check")
+def eligibility_check():
+    return render_template(
+        "features/eligibility-check.html",
+        icon="📑",
+        title="Eligibility Check",
+        subtitle="Know your approval chances early."
+    )

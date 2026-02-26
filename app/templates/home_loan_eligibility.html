@@ -277,6 +277,239 @@ font-size:14px;
 </div>
 </div>
 
+<!-- ================= RESPONSIVE AFFILIATE SECTION ================= -->
+
+<style>
+
+/* SECTION WRAPPER */
+.affiliate-section{
+margin:80px auto;
+padding:60px 20px;
+max-width:1300px;
+background:linear-gradient(135deg,#f8fafc,#eef2ff);
+border-radius:30px;
+}
+
+/* HEADER */
+.affiliate-header{
+text-align:center;
+margin-bottom:50px;
+}
+
+.affiliate-header h2{
+font-size:34px;
+font-weight:800;
+color:#0f172a;
+}
+
+.affiliate-header p{
+color:#64748b;
+margin-top:8px;
+font-size:15px;
+}
+
+/* GRID DEFAULT (DESKTOP) */
+.affiliate-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+/* CARD */
+.affiliate-card{
+background:#ffffff;
+border-radius:24px;
+padding:35px;
+box-shadow:0 20px 50px rgba(0,0,0,0.06);
+transition:0.3s ease;
+position:relative;
+border:1px solid #e2e8f0;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.affiliate-card:hover{
+transform:translateY(-8px);
+box-shadow:0 30px 60px rgba(0,0,0,0.1);
+}
+
+/* BADGE */
+.bank-badge{
+position:absolute;
+top:20px;
+right:20px;
+background:#2563eb;
+color:white;
+font-size:12px;
+padding:6px 14px;
+border-radius:20px;
+font-weight:600;
+}
+
+.badge-green{ background:#16a34a; }
+.badge-orange{ background:#f97316; }
+
+/* CARD CONTENT */
+.affiliate-card h4{
+font-size:20px;
+font-weight:700;
+margin-bottom:10px;
+margin-top:10px;
+}
+
+.affiliate-card p{
+color:#64748b;
+font-size:14px;
+margin-bottom:15px;
+}
+
+.affiliate-card ul{
+padding-left:18px;
+margin-bottom:25px;
+}
+
+.affiliate-card li{
+margin-bottom:8px;
+font-size:14px;
+color:#334155;
+}
+
+/* BUTTON */
+.apply-btn{
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+color:white;
+padding:14px;
+border-radius:14px;
+text-align:center;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+display:block;
+box-shadow:0 10px 25px rgba(37,99,235,0.3);
+}
+
+.apply-btn:hover{
+transform:translateY(-3px);
+}
+
+/* ========================= */
+/* 📲 TABLET VIEW */
+/* ========================= */
+
+@media(max-width:1024px){
+.affiliate-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+/* ========================= */
+/* 📱 MOBILE VIEW */
+/* ========================= */
+
+@media(max-width:768px){
+
+.affiliate-section{
+padding:40px 15px;
+border-radius:20px;
+}
+
+.affiliate-header h2{
+font-size:24px;
+}
+
+.affiliate-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.affiliate-card{
+padding:25px;
+border-radius:18px;
+}
+
+.apply-btn{
+font-size:14px;
+padding:12px;
+}
+
+}
+
+</style>
+<div class="affiliate-section">
+
+<div class="affiliate-header">
+<h2>🏦 Recommended Home Loan Offers</h2>
+<p>Compare trusted banks & apply instantly</p>
+</div>
+
+<div class="affiliate-grid">
+
+<!-- HDFC -->
+<div class="affiliate-card">
+<div class="bank-badge">Low Interest</div>
+<h4>HDFC Bank Home Loan</h4>
+<p>Interest starting from 8.40% onwards</p>
+<ul>
+<li>✔ Quick Approval</li>
+<li>✔ Minimal Documentation</li>
+<li>✔ Flexible Tenure</li>
+</ul>
+<a href="https://www.hdfcbank.com/personal"
+   target="_blank"
+   rel="nofollow noopener"
+   class="apply-btn">
+Apply Now →
+</a>
+</div>
+
+<!-- ICICI -->
+<div class="affiliate-card">
+<div class="bank-badge badge-green">Fast Processing</div>
+<h4>ICICI Bank Home Loan</h4>
+<p>Special offers for salaried professionals</p>
+<ul>
+<li>✔ Zero Prepayment Charges</li>
+<li>✔ Online Application</li>
+<li>✔ Top-up Loan Available</li>
+</ul>
+<a href="https://www.icicibank.com/personal-banking/loans/home-loan"
+   target="_blank"
+   rel="nofollow noopener"
+   class="apply-btn">
+Check Offer →
+</a>
+</div>
+
+<!-- SBI -->
+<div class="affiliate-card">
+<div class="bank-badge badge-orange">Balance Transfer</div>
+<h4>SBI Home Loan</h4>
+<p>Transfer your existing loan & save interest</p>
+<ul>
+<li>✔ Government Bank</li>
+<li>✔ Low Processing Fee</li>
+<li>✔ High Approval Rate</li>
+</ul>
+<a href="https://homeloans.sbi/"
+   target="_blank"
+   rel="nofollow noopener"
+   class="apply-btn">
+Transfer Now →
+</a>
+</div>
+
+</div>
+
+<!-- Safety Disclaimer -->
+<p style="font-size:12px;color:#64748b;text-align:center;margin-top:20px;">
+We are not directly affiliated with banks. Links redirect to official bank websites.
+</p>
+
+</div>
+
+</div>
+
 <script>
 function calculateEligibility(){
 

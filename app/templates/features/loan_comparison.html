@@ -1,0 +1,1338 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ======================================= -->
+<!-- 💼 LOAN COMPARISON HERO -->
+<!-- ======================================= -->
+
+<section class="comparison-hero">
+  <div class="container">
+    <h1>Loan Comparison</h1>
+    <p>Compare multiple banks instantly & choose the best offer.</p>
+  </div>
+</section>
+
+
+<!-- ======================================= -->
+<!-- 🔎 FILTER BAR -->
+<!-- ======================================= -->
+
+<section class="comparison-filter">
+  <div class="container filter-inner">
+
+    <select id="loanType">
+      <option>Personal Loan</option>
+      <option>Home Loan</option>
+      <option>Business Loan</option>
+    </select>
+
+    <select id="sortRate">
+      <option value="low">Sort by Lowest Interest</option>
+      <option value="high">Sort by Highest Interest</option>
+    </select>
+
+  </div>
+</section>
+
+
+<!-- ======================================= -->
+<!-- 🏦 COMPARISON TABLE -->
+<!-- ======================================= -->
+
+<section class="comparison-table-section">
+  <div class="container">
+
+    <div class="comparison-grid">
+
+      <!-- HDFC -->
+      <div class="bank-card best-offer" data-rate="10.5">
+
+        <div class="badge">Best Offer</div>
+
+        <div class="bank-header">
+          <img src="/static/images/hdfc.png">
+          <h3>HDFC Bank</h3>
+        </div>
+
+        <div class="bank-details">
+          <p><strong>Interest:</strong> 10.50% – 18%</p>
+          <p><strong>Processing:</strong> Up to 2%</p>
+          <p><strong>Tenure:</strong> 5 Years</p>
+        </div>
+
+        <div class="emi-preview">
+          EMI from ₹2,149 / month
+        </div>
+
+        <a href="https://www.hdfcbank.com/personal"
+           target="_blank"
+           rel="nofollow noopener"
+           class="apply-btn">
+          Apply Now →
+        </a>
+
+      </div>
+
+
+      <!-- ICICI -->
+      <div class="bank-card" data-rate="10.75">
+
+        <div class="bank-header">
+          <img src="/static/images/icici.png">
+          <h3>ICICI Bank</h3>
+        </div>
+
+        <div class="bank-details">
+          <p><strong>Interest:</strong> 10.75% – 19%</p>
+          <p><strong>Processing:</strong> Up to 2.25%</p>
+          <p><strong>Tenure:</strong> 6 Years</p>
+        </div>
+
+        <div class="emi-preview">
+          EMI from ₹2,199 / month
+        </div>
+
+        <a href="https://www.icicibank.com/personal-banking/loans/personal-loan"
+           target="_blank"
+           rel="nofollow noopener"
+           class="apply-btn">
+          Apply →
+        </a>
+
+      </div>
+
+
+      <!-- SBI -->
+      <div class="bank-card" data-rate="9.80">
+
+        <div class="bank-header">
+          <img src="/static/images/sbi.png">
+          <h3>SBI Bank</h3>
+        </div>
+
+        <div class="bank-details">
+          <p><strong>Interest:</strong> 9.80% – 17%</p>
+          <p><strong>Processing:</strong> 1.5%</p>
+          <p><strong>Tenure:</strong> 7 Years</p>
+        </div>
+
+        <div class="emi-preview">
+          EMI from ₹2,050 / month
+        </div>
+
+        <a href="https://sbi.co.in/web/personal-banking/loans/personal-loans"
+           target="_blank"
+           rel="nofollow noopener"
+           class="apply-btn">
+          Apply →
+        </a>
+
+      </div>
+
+</div>
+  </div>
+</section>
+
+<section class="bank-marquee-section"><br>
+
+  <div class="container">
+    <h2 class="marquee-title">
+      Apply from Top Banks
+    </h2><br>
+
+    <div class="marquee-wrapper">
+
+      <div class="marquee-track">
+
+        <!-- HDFC -->
+        <a href="https://www.hdfcbank.com/personal"
+           target="_blank"
+           rel="nofollow noopener"
+           class="bank-item">
+          <img src="/static/images/hdfc.png" alt="HDFC">
+        </a>
+
+        <!-- ICICI -->
+        <a href="https://www.icicibank.com/personal-banking/loans"
+           target="_blank"
+           rel="nofollow noopener"
+           class="bank-item">
+          <img src="/static/images/icici.png" alt="ICICI">
+        </a>
+
+        <!-- SBI -->
+        <a href="https://sbi.co.in/web/personal-banking/loans"
+           target="_blank"
+           rel="nofollow noopener"
+           class="bank-item">
+          <img src="/static/images/sbi.png" alt="SBI">
+        </a>
+
+        <!-- Axis -->
+        <a href="https://www.axisbank.com/retail/loans"
+           target="_blank"
+           rel="nofollow noopener"
+           class="bank-item">
+          <img src="/static/images/axis.png" alt="Axis Bank">
+        </a>
+
+        <!-- Kotak -->
+        <a href="https://www.kotak.com/en/personal-banking/loans.html"
+           target="_blank"
+           rel="nofollow noopener"
+           class="bank-item">
+          <img src="/static/images/kotak.png" alt="Kotak">
+        </a>
+
+        <!-- Duplicate for infinite scroll -->
+        <a href="https://www.hdfcbank.com/personal/borrow"
+           target="_blank"
+           rel="nofollow noopener"
+           class="bank-item">
+          <img src="/static/images/hdfc.png" alt="HDFC">
+        </a>
+
+        <a href="https://www.icicibank.com/personal-banking/loans"
+           target="_blank"
+           rel="nofollow noopener"
+           class="bank-item">
+          <img src="/static/images/icici.png" alt="ICICI">
+        </a>
+
+        <a href="https://sbi.co.in/web/personal-banking/loans"
+           target="_blank"
+           rel="nofollow noopener"
+           class="bank-item">
+          <img src="/static/images/sbi.png" alt="SBI">
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="bank-list-section">
+  <div class="container">
+
+    <h2 class="bank-list-title">
+      Compare Top Loan Offers
+    </h2>
+
+    <div class="bank-list">
+
+      <!-- SBI (Lowest Rate - Highlight) -->
+      <div class="bank-row highlight" data-rate="9.8">
+        <div class="bank-left">
+          <img src="/static/images/sbi.png">
+          <div>
+            <h4>SBI Bank</h4>
+            <span>Lowest Starting Rate</span>
+          </div>
+        </div>
+
+        <div class="bank-middle">
+          <div class="rate-box">
+            <strong>9.80%</strong>
+            <span>Interest</span>
+          </div>
+          <div class="info-box">
+            1.5% Fee
+          </div>
+          <div class="info-box">
+            7 Years
+          </div>
+        </div>
+
+        <div class="bank-right">
+          <a href="https://sbi.co.in/web/personal-banking/loans/personal-loans"
+             target="_blank"
+             rel="nofollow noopener">
+            Apply Now →
+          </a>
+        </div>
+      </div>
+
+
+      <!-- HDFC -->
+      <div class="bank-row" data-rate="10.5">
+        <div class="bank-left">
+          <img src="/static/images/hdfc.png">
+          <div>
+            <h4>HDFC Bank</h4>
+            <span>Instant Approval</span>
+          </div>
+        </div>
+
+        <div class="bank-middle">
+          <div class="rate-box">
+            <strong>10.50%</strong>
+            <span>Interest</span>
+          </div>
+          <div class="info-box">
+            2% Fee
+          </div>
+          <div class="info-box">
+            5 Years
+          </div>
+        </div>
+
+        <div class="bank-right">
+          <a href="https://www.hdfcbank.com/personal"
+             target="_blank"
+             rel="nofollow noopener">
+            Apply →
+          </a>
+        </div>
+      </div>
+
+
+      <!-- ICICI -->
+      <div class="bank-row" data-rate="10.75">
+        <div class="bank-left">
+          <img src="/static/images/icici.png">
+          <div>
+            <h4>ICICI Bank</h4>
+            <span>Flexible EMI</span>
+          </div>
+        </div>
+
+        <div class="bank-middle">
+          <div class="rate-box">
+            <strong>10.75%</strong>
+            <span>Interest</span>
+          </div>
+          <div class="info-box">
+            2.25% Fee
+          </div>
+          <div class="info-box">
+            6 Years
+          </div>
+        </div>
+
+        <div class="bank-right">
+          <a href="https://www.icicibank.com/personal-banking/loans/personal-loan"
+             target="_blank"
+             rel="nofollow noopener">
+            Apply →
+          </a>
+        </div>
+      </div>
+
+
+      <!-- AXIS -->
+      <div class="bank-row" data-rate="10.25">
+        <div class="bank-left">
+          <img src="/static/images/axis.png">
+          <div>
+            <h4>Axis Bank</h4>
+            <span>Quick Processing</span>
+          </div>
+        </div>
+
+        <div class="bank-middle">
+          <div class="rate-box">
+            <strong>10.25%</strong>
+            <span>Interest</span>
+          </div>
+          <div class="info-box">
+            2% Fee
+          </div>
+          <div class="info-box">
+            5 Years
+          </div>
+        </div>
+
+        <div class="bank-right">
+          <a href="https://www.axisbank.com/retail/loans/personal-loan"
+             target="_blank"
+             rel="nofollow noopener">
+            Apply →
+          </a>
+        </div>
+      </div>
+
+
+      <!-- KOTAK -->
+      <div class="bank-row" data-rate="10.95">
+        <div class="bank-left">
+          <img src="/static/images/kotak.png">
+          <div>
+            <h4>Kotak Bank</h4>
+            <span>Fast Disbursal</span>
+          </div>
+        </div>
+
+        <div class="bank-middle">
+          <div class="rate-box">
+            <strong>10.95%</strong>
+            <span>Interest</span>
+          </div>
+          <div class="info-box">
+            2% Fee
+          </div>
+          <div class="info-box">
+            5 Years
+          </div>
+        </div>
+
+        <div class="bank-right">
+          <a href="https://www.kotak.com/en/personal-banking/loans/personal-loan.html"
+             target="_blank"
+             rel="nofollow noopener">
+            Apply →
+          </a>
+        </div>
+      </div>
+
+
+      <!-- IDFC -->
+      <div class="bank-row" data-rate="11.25">
+        <div class="bank-left">
+          <img src="/static/images/idfc.png">
+          <div>
+            <h4>IDFC First</h4>
+            <span>Digital Process</span>
+          </div>
+        </div>
+
+        <div class="bank-middle">
+          <div class="rate-box">
+            <strong>11.25%</strong>
+            <span>Interest</span>
+          </div>
+          <div class="info-box">
+            2% Fee
+          </div>
+          <div class="info-box">
+            5 Years
+          </div>
+        </div>
+
+        <div class="bank-right">
+          <a href="https://www.idfcfirstbank.com/personal-banking/loans/personal-loan"
+             target="_blank"
+             rel="nofollow noopener">
+            Apply →
+          </a>
+        </div>
+      </div>
+
+
+      <!-- YES -->
+      <div class="bank-row" data-rate="11.10">
+        <div class="bank-left">
+          <img src="/static/images/yes.png">
+          <div>
+            <h4>Yes Bank</h4>
+            <span>Quick EMI</span>
+          </div>
+        </div>
+
+        <div class="bank-middle">
+          <div class="rate-box">
+            <strong>11.10%</strong>
+            <span>Interest</span>
+          </div>
+          <div class="info-box">
+            2% Fee
+          </div>
+          <div class="info-box">
+            5 Years
+          </div>
+        </div>
+
+        <div class="bank-right">
+          <a href="https://www.yesbank.in/personal-banking/loans/personal-loan"
+             target="_blank"
+             rel="nofollow noopener">
+            Apply →
+          </a>
+        </div>
+      </div>
+
+
+      <!-- FEDERAL -->
+      <div class="bank-row" data-rate="10.85">
+        <div class="bank-left">
+          <img src="/static/images/federal.png">
+          <div>
+            <h4>Federal Bank</h4>
+            <span>Smart Loan Offers</span>
+          </div>
+        </div>
+
+        <div class="bank-middle">
+          <div class="rate-box">
+            <strong>10.85%</strong>
+            <span>Interest</span>
+          </div>
+          <div class="info-box">
+            2% Fee
+          </div>
+          <div class="info-box">
+            5 Years
+          </div>
+        </div>
+
+        <div class="bank-right">
+          <a href="https://www.federalbank.co.in"
+             target="_blank"
+             rel="nofollow noopener">
+            Apply →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.bank-list-section{
+padding:120px 20px;
+background:#ffffff;
+}
+
+.bank-list-title{
+text-align:center;
+font-size:38px;
+font-weight:800;
+margin-bottom:60px;
+}
+
+.bank-list{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.bank-row{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:#f8fafc;
+padding:25px 35px;
+border-radius:20px;
+transition:.3s ease;
+}
+
+.bank-row:hover{
+background:#eef2ff;
+transform:translateY(-3px);
+}
+
+.highlight{
+border:2px solid #4f46e5;
+}
+
+.bank-left{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.bank-left img{
+height:32px;
+}
+
+.bank-left h4{
+margin:0;
+font-size:16px;
+}
+
+.bank-left span{
+font-size:12px;
+color:#64748b;
+}
+
+.bank-middle{
+display:flex;
+gap:40px;
+align-items:center;
+}
+
+.rate-box strong{
+font-size:20px;
+color:#4f46e5;
+}
+
+.rate-box span{
+display:block;
+font-size:12px;
+color:#64748b;
+}
+
+.info-box{
+font-size:14px;
+color:#475569;
+}
+
+.bank-right a{
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+padding:10px 22px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.bank-row{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+.bank-middle{
+gap:20px;
+}
+
+.bank-right{
+width:100%;
+}
+
+.bank-right a{
+display:block;
+text-align:center;
+}
+
+}
+
+.bank-list-section{
+padding:120px 20px;
+background:linear-gradient(135deg,#f8fafc,#eef2ff);
+}
+
+.bank-list{
+max-width:1000px;
+margin:0 auto;
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+/* CARD */
+.bank-row{
+background:white;
+border-radius:24px;
+padding:30px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 20px 50px rgba(0,0,0,0.05);
+transition:.3s ease;
+position:relative;
+}
+
+.bank-row:hover{
+transform:translateY(-6px);
+box-shadow:0 30px 80px rgba(79,70,229,0.2);
+}
+
+/* Highlight best */
+.bank-row.highlight{
+border:2px solid #4f46e5;
+}
+
+/* LEFT */
+.bank-info{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.bank-info img{
+height:36px;
+}
+
+.bank-info h4{
+margin:0;
+font-size:18px;
+font-weight:700;
+}
+
+.bank-info p{
+margin:4px 0 0;
+font-size:13px;
+color:#64748b;
+}
+
+/* MIDDLE */
+.bank-metrics{
+display:flex;
+gap:60px;
+}
+
+.metric-value{
+display:block;
+font-size:22px;
+font-weight:800;
+color:#4f46e5;
+}
+
+.metric-label{
+font-size:12px;
+color:#64748b;
+}
+
+/* RIGHT */
+.bank-action a{
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+padding:12px 28px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+transition:.3s ease;
+}
+
+.bank-action a:hover{
+transform:scale(1.05);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.bank-row{
+flex-direction:column;
+align-items:flex-start;
+gap:20px;
+padding:25px;
+}
+
+.bank-metrics{
+width:100%;
+justify-content:space-between;
+gap:20px;
+}
+
+.bank-action{
+width:100%;
+}
+
+.bank-action a{
+display:block;
+text-align:center;
+}
+
+}
+
+.bank-list{
+max-width:1100px;
+margin:0 auto;
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+
+.bank-row{
+display:grid;
+grid-template-columns: 2fr 2fr 1fr; /* Perfect column control */
+align-items:center;
+background:white;
+padding:28px 40px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+transition:.3s ease;
+}
+
+.bank-row:hover{
+transform:translateY(-5px);
+box-shadow:0 25px 60px rgba(79,70,229,0.15);
+}
+
+/* LEFT SIDE */
+.bank-info{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.bank-info img{
+height:34px;
+}
+
+.bank-info h4{
+margin:0;
+font-size:17px;
+font-weight:700;
+line-height:1.2;
+}
+
+.bank-info p{
+margin:3px 0 0;
+font-size:13px;
+color:#64748b;
+}
+
+/* MIDDLE SIDE */
+.bank-metrics{
+display:flex;
+justify-content:space-evenly;
+align-items:center;
+text-align:center;
+}
+
+.bank-metrics > div{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.metric-value{
+font-size:20px;
+font-weight:800;
+color:#4f46e5;
+line-height:1.2;
+}
+
+.metric-label{
+font-size:12px;
+color:#64748b;
+margin-top:4px;
+}
+
+/* RIGHT SIDE */
+.bank-action{
+display:flex;
+justify-content:flex-end;
+}
+
+.bank-action a{
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+padding:11px 26px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+transition:.3s ease;
+}
+
+.bank-action a:hover{
+transform:scale(1.05);
+}
+
+/* Mobile Fix */
+@media(max-width:768px){
+
+.bank-row{
+grid-template-columns:1fr;
+gap:18px;
+padding:24px;
+}
+
+.bank-metrics{
+justify-content:space-between;
+}
+
+.bank-action{
+justify-content:center;
+}
+
+}
+
+.bank-info{
+display:flex;
+align-items:center;
+gap:18px;
+min-width:280px;
+}
+
+/* FIX LOGO ALIGNMENT */
+.bank-info img{
+width:90px;           /* fixed width */
+height:36px;          /* fixed height */
+object-fit:contain;
+display:block;
+}
+
+/* TEXT WRAPPER */
+.bank-info > div{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+/* BANK NAME */
+.bank-info h4{
+margin:0;
+font-size:17px;
+font-weight:700;
+line-height:1.2;
+}
+
+/* SUBTITLE */
+.bank-info p{
+margin:4px 0 0;
+font-size:13px;
+color:#64748b;
+line-height:1.2;
+}
+
+
+.bank-row{
+display:grid;
+grid-template-columns: 300px 1fr 180px;
+align-items:center; /* THIS is important */
+background:white;
+padding:24px 40px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+transition:.3s ease;
+min-height:90px; /* fixed row height */
+}
+
+/* LEFT SIDE FIX */
+.bank-info{
+display:flex;
+align-items:center;
+gap:18px;
+height:100%;
+}
+
+/* LOGO FIX */
+.bank-info img{
+width:100px;
+height:40px;
+object-fit:contain;
+display:block;
+}
+
+/* TEXT FIX */
+.bank-info div{
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.bank-info h4{
+margin:0;
+font-size:17px;
+font-weight:700;
+line-height:1.2;
+}
+
+.bank-info p{
+margin:4px 0 0;
+font-size:13px;
+color:#64748b;
+line-height:1.2;
+}
+
+/* MIDDLE */
+.bank-metrics{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.bank-metrics > div{
+text-align:center;
+}
+
+.metric-value{
+font-size:20px;
+font-weight:800;
+color:#4f46e5;
+}
+
+.metric-label{
+font-size:12px;
+color:#64748b;
+}
+
+/* RIGHT */
+.bank-action{
+display:flex;
+justify-content:flex-end;
+align-items:center;
+}
+
+.bank-action a{
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+padding:10px 24px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.bank-row{
+grid-template-columns:1fr;
+gap:16px;
+padding:20px;
+min-height:auto;
+}
+
+.bank-action{
+justify-content:center;
+}
+
+}
+/* ======================================= */
+/* 🚀 HOW IT WORKS SECTION */
+/* ======================================= */
+
+.how-it-works{
+padding:140px 20px;
+background:linear-gradient(135deg,#f8fafc,#eef2ff);
+text-align:center;
+}
+
+.how-header{
+max-width:700px;
+margin:0 auto 80px;
+}
+
+.how-header .badge{
+background:rgba(79,70,229,0.1);
+color:#4f46e5;
+padding:6px 16px;
+border-radius:999px;
+font-size:13px;
+display:inline-block;
+margin-bottom:20px;
+}
+
+.how-header h2{
+font-size:42px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.how-header p{
+color:#64748b;
+font-size:16px;
+}
+
+.how-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+.how-card{
+background:white;
+padding:40px;
+border-radius:28px;
+box-shadow:0 20px 60px rgba(0,0,0,0.05);
+transition:.4s ease;
+position:relative;
+}
+
+.how-card:hover{
+transform:translateY(-10px);
+box-shadow:0 30px 80px rgba(79,70,229,0.2);
+}
+
+.step-number{
+font-size:40px;
+font-weight:800;
+color:#e0e7ff;
+position:absolute;
+top:20px;
+right:25px;
+}
+
+.how-card h4{
+font-size:20px;
+margin-bottom:12px;
+font-weight:700;
+}
+
+.how-card p{
+color:#64748b;
+font-size:14px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.how-it-works{
+padding:80px 16px;
+}
+
+.how-header h2{
+font-size:26px;
+}
+
+.how-grid{
+gap:20px;
+}
+
+.how-card{
+padding:25px;
+}
+
+}
+
+/* ======================================= */
+/* 🏦 BANK LOGO MARQUEE SLIDER */
+/* ======================================= */
+
+.bank-marquee-section{
+padding:100px 20px;
+background:#ffffff;
+text-align:center;
+overflow:hidden;
+}
+
+.marquee-title{
+font-size:36px;
+font-weight:800;
+margin-bottom:60px;
+}
+
+.marquee-wrapper{
+overflow:hidden;
+position:relative;
+}
+
+.marquee-track{
+display:flex;
+gap:60px;
+animation:scrollMarquee 25s linear infinite;
+align-items:center;
+}
+
+.bank-item{
+display:flex;
+align-items:center;
+justify-content:center;
+min-width:150px;
+opacity:0.6;
+transition:.3s ease;
+}
+
+.bank-item img{
+height:40px;
+filter:grayscale(100%);
+transition:.3s ease;
+}
+
+.bank-item:hover{
+opacity:1;
+}
+
+.bank-item:hover img{
+filter:grayscale(0%);
+transform:scale(1.1);
+}
+
+/* Infinite Scroll Animation */
+@keyframes scrollMarquee{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.bank-marquee-section{
+padding:70px 16px;
+}
+
+.marquee-title{
+font-size:24px;
+margin-bottom:40px;
+}
+
+.marquee-track{
+gap:40px;
+animation-duration:18s;
+}
+
+.bank-item{
+min-width:120px;
+}
+
+.bank-item img{
+height:28px;
+}
+
+}
+
+/* ======================================= */
+/* 🚀 ULTIMATE LOAN COMPARISON */
+/* ======================================= */
+
+.comparison-hero{
+padding:150px 20px 80px;
+background:linear-gradient(135deg,#f8fafc,#eef2ff);
+text-align:center;
+}
+
+.comparison-hero h1{
+font-size:48px;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.comparison-hero p{
+font-size:18px;
+color:#64748b;
+}
+
+/* FILTER */
+.comparison-filter{
+background:white;
+padding:25px 0;
+position:sticky;
+top:0;
+z-index:20;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.filter-inner{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.filter-inner select{
+padding:10px 16px;
+border-radius:12px;
+border:1px solid #e5e7eb;
+font-size:14px;
+}
+
+/* GRID */
+.comparison-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+padding:100px 0;
+}
+
+/* CARD */
+.bank-card{
+background:white;
+border-radius:28px;
+padding:35px;
+box-shadow:0 20px 60px rgba(0,0,0,0.05);
+transition:.4s ease;
+position:relative;
+}
+
+.bank-card:hover{
+transform:translateY(-10px);
+box-shadow:0 30px 80px rgba(79,70,229,0.2);
+}
+
+.best-offer{
+border:2px solid #4f46e5;
+}
+
+.badge{
+position:absolute;
+top:15px;
+right:15px;
+background:#ef4444;
+color:white;
+padding:5px 12px;
+border-radius:999px;
+font-size:12px;
+}
+
+/* HEADER */
+.bank-header{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:20px;
+}
+
+.bank-header img{
+height:30px;
+}
+
+/* DETAILS */
+.bank-details p{
+margin:6px 0;
+font-size:14px;
+color:#475569;
+}
+
+/* EMI */
+.emi-preview{
+background:#f1f5f9;
+padding:12px;
+border-radius:12px;
+margin:20px 0;
+font-weight:600;
+}
+
+/* BUTTON */
+.apply-btn{
+display:block;
+text-align:center;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+padding:12px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+transition:.3s ease;
+}
+
+.apply-btn:hover{
+transform:scale(1.05);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.comparison-hero{
+padding:100px 16px 50px;
+}
+
+.comparison-hero h1{
+font-size:28px;
+}
+
+.comparison-grid{
+gap:20px;
+padding:60px 0;
+}
+
+.bank-card{
+padding:25px;
+}
+
+}
+</style>
+
+
+<script>
+// Sort by interest rate
+document.getElementById("sortRate").addEventListener("change", function(){
+    const cards = Array.from(document.querySelectorAll(".bank-card"));
+    const container = document.querySelector(".comparison-grid");
+
+    cards.sort((a,b)=>{
+        let rateA = parseFloat(a.dataset.rate);
+        let rateB = parseFloat(b.dataset.rate);
+
+        return this.value === "low" ? rateA - rateB : rateB - rateA;
+    });
+
+    cards.forEach(card=>container.appendChild(card));
+});
+</script>
+
+{% endblock %}

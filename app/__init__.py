@@ -13,7 +13,9 @@ Why App Factory?
 import os
 import logging
 from logging.handlers import RotatingFileHandler
+
 from flask import Flask, jsonify
+from dotenv import load_dotenv
 
 from config import config_by_name
 from app.core.extensions import init_extensions
@@ -29,13 +31,33 @@ def create_app(config_name=None):
     Application factory function.
     """
 
+    # Load environment variables (.env)
+    load_dotenv()
+
     # Determine environment
     env = config_name or os.getenv("FLASK_ENV", "development")
 
     app = Flask(__name__)
 
-    # Load configuration
+    # Load base configuration
     app.config.from_object(config_by_name[env])
+
+    # ==========================================
+    # BANK AFFILIATE CONFIG (FROM .env)
+    # ==========================================
+
+    app.config["BANK_LINKS"] = {
+        "hdfc": {
+            "apply": os.getenv("HDFC_APPLY_URL", "#"),
+            "eligibility": os.getenv("HDFC_ELIGIBILITY_URL", "#"),
+        },
+        "icici": {
+            "apply": os.getenv("ICICI_APPLY_URL", "#"),
+            "eligibility": os.getenv("ICICI_ELIGIBILITY_URL", "#"),
+        },
+        # Future banks can be added here easily
+        # "sbi": { ... }
+    }
 
     # Initialize Extensions
     init_extensions(app)
@@ -65,16 +87,14 @@ def register_blueprints(app):
     from app.routes.web.calculator import calculator_bp
     from app.routes.web.comparison import comparison_bp
     from app.routes.web.reports import reports_bp
+    from app.routes.web.pages import pages_bp
 
     from app.routes.api.emi_api import emi_api_bp
     from app.routes.api.prepayment_api import prepayment_api_bp
     from app.routes.api.comparison_api import comparison_api_bp
     from app.routes.api.history_api import history_api_bp
 
-    from app.routes.web.pages import pages_bp   # ✅ ADD THIS
-
     from app.core.caching import init_cache
-    
     init_cache(app)
 
     # Web routes
@@ -82,13 +102,15 @@ def register_blueprints(app):
     app.register_blueprint(calculator_bp)
     app.register_blueprint(comparison_bp)
     app.register_blueprint(reports_bp)
-    app.register_blueprint(pages_bp)        # ✅ ADD THIS
+    app.register_blueprint(pages_bp)
 
     # API routes
     app.register_blueprint(emi_api_bp, url_prefix="/api")
     app.register_blueprint(prepayment_api_bp, url_prefix="/api")
     app.register_blueprint(comparison_api_bp, url_prefix="/api")
     app.register_blueprint(history_api_bp, url_prefix="/api")
+
+
 # ==========================================
 # ERROR HANDLERS
 # ==========================================

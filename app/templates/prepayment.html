@@ -117,32 +117,6 @@
     display: block;
 }
 
-/* =========================================
-   📱 MOBILE VIEW (Below 768px)
-========================================= */
-
-@media (max-width: 768px) {
-
-    .calculator-card {
-        grid-template-columns: 1fr;
-        padding: 25px;
-    }
-
-    .calculator-card h4,
-    .calculator-card hr,
-    .primary-btn {
-        grid-column: span 1;
-    }
-
-    .result-card {
-        grid-template-columns: 1fr;
-    }
-
-    .prepayment-wrapper h2 {
-        font-size: 24px;
-    }
-
-}
 
 /* =========================================
    📱 TABLET VIEW (768px - 1024px)
@@ -176,7 +150,123 @@
     }
 
 }
-</style>
+
+/* =========================================
+   📱 FINTECH PREMIUM MOBILE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        background: #f4f6fb;
+    }
+
+    .prepayment-wrapper {
+        margin: 30px auto;
+        padding: 16px;
+    }
+
+    .prepayment-wrapper h2 {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+
+    .prepayment-wrapper p {
+        font-size: 14px;
+        margin-bottom: 22px;
+        color: #6b7280;
+    }
+
+    /* Card redesign */
+    .calculator-card {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        border-radius: 20px;
+        gap: 16px;
+        background: #ffffff;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    }
+
+    .calculator-card label {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .calculator-card input {
+        padding: 14px;
+        font-size: 15px;
+        border-radius: 14px;
+        border: 1px solid #e5e7eb;
+        background: #fafafa;
+    }
+
+    .calculator-card input:focus {
+        outline: none;
+        border-color: #6366f1;
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+    }
+
+    .calculator-card h4 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    .calculator-card hr {
+        margin: 10px 0;
+    }
+
+    /* Premium gradient button */
+    .primary-btn {
+        width: 100%;
+        padding: 16px;
+        border-radius: 16px;
+        font-size: 15px;
+        background: linear-gradient(135deg,#6366f1,#8b5cf6);
+        box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+        transition: all .3s ease;
+    }
+
+    .primary-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    /* Result section */
+    .prepayment-result-section {
+        margin: 25px auto;
+        padding: 16px;
+    }
+
+    .prepayment-result-section h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .result-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .result-item {
+        padding: 18px;
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    }
+
+    .result-item span {
+        font-size: 13px;
+        color: #6b7280;
+    }
+
+    .result-item strong {
+        font-size: 20px;
+        margin-top: 6px;
+    }
+
+}</style>
 
 <section class="prepayment-wrapper">
 

@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+/* ===============================
+   HERO (Matches EMI Pro Theme)
+=================================*/
+.instant-hero{
+max-width:1200px;
+margin:60px auto;
+padding:70px 40px;
+border-radius:30px;
+background: linear-gradient(135deg,#0f172a,#1e293b 60%, #0ea5e9);
+color:#fff;
+text-align:center;
+position:relative;
+overflow:hidden;
+box-shadow:0 30px 80px rgba(0,0,0,0.25);
+}
+
+.instant-hero h1{
+font-size:48px;
+font-weight:700;
+margin-bottom:15px;
+letter-spacing:-1px;
+}
+
+.instant-hero p{
+font-size:18px;
+opacity:0.85;
+margin-bottom:35px;
+}
+
+.instant-cta{
+display:inline-block;
+background:linear-gradient(135deg,#22c55e,#16a34a);
+padding:16px 40px;
+border-radius:60px;
+color:#fff;
+font-weight:600;
+text-decoration:none;
+transition:0.3s ease;
+box-shadow:0 15px 30px rgba(34,197,94,0.4);
+}
+
+.instant-cta:hover{
+transform:translateY(-4px);
+box-shadow:0 20px 40px rgba(34,197,94,0.6);
+}
+
+/* ===============================
+   TRUST STRIP
+=================================*/
+.trust-strip{
+display:flex;
+justify-content:center;
+gap:50px;
+margin-top:30px;
+opacity:0.8;
+font-size:14px;
+flex-wrap:wrap;
+}
+
+/* ===============================
+   FEATURES GRID
+=================================*/
+.features-section{
+max-width:1200px;
+margin:100px auto;
+padding:0 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:35px;
+}
+
+.feature-card{
+background:#ffffff;
+border-radius:28px;
+padding:35px;
+box-shadow:0 20px 60px rgba(0,0,0,0.05);
+text-align:center;
+transition:0.4s ease;
+}
+
+.feature-card:hover{
+transform:translateY(-8px);
+box-shadow:0 30px 80px rgba(0,0,0,0.08);
+}
+
+.feature-icon{
+font-size:38px;
+margin-bottom:15px;
+}
+
+.feature-card h4{
+font-weight:600;
+margin-bottom:10px;
+}
+
+/* ===============================
+   AFFILIATE PARTNER SECTION
+=================================*/
+.partner-section{
+max-width:1200px;
+margin:100px auto;
+padding:50px 30px;
+border-radius:30px;
+background:#f1f5f9;
+}
+
+.partner-title{
+text-align:center;
+font-size:30px;
+font-weight:700;
+margin-bottom:40px;
+}
+
+.partner-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.partner-card{
+background:#ffffff;
+border-radius:24px;
+padding:30px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.partner-card:hover{
+transform:translateY(-6px);
+}
+
+.partner-card h5{
+font-size:20px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+.partner-card ul{
+padding-left:18px;
+margin-bottom:20px;
+}
+
+.partner-card li{
+margin-bottom:8px;
+font-size:14px;
+}
+
+.apply-btn{
+display:block;
+text-align:center;
+background:#0ea5e9;
+color:#fff;
+padding:14px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.apply-btn:hover{
+background:#0284c7;
+}
+
+/* ===============================
+   STICKY MOBILE CTA
+=================================*/
+.sticky-apply{
+display:none;
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:#22c55e;
+color:#fff;
+padding:14px 40px;
+border-radius:50px;
+font-weight:600;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+z-index:999;
+text-decoration:none;
+}
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+@media(max-width:768px){
+
+.instant-hero{
+padding:50px 20px;
+}
+
+.instant-hero h1{
+font-size:30px;
+}
+
+.instant-hero p{
+font-size:15px;
+}
+
+.sticky-apply{
+display:block;
+}
+
+}
+
+</style>
+
+<!-- ================= HERO ================= -->
+<br><br><br>
+<div class="instant-hero">
+    <h1>⚡ Instant Loan Approval</h1>
+    <p>Fast-track your loan application with trusted NBFC & Bank partners.</p>
+
+    <a href="https://www.hdfcbank.com/personal"
+   target="_blank"
+   rel="nofollow noopener"
+   class="instant-cta">
+    Apply Now & Get Approved →
+</a>
+
+    <div class="trust-strip">
+        <span>✔ 4.8★ Rated</span>
+        <span>✔ RBI Regulated Partners</span>
+        <span>✔ 100% Digital Process</span>
+    </div>
+</div>
+
+<!-- ================= FEATURES ================= -->
+
+<div class="features-section">
+
+    <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h4>Quick Processing</h4>
+        <p>Loan approval within minutes using instant KYC.</p>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">💳</div>
+        <h4>No Collateral</h4>
+        <p>Unsecured personal loans up to ₹25 Lakhs.</p>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <h4>Minimal Documents</h4>
+        <p>Only PAN & Aadhaar required.</p>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h4>Bank-Level Security</h4>
+        <p>Encrypted & secure application flow.</p>
+    </div>
+
+</div>
+
+<!-- ================= PARTNERS ================= -->
+
+<div class="partner-section">
+    <div class="partner-title">Top Instant Loan Offers</div>
+
+    <div class="partner-grid">
+
+        <div class="partner-card">
+            <h5>Bajaj Finserv Personal Loan</h5>
+            <ul>
+                <li>Loan up to ₹25 Lakhs</li>
+                <li>Approval in 5 Minutes</li>
+                <li>Flexible EMI Options</li>
+            </ul>
+            <a href="https://www.bajajfinserv.in/personal-loan"
+               target="_blank"
+               rel="nofollow noopener"
+               class="apply-btn">
+                Apply via Bajaj →
+            </a>
+        </div>
+
+        <div class="partner-card">
+            <h5>KreditBee Instant Loan</h5>
+            <ul>
+                <li>Loan up to ₹2 Lakhs</li>
+                <li>Instant Disbursal</li>
+                <li>100% Online</li>
+            </ul>
+            <a href="https://www.kreditbee.in/personal-loan"
+               target="_blank"
+               rel="nofollow noopener"
+               class="apply-btn">
+                Apply via KreditBee →
+            </a>
+        </div>
+
+        <div class="partner-card">
+            <h5>Tata Capital Personal Loan</h5>
+            <ul>
+                <li>Low Interest Rates</li>
+                <li>Quick Approval</li>
+                <li>Minimal Documentation</li>
+            </ul>
+            <a href="https://www.tatacapital.com/personal-loan.html"
+               target="_blank"
+               rel="nofollow noopener"
+               class="apply-btn">
+                Apply via Tata →
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- Sticky Mobile CTA -->
+<a href="https://www.hdfcbank.com/personal"
+   target="_blank"
+   rel="nofollow noopener"
+   class="sticky-apply">
+Apply Now →
+</a>
+
+{% endblock %}

@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+.loan-wrapper{
+background:linear-gradient(180deg,#eef2ff 0%, #f8fafc 100%);
+padding-bottom:80px;
+}
+
+/* HERO */
+.loan-hero{
+padding:80px 0 50px 0;
+text-align:center;
+}
+
+.loan-hero h1{
+font-weight:800;
+font-size:42px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.loan-hero p{
+color:#64748b;
+font-size:18px;
+margin-top:10px;
+}
+
+/* STATS */
+.loan-stats{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.stat-box{
+background:white;
+padding:15px 25px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.04);
+font-weight:600;
+color:#334155;
+}
+
+/* FILTER BAR */
+.filter-bar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:40px 0 30px;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.filter-bar select{
+border-radius:8px;
+padding:8px 12px;
+}
+
+/* EMPTY STATE */
+.empty-state{
+text-align:center;
+background:white;
+padding:70px 30px;
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.05);
+max-width:700px;
+margin:40px auto;
+}
+
+.empty-icon{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.empty-state h4{
+font-weight:700;
+}
+
+.empty-state p{
+color:#64748b;
+margin-top:10px;
+}
+
+.back-btn{
+margin-top:20px;
+padding:10px 20px;
+border-radius:8px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+}
+
+/* CARD */
+.loan-card{
+background:white;
+border-radius:18px;
+padding:25px;
+border:1px solid #e2e8f0;
+transition:.3s ease;
+height:100%;
+}
+
+.loan-card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 60px rgba(0,0,0,0.08);
+}
+
+.loan-rate{
+font-size:28px;
+font-weight:800;
+color:#4f46e5;
+}
+
+.apply-btn{
+margin-top:20px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+border:none;
+padding:10px;
+border-radius:8px;
+color:white;
+font-weight:600;
+width:100%;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.loan-hero h1{
+font-size:30px;
+}
+.loan-stats{
+gap:15px;
+}
+}
+
+</style>
+
+<div class="loan-wrapper">
+
+<div class="container">
+
+    <br><br>
+
+<!-- HERO -->
+<div class="loan-hero">
+<h1>Compare & Apply Loans</h1>
+<p>Find lowest interest offers, compare EMIs & apply instantly.</p>
+
+<div class="loan-stats">
+<div class="stat-box">🏦 Trusted Banks</div>
+<div class="stat-box">⚡ Fast Approval</div>
+<div class="stat-box">🔒 Secure Process</div>
+</div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+<div>
+<select id="sortSelect" class="form-select">
+<option value="rate">Sort by Interest Rate</option>
+<option value="amount">Sort by Max Amount</option>
+</select>
+</div>
+
+<div>
+<span class="text-muted fw-semibold">
+{{ offers|length }} Offers Available
+</span>
+</div>
+</div>
+
+{% if offers %}
+<div class="row">
+
+{% for offer in offers %}
+<div class="col-lg-4 col-md-6 mb-4">
+<div class="loan-card">
+
+<img src="{{ url_for('static', filename='images/' + offer.bank.logo) }}"
+     style="height:40px; object-fit:contain;">
+
+<h5 class="mt-3 fw-bold">{{ offer.bank.name }}</h5>
+
+<div class="loan-rate mt-2">
+{{ offer.interest_rate }}%
+</div>
+
+<p class="text-muted mb-1">Interest Rate</p>
+
+<hr>
+
+<p>Max Amount: ₹{{ "{:,.0f}".format(offer.max_amount) }}</p>
+<p>Tenure: {{ offer.tenure_months }} months</p>
+<p>Approval: {{ offer.approval_time }}</p>
+
+<a href="{{ offer.affiliate_link }}"
+   target="_blank"
+   class="apply-btn">
+Apply Now →
+</a>
+
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+{% else %}
+
+<div class="empty-state">
+<div class="empty-icon">💳</div>
+<h4>No Loan Offers Available</h4>
+<p>
+We are currently onboarding partner banks.<br>
+New offers will be available shortly.
+</p>
+<a href="/" class="back-btn">
+Explore EMI Tools →
+</a>
+</div>
+
+{% endif %}
+
+</div>
+</div>
+
+{% endblock %}

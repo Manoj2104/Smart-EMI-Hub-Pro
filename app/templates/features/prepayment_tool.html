@@ -1,0 +1,435 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ======================================= -->
+<!-- 🚀 HERO -->
+<!-- ======================================= -->
+
+<section class="prepay-hero">
+  <div class="container">
+    <h1>Prepayment Tool</h1>
+    <p>Plan early loan closures & save thousands in interest.</p>
+  </div>
+</section>
+
+
+<!-- ======================================= -->
+<!-- 💰 PREPAYMENT CALCULATOR -->
+<!-- ======================================= -->
+
+<section class="prepay-section">
+  <div class="container prepay-grid">
+
+    <!-- LEFT FORM -->
+    <div class="prepay-form">
+
+      <h3>Loan Details</h3>
+
+      <label>Loan Amount (₹)</label>
+      <input type="number" id="loanAmount" value="1000000">
+
+      <label>Interest Rate (%)</label>
+      <input type="number" id="interestRate" value="8.5">
+
+      <label>Remaining Tenure (Years)</label>
+      <input type="number" id="tenure" value="5">
+
+      <label>Monthly EMI (₹)</label>
+      <input type="number" id="emi" placeholder="Enter EMI">
+
+      <label>Extra Monthly Payment (₹)</label>
+      <input type="number" id="extraPayment" value="2000">
+
+      <button onclick="calculatePrepayment()">
+        Calculate Savings →
+      </button>
+
+    </div>
+
+
+    <!-- RIGHT RESULT -->
+    <div class="prepay-result">
+
+      <h3>Prepayment Impact</h3>
+
+      <div class="result-row">
+        <span>New Loan Tenure</span>
+        <strong id="newTenure">--</strong>
+      </div>
+
+      <div class="result-row">
+        <span>Interest Saved</span>
+        <strong>₹ <span id="interestSaved">0</span></strong>
+      </div>
+
+      <div class="result-row">
+        <span>Time Reduced</span>
+        <strong id="timeSaved">--</strong>
+      </div>
+
+      <canvas id="prepayChart"></canvas>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================= -->
+<!-- 💎 AFFILIATE CTA SECTION -->
+<!-- ======================================= -->
+
+<section class="prepay-affiliate">
+  <div class="container">
+
+    <h2>Want Lower EMI Instantly?</h2>
+    <p>Compare balance transfer offers & reduce interest rate today.</p>
+
+    <div class="affiliate-buttons">
+
+  <a href="https://www.hdfcbank.com/personal"
+     target="_blank"
+     rel="nofollow noopener"
+     class="affiliate-btn">
+    Apply HDFC Balance Transfer →
+  </a>
+
+  <a href="https://homeloans.sbi/"
+     target="_blank"
+     rel="nofollow noopener"
+     class="affiliate-btn green">
+    Apply SBI Transfer →
+  </a>
+
+  <a href="/loan-comparison" class="affiliate-btn outline">
+    Compare All Banks →
+  </a>
+
+</div>
+  </div>
+</section>
+
+
+<style>
+
+/* HERO */
+.prepay-hero{
+padding:150px 20px 80px;
+background:linear-gradient(135deg,#f8fafc,#eef2ff);
+text-align:center;
+}
+
+.prepay-hero h1{
+font-size:48px;
+font-weight:800;
+}
+
+.prepay-hero p{
+color:#64748b;
+font-size:18px;
+}
+
+/* GRID */
+.prepay-section{
+padding:100px 20px;
+background:white;
+}
+
+.prepay-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+}
+
+/* FORM */
+.prepay-form{
+background:#f8fafc;
+padding:40px;
+border-radius:28px;
+}
+
+.prepay-form label{
+display:block;
+margin-top:15px;
+font-size:14px;
+}
+
+.prepay-form input{
+width:100%;
+padding:12px;
+margin-top:6px;
+border-radius:12px;
+border:1px solid #e5e7eb;
+}
+
+.prepay-form button{
+margin-top:25px;
+width:100%;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+padding:14px;
+border:none;
+border-radius:999px;
+cursor:pointer;
+}
+
+/* RESULT */
+.prepay-result{
+background:#eef2ff;
+padding:40px;
+border-radius:28px;
+text-align:center;
+}
+
+.result-row{
+display:flex;
+justify-content:space-between;
+margin:15px 0;
+}
+
+/* AFFILIATE */
+.prepay-affiliate{
+padding:120px 20px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+text-align:center;
+}
+
+.affiliate-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.affiliate-btn{
+background:white;
+color:#4f46e5;
+padding:14px 28px;
+border-radius:999px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.affiliate-btn.green{
+background:#10b981;
+color:white;
+}
+
+.affiliate-btn.outline{
+background:transparent;
+border:2px solid white;
+color:white;
+}
+
+.affiliate-btn:hover{
+transform:translateY(-3px);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.prepay-grid{
+grid-template-columns:1fr;
+gap:40px;
+}
+.prepay-hero{
+padding:100px 16px 60px;
+}
+.prepay-hero h1{
+font-size:28px;
+}
+}
+
+/* ======================================= */
+/* 📱 PREMIUM MOBILE VIEW – PREPAY TOOL */
+/* ======================================= */
+
+@media (max-width:768px){
+
+/* HERO */
+.prepay-hero{
+padding:90px 16px 50px;
+}
+
+.prepay-hero h1{
+font-size:28px;
+margin-bottom:6px;
+}
+
+.prepay-hero p{
+font-size:14px;
+}
+
+/* SECTION */
+.prepay-section{
+padding:50px 16px;
+}
+
+.prepay-grid{
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+/* FORM */
+.prepay-form{
+padding:22px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+}
+
+.prepay-form h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.prepay-form label{
+font-size:13px;
+margin-top:12px;
+}
+
+.prepay-form input{
+padding:11px;
+border-radius:10px;
+font-size:14px;
+}
+
+.prepay-form button{
+position:sticky;
+bottom:15px;
+margin-top:20px;
+padding:13px;
+font-size:14px;
+border-radius:16px;
+box-shadow:0 10px 25px rgba(79,70,229,0.3);
+}
+
+/* RESULT */
+.prepay-result{
+padding:22px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+}
+
+.prepay-result h3{
+font-size:18px;
+margin-bottom:12px;
+}
+
+.result-row{
+font-size:14px;
+}
+
+/* Chart spacing */
+#prepayChart{
+margin-top:20px;
+}
+
+/* AFFILIATE */
+.prepay-affiliate{
+padding:70px 16px;
+}
+
+.prepay-affiliate h2{
+font-size:20px;
+}
+
+.prepay-affiliate p{
+font-size:14px;
+margin-bottom:20px;
+}
+
+.affiliate-buttons{
+flex-direction:column;
+gap:12px;
+}
+
+.affiliate-btn{
+width:100%;
+text-align:center;
+padding:12px;
+font-size:14px;
+border-radius:16px;
+}
+
+}
+
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+let prepayChart;
+
+function calculatePrepayment(){
+
+let P = parseFloat(document.getElementById("loanAmount").value);
+let rate = parseFloat(document.getElementById("interestRate").value)/100/12;
+let years = parseFloat(document.getElementById("tenure").value);
+let emi = parseFloat(document.getElementById("emi").value);
+let extra = parseFloat(document.getElementById("extraPayment").value);
+
+if(!P || !rate || !years || !emi){
+alert("Please enter all required details");
+return;
+}
+
+let n = years*12;
+let balance = P;
+let months=0;
+let totalInterestOld=0;
+let totalInterestNew=0;
+
+/* Old tenure */
+let balOld=P;
+for(let i=0;i<n;i++){
+let interest = balOld*rate;
+let principal = emi-interest;
+balOld -= principal;
+totalInterestOld+=interest;
+}
+
+/* New tenure */
+while(balance>0){
+let interest = balance*rate;
+let principal = (emi+extra)-interest;
+balance -= principal;
+totalInterestNew+=interest;
+months++;
+}
+
+let interestSaved = totalInterestOld-totalInterestNew;
+let timeSaved = n-months;
+
+document.getElementById("newTenure").innerText =
+(Math.floor(months/12))+" Years "+(months%12)+" Months";
+
+document.getElementById("interestSaved").innerText =
+Math.round(interestSaved).toLocaleString();
+
+document.getElementById("timeSaved").innerText =
+(Math.floor(timeSaved/12))+" Years "+(timeSaved%12)+" Months";
+
+/* Chart */
+if(prepayChart) prepayChart.destroy();
+
+prepayChart = new Chart(document.getElementById("prepayChart"),{
+type:'doughnut',
+data:{
+labels:['Interest Before','Interest After'],
+datasets:[{
+data:[totalInterestOld,totalInterestNew],
+backgroundColor:['#ef4444','#10b981']
+}]
+}
+});
+
+}
+
+</script>
+
+{% endblock %}

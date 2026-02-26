@@ -1,0 +1,495 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ======================================= -->
+<!-- 🚀 HERO SECTION -->
+<!-- ======================================= -->
+
+<section class="bt-hero">
+  <div class="container">
+    <h1>Balance Transfer</h1>
+    <p>Reduce EMI with smarter transfers & save thousands in interest.</p>
+  </div>
+</section>
+
+
+<!-- ======================================= -->
+<!-- 💰 EMI SAVINGS CALCULATOR -->
+<!-- ======================================= -->
+
+<section class="bt-calculator">
+  <div class="container bt-grid">
+
+    <div class="bt-form">
+      <h3>Check Your Savings</h3>
+
+      <label>Outstanding Loan Amount (₹)</label>
+      <input type="number" id="loanAmount" placeholder="500000">
+
+      <label>Current Interest Rate (%)</label>
+      <input type="number" id="currentRate" placeholder="14">
+
+      <label>New Interest Rate (%)</label>
+      <input type="number" id="newRate" placeholder="10">
+
+      <label>Remaining Tenure (Years)</label>
+      <input type="number" id="tenure" placeholder="5">
+
+      <button onclick="calculateSavings()">Calculate Savings →</button>
+    </div>
+
+    <div class="bt-result">
+      <h3>You Can Save</h3>
+      <div class="save-amount">₹ <span id="totalSavings">0</span></div>
+      <p class="save-note">Estimated interest savings over loan tenure.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================= -->
+<!-- 🏦 TOP BANK OFFERS -->
+<!-- ======================================= -->
+
+<section class="bt-offers">
+  <div class="container">
+    <h2>Top Balance Transfer Offers</h2>
+
+    <div class="bt-offer-grid">
+
+      <!-- HDFC -->
+      <div class="bt-offer-card">
+        <h4>HDFC Bank</h4>
+        <p>Home Loan Balance Transfer – Competitive Interest Rates</p>
+        <a href="https://www.hdfcbank.com/personal"
+           target="_blank"
+           rel="nofollow noopener">
+          Apply Now →
+        </a>
+      </div>
+
+      <!-- SBI -->
+      <div class="bt-offer-card">
+        <h4>SBI Bank</h4>
+        <p>Transfer Existing Loan & Save Interest</p>
+        <a href="https://homeloans.sbi/"
+           target="_blank"
+           rel="nofollow noopener">
+          Apply Now →
+        </a>
+      </div>
+
+      <!-- ICICI -->
+      <div class="bt-offer-card">
+        <h4>ICICI Bank</h4>
+        <p>Home Loan Balance Transfer with Top-up Options</p>
+        <a href="https://www.icicibank.com/personal-banking/loans/home-loan"
+           target="_blank"
+           rel="nofollow noopener">
+          Apply Now →
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Disclaimer -->
+    <p style="font-size:12px;color:#64748b;text-align:center;margin-top:20px;">
+      We are not directly affiliated with banks. Links redirect to official bank websites.
+    </p>
+
+  </div>
+</section>
+<!-- ======================================= -->
+<!-- 💎 WHY TRANSFER WITH US -->
+<!-- ======================================= -->
+
+<section class="bt-why">
+  <div class="container">
+
+    <h2>Why Transfer Through Smart EMI Hub Pro?</h2>
+    <p class="bt-why-sub">
+      We help you compare smarter, save bigger & transfer securely.
+    </p>
+
+    <div class="bt-why-grid">
+
+      <div class="bt-why-card">
+        <div class="why-icon gradient1">⚡</div>
+        <h4>Instant Comparison</h4>
+        <p>Compare top bank offers in real-time with accurate rate data.</p>
+      </div>
+
+      <div class="bt-why-card">
+        <div class="why-icon gradient2">💰</div>
+        <h4>Maximum Savings</h4>
+        <p>Advanced EMI analysis to calculate real interest difference.</p>
+      </div>
+
+      <div class="bt-why-card">
+        <div class="why-icon gradient3">🔒</div>
+        <h4>Secure Process</h4>
+        <p>Bank-level encryption & secure redirection to official portals.</p>
+      </div>
+
+      <div class="bt-why-card">
+        <div class="why-icon gradient4">📊</div>
+        <h4>Smart EMI Insights</h4>
+        <p>Detailed breakdown of principal, interest & tenure impact.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================= -->
+<!-- 🚀 SAVINGS IMPACT SECTION -->
+<!-- ======================================= -->
+
+<section class="bt-impact">
+  <div class="container">
+
+    <div class="impact-box">
+
+      <h2>Start Saving Up To ₹2,50,000+</h2>
+      <p>
+        Thousands of users reduced EMI by transferring their loans.
+        Don’t overpay interest — switch today.
+      </p>
+
+      <div class="impact-stats">
+        <div>
+          <h3>150K+</h3>
+          <span>Users Helped</span>
+        </div>
+        <div>
+          <h3>₹45Cr+</h3>
+          <span>Interest Saved</span>
+        </div>
+        <div>
+          <h3>25+</h3>
+          <span>Bank Partners</span>
+        </div>
+      </div>
+
+      <a href="#loanAmount" class="impact-btn">
+        Check Your Savings Now →
+      </a>
+
+    </div>
+
+  </div>
+</section>
+<style>
+/* ======================================= */
+/* 💎 WHY SECTION */
+/* ======================================= */
+
+.bt-why{
+padding:120px 20px;
+background:white;
+text-align:center;
+}
+
+.bt-why h2{
+font-size:36px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.bt-why-sub{
+color:#64748b;
+margin-bottom:60px;
+}
+
+.bt-why-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.bt-why-card{
+background:#f8fafc;
+padding:40px 25px;
+border-radius:24px;
+transition:.3s ease;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+.bt-why-card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 60px rgba(79,70,229,0.15);
+}
+
+.why-icon{
+width:60px;
+height:60px;
+margin:0 auto 20px;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:26px;
+}
+
+/* gradient icons */
+.gradient1{background:linear-gradient(135deg,#4f46e5,#7c3aed);}
+.gradient2{background:linear-gradient(135deg,#10b981,#22c55e);}
+.gradient3{background:linear-gradient(135deg,#0ea5e9,#06b6d4);}
+.gradient4{background:linear-gradient(135deg,#f59e0b,#f97316);}
+
+/* ======================================= */
+/* 🚀 IMPACT SECTION */
+/* ======================================= */
+
+.bt-impact{
+padding:140px 20px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+text-align:center;
+}
+
+.impact-box{
+max-width:900px;
+margin:auto;
+}
+
+.impact-box h2{
+font-size:42px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.impact-box p{
+font-size:18px;
+opacity:0.9;
+margin-bottom:50px;
+}
+
+.impact-stats{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+margin-bottom:50px;
+}
+
+.impact-stats h3{
+font-size:28px;
+margin-bottom:5px;
+}
+
+.impact-btn{
+display:inline-block;
+background:white;
+color:#4f46e5;
+padding:14px 35px;
+border-radius:999px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+
+.impact-btn:hover{
+transform:translateY(-3px);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.bt-why{
+padding:80px 16px;
+}
+
+.bt-impact{
+padding:100px 16px;
+}
+
+.impact-box h2{
+font-size:28px;
+}
+
+.impact-stats{
+gap:30px;
+}
+
+}
+
+
+/* HERO */
+.bt-hero{
+padding:150px 20px 80px;
+background:linear-gradient(135deg,#f8fafc,#eef2ff);
+text-align:center;
+}
+
+.bt-hero h1{
+font-size:48px;
+font-weight:800;
+}
+
+.bt-hero p{
+font-size:18px;
+color:#64748b;
+}
+
+/* CALCULATOR */
+.bt-calculator{
+padding:80px 20px;
+background:white;
+}
+
+.bt-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.bt-form{
+background:#f8fafc;
+padding:40px;
+border-radius:24px;
+}
+
+.bt-form h3{
+margin-bottom:20px;
+}
+
+.bt-form label{
+font-size:14px;
+display:block;
+margin-top:15px;
+}
+
+.bt-form input{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+}
+
+.bt-form button{
+margin-top:20px;
+width:100%;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+padding:12px;
+border:none;
+border-radius:999px;
+cursor:pointer;
+font-weight:600;
+}
+
+.bt-result{
+text-align:center;
+}
+
+.save-amount{
+font-size:48px;
+font-weight:800;
+color:#10b981;
+margin:20px 0;
+}
+
+.save-note{
+color:#64748b;
+}
+
+/* OFFERS */
+.bt-offers{
+padding:100px 20px;
+background:#f8fafc;
+text-align:center;
+}
+
+.bt-offer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-top:50px;
+}
+
+.bt-offer-card{
+background:white;
+padding:30px;
+border-radius:24px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+transition:.3s;
+}
+
+.bt-offer-card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 60px rgba(79,70,229,0.2);
+}
+
+.bt-offer-card a{
+display:inline-block;
+margin-top:15px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+color:white;
+padding:10px 20px;
+border-radius:999px;
+text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.bt-hero{
+padding:100px 16px 60px;
+}
+
+.bt-hero h1{
+font-size:28px;
+}
+
+.bt-grid{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.save-amount{
+font-size:34px;
+}
+
+}
+
+</style>
+
+
+<script>
+function calculateSavings(){
+let amount = parseFloat(document.getElementById("loanAmount").value);
+let currentRate = parseFloat(document.getElementById("currentRate").value)/100/12;
+let newRate = parseFloat(document.getElementById("newRate").value)/100/12;
+let years = parseFloat(document.getElementById("tenure").value);
+let months = years*12;
+
+if(!amount || !currentRate || !newRate || !months){
+alert("Please enter all details");
+return;
+}
+
+function emi(p,r,n){
+return p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+}
+
+let emiCurrent = emi(amount,currentRate,months);
+let emiNew = emi(amount,newRate,months);
+
+let totalCurrent = emiCurrent*months;
+let totalNew = emiNew*months;
+
+let savings = totalCurrent-totalNew;
+
+document.getElementById("totalSavings").innerText =
+Math.round(savings).toLocaleString();
+}
+</script>
+
+{% endblock %}
