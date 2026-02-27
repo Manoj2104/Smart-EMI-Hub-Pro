@@ -260,3 +260,49 @@ def eligibility_check():
         title="Eligibility Check",
         subtitle="Know your approval chances early."
     )
+
+
+import math
+
+@pages_bp.route("/emi-for-<int:amount>-lakh-loan-<int:years>-years")
+def emi_amount_specific(amount, years):
+
+    if amount <= 0 or years <= 0 or amount > 200 or years > 40:
+        return redirect("/")
+
+    principal = amount * 100000
+    tenure = years * 12
+
+    def calculate_emi(rate):
+        r = rate / 12 / 100
+        emi = (principal * r * (1 + r) ** tenure) / ((1 + r) ** tenure - 1)
+        return round(emi)
+
+    emi_8 = calculate_emi(8)
+    emi_10 = calculate_emi(10)
+    emi_12 = calculate_emi(12)
+
+    return render_template(
+        "features/seo/emi_amount_specific.html",
+        amount=amount,
+        years=years,
+        emi_8=emi_8,
+        emi_10=emi_10,
+        emi_12=emi_12
+    )
+
+@pages_bp.route("/<loan_type>-loan-emi-for-<int:amount>-lakh-<int:years>-years")
+def loan_type_emi(loan_type, amount, years):
+
+    valid_types = ["home", "car", "personal"]
+
+    if loan_type not in valid_types:
+        return redirect("/")
+
+    if amount <= 0 or years <= 0 or amount > 200 or years > 40:
+        return redirect("/")
+
+    return render_template("features/seo/loan_type_emi.html",
+                       loan_type=loan_type,
+                       amount=amount,
+                       years=years)

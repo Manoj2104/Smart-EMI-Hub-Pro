@@ -1,0 +1,708 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if loan_type == "home" %}
+    {% set loan_title = "Home Loan" %}
+    {% set special_content = "Includes tax benefits under Section 80C & 24B." %}
+{% elif loan_type == "car" %}
+    {% set loan_title = "Car Loan" %}
+    {% set special_content = "Typically 5–7 year tenure with moderate interest rates." %}
+{% elif loan_type == "personal" %}
+    {% set loan_title = "Personal Loan" %}
+    {% set special_content = "Unsecured loan with higher interest & quick approval." %}
+{% endif %}
+
+<style>
+/* ===== HERO ===== */
+
+.loan-hero{
+    background:linear-gradient(135deg,#1e293b,#0f172a);
+    color:white;
+    padding:90px 20px;
+    text-align:center;
+}
+
+.loan-hero h1{
+    font-size:42px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.loan-hero p{
+    font-size:18px;
+    opacity:0.9;
+    max-width:750px;
+    margin:auto;
+}
+
+/* ===== SECTION WRAPPER ===== */
+
+.section{
+    max-width:1100px;
+    margin:90px auto;
+    padding:0 20px;
+}
+
+.section h2{
+    font-size:30px;
+    margin-bottom:25px;
+    border-left:6px solid #2563eb;
+    padding-left:15px;
+}
+
+/* ===== TABLE ===== */
+
+.emi-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.emi-table th{
+    background:#0f172a;
+    color:white;
+    padding:15px;
+}
+
+.emi-table td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+.emi-table tr:nth-child(even){
+    background:#f8fafc;
+}
+
+/* ===== CARD GRID ===== */
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:40px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 60px rgba(37,99,235,0.15);
+}
+
+/* ===== CTA ===== */
+
+.final-cta{
+    margin-top:80px;
+    padding:70px 30px;
+    background:linear-gradient(120deg,#2563eb,#22c55e);
+    border-radius:30px;
+    color:white;
+    text-align:center;
+}
+
+.final-cta h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.final-cta a{
+    background:white;
+    color:#2563eb;
+    padding:14px 30px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    display:inline-block;
+    margin-top:20px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+    .loan-hero h1{
+        font-size:28px;
+    }
+    .section h2{
+        font-size:22px;
+    }
+}
+
+/* ==============================
+   PREMIUM HERO
+============================== */
+
+.premium-hero{
+    position:relative;
+    padding:120px 20px 140px;
+    text-align:center;
+    overflow:hidden;
+    background:linear-gradient(120deg,#eef2ff,#fef9c3);
+}
+
+/* Floating Blur Shapes */
+
+.hero-bg-shape{
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:0.5;
+    animation:float 10s infinite alternate ease-in-out;
+}
+
+.shape1{
+    background:#3b82f6;
+    top:-100px;
+    left:-100px;
+}
+
+.shape2{
+    background:#22c55e;
+    bottom:-120px;
+    right:-100px;
+}
+
+@keyframes float{
+    0%{ transform:translateY(0px); }
+    100%{ transform:translateY(40px); }
+}
+
+/* Text */
+
+.premium-hero h1{
+    font-size:48px;
+    font-weight:800;
+    color:#0f172a;
+    line-height:1.2;
+}
+
+.highlight{
+    background:linear-gradient(90deg,#22c55e,#2563eb);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.blue-text{
+    color:#2563eb;
+}
+
+.hero-sub{
+    font-size:18px;
+    margin-top:20px;
+    color:#334155;
+    max-width:750px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* EMI Cards */
+
+.emi-preview-grid{
+    margin-top:50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.emi-card{
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(12px);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.emi-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 70px rgba(37,99,235,0.15);
+}
+
+.emi-card span{
+    font-size:14px;
+    color:#64748b;
+}
+
+.emi-card h3{
+    font-size:28px;
+    margin-top:10px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+/* Buttons */
+
+.hero-actions{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-primary{
+    background:linear-gradient(90deg,#22c55e,#16a34a);
+    color:white;
+    padding:16px 32px;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
+    box-shadow:0 10px 30px rgba(34,197,94,0.4);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:2px solid #0f172a;
+    padding:14px 30px;
+    border-radius:12px;
+    font-weight:600;
+    text-decoration:none;
+    color:#0f172a;
+    transition:0.3s;
+}
+
+.btn-outline:hover{
+    background:#0f172a;
+    color:white;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .premium-hero{
+        padding:80px 15px 100px;
+    }
+
+    .premium-hero h1{
+        font-size:30px;
+    }
+
+    .hero-sub{
+        font-size:15px;
+    }
+
+    .emi-card{
+        padding:20px;
+    }
+
+}
+</style>
+
+<!-- =========================
+   🚀 PREMIUM HERO SECTION
+========================= -->
+
+<section class="premium-hero">
+<br><br><br><br>
+    <div class="hero-bg-shape shape1"></div>
+    <div class="hero-bg-shape shape2"></div>
+
+    <div class="container hero-inner">
+
+        <h1>
+            {{ loan_title }} EMI for 
+            <span class="highlight">₹{{ amount }} Lakh</span> 
+            for 
+            <span class="blue-text">{{ years }} Years</span>
+        </h1>
+
+        <p class="hero-sub">
+            {{ special_content }}  
+            Instantly calculate EMI, compare interest rates & plan smarter repayments.
+        </p>
+
+        <!-- EMI Preview Cards -->
+        <div class="emi-preview-grid">
+
+            <div class="emi-card">
+                <span>EMI at 8%</span>
+                <h3>₹{{ (amount * 100000 * 0.008) | round(0) }}</h3>
+            </div>
+
+            <div class="emi-card">
+                <span>EMI at 10%</span>
+                <h3>₹{{ (amount * 100000 * 0.01) | round(0) }}</h3>
+            </div>
+
+            <div class="emi-card">
+                <span>EMI at 12%</span>
+                <h3>₹{{ (amount * 100000 * 0.012) | round(0) }}</h3>
+            </div>
+
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions">
+            <a href="/calculator" class="btn-primary">
+                Calculate Custom EMI →
+            </a>
+
+            <a href="/compare" class="btn-outline">
+                Compare Banks
+            </a>
+        </div>
+
+    </div>
+</section>
+<style>
+
+/* =========================
+   GLOBAL SECTION STYLE
+========================= */
+
+.section{
+    max-width:1200px;
+    margin:100px auto;
+    padding:0 20px;
+}
+
+.section h2{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:20px;
+    background:linear-gradient(90deg,#2563eb,#22c55e);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.section p{
+    font-size:17px;
+    line-height:1.7;
+    color:#475569;
+    max-width:850px;
+}
+
+/* =========================
+   PREMIUM TABLE
+========================= */
+
+.emi-table{
+    width:100%;
+    margin-top:40px;
+    border-collapse:collapse;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,0.05);
+}
+
+.emi-table th{
+    background:#0f172a;
+    color:white;
+    padding:18px;
+    font-weight:600;
+}
+
+.emi-table td{
+    padding:18px;
+    text-align:center;
+    border-bottom:1px solid #f1f5f9;
+    font-weight:500;
+}
+
+.emi-table tr:nth-child(even){
+    background:#f8fafc;
+}
+
+.emi-table tr:hover{
+    background:#eef2ff;
+}
+
+/* =========================
+   CARD GRID
+========================= */
+
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.06);
+    transition:all 0.3s ease;
+    border:1px solid #f1f5f9;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 30px 80px rgba(37,99,235,0.15);
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:12px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+.card p{
+    font-size:15px;
+    color:#64748b;
+}
+
+/* =========================
+   AFFORDABILITY BADGE STYLE
+========================= */
+
+.afford-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.afford-card::before{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    background:linear-gradient(135deg,#22c55e,#2563eb);
+    opacity:0.08;
+    top:-40px;
+    right:-40px;
+    border-radius:50%;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-cta{
+    margin-top:120px;
+    padding:90px 40px;
+    border-radius:30px;
+    background:linear-gradient(120deg,#2563eb,#22c55e);
+    text-align:center;
+    color:white;
+    box-shadow:0 30px 90px rgba(34,197,94,0.3);
+}
+
+.final-cta h2{
+    font-size:36px;
+    margin-bottom:15px;
+    color:white;
+}
+
+.final-cta p{
+    color:white;
+    opacity:0.95;
+}
+
+.final-cta a{
+    margin-top:25px;
+    display:inline-block;
+    padding:16px 35px;
+    border-radius:14px;
+    background:white;
+    color:#2563eb;
+    font-weight:700;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.final-cta a:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+    .section{
+        margin:60px auto;
+    }
+
+    .section h2{
+        font-size:26px;
+    }
+
+    .final-cta{
+        padding:60px 20px;
+    }
+}
+
+</style>
+
+
+<!-- =========================
+   EMI OVERVIEW
+========================= -->
+
+<div class="section">
+
+<h2>📊 EMI Overview for ₹{{ amount }} Lakh {{ loan_title }}</h2>
+
+<p>
+If you take a ₹{{ amount }} lakh {{ loan_title.lower() }} for {{ years }} years, 
+your monthly EMI depends on interest rate, tenure, and repayment structure. 
+Longer tenure reduces EMI but increases total interest cost significantly.
+</p>
+
+<table class="emi-table">
+<tr>
+<th>Interest Rate</th>
+<th>EMI Impact</th>
+<th>Total Interest Burden</th>
+</tr>
+<tr>
+<td>8%</td>
+<td>Lower Monthly EMI</td>
+<td>Lowest total repayment cost</td>
+</tr>
+<tr>
+<td>10%</td>
+<td>Moderate EMI</td>
+<td>Balanced interest cost</td>
+</tr>
+<tr>
+<td>12%</td>
+<td>Higher EMI</td>
+<td>Maximum total repayment</td>
+</tr>
+</table>
+
+</div>
+
+
+<!-- =========================
+   LOAN TYPE SPECIFIC SECTION
+========================= -->
+
+<div class="section">
+
+<h2>💡 {{ loan_title }} Planning & Optimization Tips</h2>
+
+<div class="card-grid">
+
+{% if loan_type == "home" %}
+
+<div class="card">
+<h3>🏠 Tax Optimization Strategy</h3>
+<p>Claim deductions under Section 80C & 24B to reduce effective loan cost.</p>
+</div>
+
+<div class="card">
+<h3>📉 Long Tenure Advantage</h3>
+<p>Choose 20–30 years tenure to reduce EMI stress and maintain liquidity.</p>
+</div>
+
+<div class="card">
+<h3>📈 Fixed vs Floating Rate</h3>
+<p>Floating rates may start lower, but monitor RBI rate changes.</p>
+</div>
+
+{% elif loan_type == "car" %}
+
+<div class="card">
+<h3>🚗 Higher Down Payment</h3>
+<p>Reducing principal lowers EMI and total interest cost.</p>
+</div>
+
+<div class="card">
+<h3>📅 Ideal Tenure Range</h3>
+<p>5–7 years is considered financially efficient.</p>
+</div>
+
+<div class="card">
+<h3>💰 Avoid Hidden Charges</h3>
+<p>Check processing fee, insurance bundling, and foreclosure rules.</p>
+</div>
+
+{% elif loan_type == "personal" %}
+
+<div class="card">
+<h3>⚡ Quick Approval Advantage</h3>
+<p>Minimal documentation but higher interest rates apply.</p>
+</div>
+
+<div class="card">
+<h3>📉 Keep Tenure Short</h3>
+<p>Short tenure reduces heavy interest burden.</p>
+</div>
+
+<div class="card">
+<h3>🔍 Check All Charges</h3>
+<p>Processing fees & penalties increase overall cost.</p>
+</div>
+
+{% endif %}
+
+</div>
+</div>
+
+
+<!-- =========================
+   AFFORDABILITY ANALYSIS
+========================= -->
+
+<div class="section">
+
+<h2>💼 EMI Affordability & Debt-to-Income Analysis</h2>
+
+<p>
+Financial planners recommend that your total EMIs should not exceed 35–40% 
+of your monthly income to maintain healthy savings and avoid financial stress.
+</p>
+
+<div class="card-grid">
+
+<div class="card afford-card">
+<h3>Salary ₹30,000</h3>
+<p>High EMI risk. Keep EMI below ₹12,000.</p>
+</div>
+
+<div class="card afford-card">
+<h3>Salary ₹50,000</h3>
+<p>Moderate zone. Safe EMI up to ₹20,000.</p>
+</div>
+
+<div class="card afford-card">
+<h3>Salary ₹70,000+</h3>
+<p>Comfortable repayment capacity with savings buffer.</p>
+</div>
+
+</div>
+</div>
+
+
+<!-- =========================
+   FINAL CONVERSION CTA
+========================= -->
+
+<div class="section final-cta">
+
+<h2>Ready to Calculate Your Exact EMI?</h2>
+
+<p>
+Generate accurate EMI, amortization schedule, compare top banks,
+optimize interest cost and plan smarter repayments instantly.
+</p>
+
+<a href="/calculator">🚀 Calculate EMI Now</a>
+
+</div>
+
+{% endblock %}
