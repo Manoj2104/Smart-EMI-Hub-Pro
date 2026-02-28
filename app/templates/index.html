@@ -497,38 +497,13 @@ background:linear-gradient(135deg,#f3f6fa,#eef2ff);
 overflow:hidden;
 }
 
-.tools-slider{
-display:flex;
-gap:25px;
-overflow-x:auto;
-padding:20px 10px;
-scroll-behavior:smooth;
--webkit-overflow-scrolling:touch;
-}
+
 
 .tools-slider::-webkit-scrollbar{
 display:none;
 }
 
 /* CARD */
-
-.tool-slide{
-flex:0 0 auto;
-min-width:260px;
-padding:25px;
-border-radius:24px;
-cursor:pointer;
-position:relative;
-display:flex;
-align-items:flex-start;
-gap:18px;
-transition:.35s ease;
-
-background:rgba(255,255,255,0.65);
-backdrop-filter:blur(14px);
-border:1px solid rgba(255,255,255,0.4);
-box-shadow:0 20px 40px rgba(0,0,0,0.08);
-}
 
 /* Hover Glow */
 
@@ -572,10 +547,6 @@ color:#555;
 
 @media(max-width:600px){
 
-.tool-slide{
-min-width:220px;
-padding:20px;
-}
 
 .tool-icon{
 width:50px;
@@ -769,9 +740,6 @@ padding:140px 0;
 grid-template-columns:repeat(3,1fr);
 }
 
-.tools-slider{
-gap:25px;
-}
 
 }
 
@@ -820,13 +788,8 @@ grid-template-columns:repeat(2,1fr);
 padding:100px 20px;
 }
 
-.tools-slider{
-gap:20px;
-}
 
-.tool-slide{
-min-width:240px;
-}
+
 
 }
 
@@ -937,14 +900,7 @@ font-size:13px;
 
 /* SLIDER */
 
-.tools-slider{
-gap:15px;
-}
 
-.tool-slide{
-min-width:220px;
-padding:18px;
-}
 
 .tool-icon{
 width:48px;
@@ -1073,28 +1029,7 @@ overflow-x:hidden;
 
 }
 
-/* ==============================
-   AUTO INFINITE TOOL SLIDER
-============================== */
 
-.tools-slider{
-display:flex;
-gap:25px;
-overflow:hidden;              /* hide scrollbar */
-scroll-behavior:auto;
-}
-
-.tool-slide{
-flex:0 0 auto;
-min-width:260px;
-}
-
-/* Mobile width */
-@media(max-width:600px){
-.tool-slide{
-min-width:220px;
-}
-}
 
 /* =====================================
    💼 PREMIUM SHOWCASE SECTION
@@ -1616,7 +1551,11 @@ height:28px;
 
 }
 
-
+.tool-card{
+display:block;
+text-decoration:none;
+color:inherit;
+}
 
 </style>
 
@@ -1685,42 +1624,39 @@ height:28px;
 
 <div class="tool-grid">
 
-<div class="tool-card bg-purple" onclick="window.location='/calculator/'">
+<a href="/calculator/" class="tool-card bg-purple">
 <div class="icon">💰</div>
 <h3>Loan EMI Calculator</h3>
-</div>
+</a>
 
-<div class="tool-card bg-pink" onclick="window.location='/calculator/prepayment-calculator'">
+<a href="/calculator/prepayment-calculator" class="tool-card bg-pink">
 <div class="icon">🔁</div>
 <h3>Prepayment Calculator</h3>
-</div>
+</a>
 
-<div class="tool-card bg-blue" onclick="window.location='/calculator/home-loan-eligibility'">
+<a href="/calculator/home-loan-eligibility" class="tool-card bg-blue">
 <div class="icon">🏠</div>
 <h3>Home Loan Eligibility</h3>
-</div>
+</a>
 
-<div class="tool-card bg-beige" onclick="window.location='/calculator/loan-eligibility-by-salary'">
+<a href="/calculator/loan-eligibility-by-salary" class="tool-card bg-beige">
 <div class="icon">💼</div>
 <h3>Eligibility by Salary</h3>
-</div>
+</a>
 
-<div class="tool-card bg-green" onclick="window.location='/calculator/dti-calculator'">
+<a href="/calculator/dti-calculator" class="tool-card bg-green">
 <div class="icon">📊</div>
 <h3>Debt-to-Income (DTI)</h3>
-</div>
+</a>
 
-<div class="tool-card bg-purple" onclick="window.location='/calculator/credit-card-emi'">
+<a href="/calculator/credit-card-emi" class="tool-card bg-purple">
 <div class="icon">💳</div>
 <h3>Credit Card EMI</h3>
-</div>
+</a>
 
 </div>
 </div>
 </section>
-
-
-
 <section class="bank-features-section">
 <style>
 
@@ -2046,76 +1982,85 @@ color:#6b7280;
 </div>
 </section>
 
+<!-- ============================= -->
+<!-- INVESTMENT CALCULATORS -->
+<!-- ============================= -->
+
 <section class="tool-category">
-<div class="container">
+  <div class="container">
 
-<h2>Investment <span>Calculators</span></h2>
+    <h2>Investment <span>Calculators</span></h2>
 
-<div class="tool-grid">
+    <div class="tool-grid">
 
-<div class="tool-card bg-green" onclick="window.location='/calculator/sip-calculator'">
-<div class="icon">📈</div>
-<h3>SIP Calculator</h3>
-</div>
+      <a href="/calculator/sip-calculator" class="tool-card bg-green">
+        <div class="icon">📈</div>
+        <h3>SIP Calculator</h3>
+      </a>
 
-<div class="tool-card bg-blue" onclick="window.location='/calculator/lumpsum-calculator'">
-<div class="icon">💹</div>
-<h3>Lumpsum Calculator</h3>
-</div>
+      <a href="/calculator/lumpsum-calculator" class="tool-card bg-blue">
+        <div class="icon">💹</div>
+        <h3>Lumpsum Calculator</h3>
+      </a>
 
-<div class="tool-card bg-purple" onclick="window.location='/calculator/compound-interest-calculator'">
-<div class="icon">📊</div>
-<h3>Compound Interest</h3>
-</div>
+      <a href="/calculator/compound-interest-calculator" class="tool-card bg-purple">
+        <div class="icon">📊</div>
+        <h3>Compound Interest</h3>
+      </a>
 
-<div class="tool-card bg-beige" onclick="window.location='/calculator/fd-calculator'">
-<div class="icon">🏦</div>
-<h3>FD Calculator</h3>
-</div>
+      <a href="/calculator/fd-calculator" class="tool-card bg-beige">
+        <div class="icon">🏦</div>
+        <h3>FD Calculator</h3>
+      </a>
 
-<div class="tool-card bg-pink" onclick="window.location='/calculator/rd-calculator'">
-<div class="icon">📅</div>
-<h3>RD Calculator</h3>
-</div>
+      <a href="/calculator/rd-calculator" class="tool-card bg-pink">
+        <div class="icon">📅</div>
+        <h3>RD Calculator</h3>
+      </a>
 
-<div class="tool-card bg-green" onclick="window.location='/calculator/retirement-calculator'">
-<div class="icon">👴</div>
-<h3>Retirement Planner</h3>
-</div>
+      <a href="/calculator/retirement-calculator" class="tool-card bg-green">
+        <div class="icon">👴</div>
+        <h3>Retirement Planner</h3>
+      </a>
 
-</div>
-</div>
+    </div>
+  </div>
 </section>
 
+
+<!-- ============================= -->
+<!-- TAX & BUSINESS TOOLS -->
+<!-- ============================= -->
+
 <section class="tool-category">
-<div class="container">
+  <div class="container">
 
-<h2>Tax & <span>Business Tools</span></h2>
+    <h2>Tax & <span>Business Tools</span></h2>
 
-<div class="tool-grid">
+    <div class="tool-grid">
 
-<div class="tool-card bg-beige" onclick="window.location='/calculator/gst-calculator'">
-<div class="icon">🧮</div>
-<h3>GST Calculator</h3>
-</div>
+      <a href="/calculator/gst-calculator" class="tool-card bg-beige">
+        <div class="icon">🧮</div>
+        <h3>GST Calculator</h3>
+      </a>
 
-<div class="tool-card bg-green" onclick="window.location='/calculator/inflation-calculator'">
-<div class="icon">📉</div>
-<h3>Inflation Calculator</h3>
-</div>
+      <a href="/calculator/inflation-calculator" class="tool-card bg-green">
+        <div class="icon">📉</div>
+        <h3>Inflation Calculator</h3>
+      </a>
 
-<div class="tool-card bg-blue">
-<div class="icon">💼</div>
-<h3>Income Tax</h3>
-</div>
+      <a href="#" class="tool-card bg-blue">
+        <div class="icon">💼</div>
+        <h3>Income Tax</h3>
+      </a>
 
-<div class="tool-card bg-purple">
-<div class="icon">🏢</div>
-<h3>Business Loan EMI</h3>
-</div>
+      <a href="#" class="tool-card bg-purple">
+        <div class="icon">🏢</div>
+        <h3>Business Loan EMI</h3>
+      </a>
 
-</div>
-</div>
+    </div>
+  </div>
 </section>
 <section class="bank-connect-section">
 
@@ -2316,6 +2261,68 @@ border-radius:8px;
 }
 
 }
+
+/* ==============================
+   FINAL CLEAN TOOL SLIDER
+============================== */
+
+.tools-slider{
+display:flex;
+gap:25px;
+overflow:hidden;
+scroll-behavior:auto;
+}
+
+.tool-slide{
+flex:0 0 auto;
+min-width:260px;
+padding:25px;
+border-radius:24px;
+cursor:pointer;
+display:flex;
+align-items:flex-start;
+gap:18px;
+text-decoration:none;
+color:inherit;
+
+background:rgba(255,255,255,0.65);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,255,255,0.4);
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
+transition:.35s ease;
+}
+
+.tool-slide:hover{
+transform:translateY(-8px);
+box-shadow:0 30px 60px rgba(79,70,229,0.25);
+}
+
+.tool-icon{
+width:60px;
+height:60px;
+border-radius:18px;
+background:linear-gradient(135deg,#4f46e5,#7c3aed);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:26px;
+color:white;
+flex-shrink:0;
+box-shadow:0 15px 30px rgba(79,70,229,0.4);
+}
+
+@media(max-width:600px){
+.tool-slide{
+min-width:220px;
+padding:20px;
+}
+
+.tool-icon{
+width:50px;
+height:50px;
+font-size:22px;
+}
+}
 </style>
 
 
@@ -2436,78 +2443,78 @@ Start Comparing →
 </section>
 
 <!-- 🔥 TOOLS SLIDER -->
-<section  class="tools-slider-section">
-<div class="container tools-slider-wrapper">
+<section class="tools-slider-section">
+  <div class="container tools-slider-wrapper">
 
-<div class="tools-slider">
+    <div class="tools-slider">
 
-<div class="tool-slide" onclick="window.location='/calculator/'">
-<div class="tool-icon">💰</div>
-<div>
-<h4>Loan EMI</h4>
-<p>EMI with schedule</p>
-</div>
-</div>
+      <a href="/calculator/" class="tool-slide">
+        <div class="tool-icon">💰</div>
+        <div>
+          <h4>Loan EMI</h4>
+          <p>EMI with schedule</p>
+        </div>
+      </a>
 
-<div class="tool-slide" onclick="window.location='/calculator/prepayment-calculator'">
-<div class="tool-icon">🔁</div>
-<div>
-<h4>Prepayment</h4>
-<p>Interest saving tool</p>
-</div>
-</div>
+      <a href="/calculator/prepayment-calculator" class="tool-slide">
+        <div class="tool-icon">🔁</div>
+        <div>
+          <h4>Prepayment</h4>
+          <p>Interest saving tool</p>
+        </div>
+      </a>
 
-<div class="tool-slide" onclick="window.location='/calculator/home-loan-eligibility'">
-<div class="tool-icon">🏠</div>
-<div>
-<h4>Home Eligibility</h4>
-<p>Loan approval estimate</p>
-</div>
-</div>
+      <a href="/calculator/home-loan-eligibility" class="tool-slide">
+        <div class="tool-icon">🏠</div>
+        <div>
+          <h4>Home Eligibility</h4>
+          <p>Loan approval estimate</p>
+        </div>
+      </a>
 
-<div class="tool-slide" onclick="window.location='/calculator/sip-calculator'">
-<div class="tool-icon">📈</div>
-<div>
-<h4>SIP Calculator</h4>
-<p>Mutual fund returns</p>
-</div>
-</div>
+      <a href="/calculator/sip-calculator" class="tool-slide">
+        <div class="tool-icon">📈</div>
+        <div>
+          <h4>SIP Calculator</h4>
+          <p>Mutual fund returns</p>
+        </div>
+      </a>
 
-<div class="tool-slide" onclick="window.location='/calculator/fd-calculator'">
-<div class="tool-icon">🏦</div>
-<div>
-<h4>FD Calculator</h4>
-<p>Maturity value</p>
-</div>
-</div>
+      <a href="/calculator/fd-calculator" class="tool-slide">
+        <div class="tool-icon">🏦</div>
+        <div>
+          <h4>FD Calculator</h4>
+          <p>Maturity value</p>
+        </div>
+      </a>
 
-<div class="tool-slide" onclick="window.location='/calculator/gst-calculator'">
-<div class="tool-icon">🧾</div>
-<div>
-<h4>GST Calculator</h4>
-<p>GST inclusive/exclusive</p>
-</div>
-</div>
+      <a href="/calculator/gst-calculator" class="tool-slide">
+        <div class="tool-icon">🧾</div>
+        <div>
+          <h4>GST Calculator</h4>
+          <p>GST inclusive/exclusive</p>
+        </div>
+      </a>
 
-<div class="tool-slide">
-<div class="tool-icon">📊</div>
-<div>
-<h4>Loan Compare</h4>
-<p>Compare loan offers</p>
-</div>
-</div>
+      <a href="/loan-comparison" class="tool-slide">
+        <div class="tool-icon">📊</div>
+        <div>
+          <h4>Loan Compare</h4>
+          <p>Compare loan offers</p>
+        </div>
+      </a>
 
-<div class="tool-slide">
-<div class="tool-icon">✨</div>
-<div>
-<h4>Premium Tools</h4>
-<p>Advanced features</p>
-</div>
-</div>
+      <a href="/premium-tools" class="tool-slide">
+        <div class="tool-icon">✨</div>
+        <div>
+          <h4>Premium Tools</h4>
+          <p>Advanced features</p>
+        </div>
+      </a>
 
-</div>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <!-- 💼 FEATURED PROJECT SHOWCASE -->
@@ -4166,6 +4173,8 @@ Popular EMI <span>Calculations</span>
 </div>
 </div>
 </section>
+
+
 <script>
 function scrollEmi(direction){
 const row = document.getElementById('emiRow');
@@ -4181,47 +4190,6 @@ behavior: 'smooth'
 }
 </script>
 
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-const slider = document.querySelector(".tools-slider");
-if (!slider) return;
-
-let autoScroll;
-let speed = 0.3;   // 🔥 LOWER = SLOWER (0.2 - 0.5 perfect)
-let isPaused = false;
-
-function startAutoScroll() {
-autoScroll = setInterval(() => {
-
-if (!isPaused) {
-slider.scrollLeft += speed;
-
-if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-slider.scrollLeft = 0;
-}
-}
-
-}, 20);  // smoother timing
-}
-
-function stopAutoScroll() {
-clearInterval(autoScroll);
-}
-
-/* Pause on touch */
-slider.addEventListener("touchstart", () => isPaused = true);
-slider.addEventListener("touchend", () => isPaused = false);
-
-/* Pause on hover (desktop) */
-slider.addEventListener("mouseenter", () => isPaused = true);
-slider.addEventListener("mouseleave", () => isPaused = false);
-
-startAutoScroll();
-
-});
-</script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
