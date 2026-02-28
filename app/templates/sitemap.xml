@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset 
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
 {% for page in pages %}
   <url>
-    <loc>{{ page.loc }}</loc>
+    <loc>{{ page.loc | e }}</loc>
     <lastmod>{{ page.lastmod }}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>{{ page.changefreq if page.changefreq else 'weekly' }}</changefreq>
+    <priority>{{ page.priority if page.priority else '0.8' }}</priority>
   </url>
 {% endfor %}
+
 </urlset>
