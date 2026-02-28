@@ -306,3 +306,8 @@ def loan_type_emi(loan_type, amount, years):
                        loan_type=loan_type,
                        amount=amount,
                        years=years)
+
+
+@pages_bp.route("/complete-emi-guide")
+def complete_emi_guide():
+    return render_template("complete_emi_guide.html")

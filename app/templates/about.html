@@ -2,158 +2,636 @@
 {% block content %}
 
 <style>
+
+/* ===============================
+   HERO
+================================ */
 .about-hero{
-padding:140px 20px 80px;
+padding:150px 20px 100px;
 text-align:center;
 background:linear-gradient(135deg,#ecfeff,#f0fdf4,#fef9c3);
 }
-
 .about-hero h1{
-font-size:48px;
+font-size:50px;
+font-weight:900;
+margin-bottom:20px;
+}
+.about-hero p{
+max-width:900px;
+margin:auto;
+font-size:19px;
+color:#475569;
+line-height:1.8;
+}
+
+/* ===============================
+   SECTION BASE
+================================ */
+.section{
+padding:100px 20px;
+}
+.container-narrow{
+max-width:1100px;
+margin:auto;
+}
+.section h2{
+font-size:32px;
 font-weight:800;
+margin-bottom:25px;
+color:#0f172a;
+}
+.section p{
+font-size:16px;
+line-height:1.9;
+color:#475569;
 margin-bottom:20px;
 }
 
-.about-hero p{
-max-width:750px;
-margin:auto;
-font-size:18px;
-color:#475569;
-}
-
-.about-section{
-padding:100px 20px;
-}
-
-.about-grid{
+/* ===============================
+   GRID CARDS
+================================ */
+.grid-2{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
+gap:50px;
 }
-
-.about-card{
-background:#ffffff;
+.card{
+background:#fff;
 padding:40px;
 border-radius:20px;
 box-shadow:0 25px 60px rgba(0,0,0,0.05);
 transition:.3s;
 }
-
-.about-card:hover{
-transform:translateY(-6px);
+.card:hover{
+transform:translateY(-8px);
 }
 
-.about-card h3{
-margin-bottom:15px;
-font-size:22px;
+/* ===============================
+   TIMELINE
+================================ */
+.timeline{
+border-left:4px solid #00d09c;
+padding-left:30px;
 }
-
-.about-card p{
-color:#64748b;
-font-size:15px;
+.timeline-item{
+margin-bottom:40px;
 }
-
-.stats-section{
-background:#0f172a;
-color:white;
-padding:100px 20px;
-text-align:center;
-}
-
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:40px;
-margin-top:60px;
-}
-
-.stat h2{
-font-size:36px;
-font-weight:800;
+.timeline-item h4{
+font-weight:700;
 margin-bottom:10px;
-color:#00d09c;
 }
 
-.stat p{
-color:#cbd5e1;
-font-size:14px;
+/* ===============================
+   AUTHOR
+================================ */
+.author-section{
+background:#f8fafc;
+}
+.author-box{
+display:flex;
+gap:40px;
+align-items:center;
+background:#fff;
+padding:50px;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,0.06);
+}
+.author-box img{
+width:170px;
+height:170px;
+border-radius:50%;
+border:6px solid #00d09c;
+object-fit:cover;
+}
+.author-box h3{
+font-size:24px;
+margin-bottom:10px;
 }
 
+/* ===============================
+   FAQ
+================================ */
+.faq-item{
+margin-bottom:30px;
+}
+.faq-item h4{
+font-size:18px;
+font-weight:700;
+margin-bottom:8px;
+}
+
+/* ===============================
+   CTA
+================================ */
+.cta-section{
+background:#0f172a;
+color:#fff;
+text-align:center;
+padding:100px 20px;
+}
+.cta-section h2{
+font-size:34px;
+margin-bottom:20px;
+}
+.cta-section a{
+display:inline-block;
+background:#00d09c;
+color:#000;
+padding:14px 30px;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+margin-top:20px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
 @media(max-width:992px){
-
-.about-grid{
-grid-template-columns:1fr;
+.grid-2{grid-template-columns:1fr;}
+.author-box{flex-direction:column;text-align:center;}
+.about-hero h1{font-size:36px;}
 }
 
-.stats-grid{
-grid-template-columns:1fr 1fr;
+/* ==================================================
+   SMART EMI HUB PRO – ADVANCED ABOUT PAGE CSS
+================================================== */
+
+/* -----------------------------
+   GLOBAL RESET IMPROVEMENTS
+------------------------------*/
+.section {
+  padding: 110px 20px;
 }
 
-.about-hero h1{
-font-size:36px;
+.container-narrow {
+  max-width: 1100px;
+  margin: auto;
 }
+
+.section h2 {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #475569;
+  margin-bottom: 22px;
+}
+
+.section ul {
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.section li {
+  margin-bottom: 10px;
+  color: #475569;
+}
+
+/* -----------------------------
+   HERO SECTION
+------------------------------*/
+.about-hero {
+  padding: 160px 20px 110px;
+  text-align: center;
+  background: linear-gradient(135deg, #ecfeff, #f0fdf4, #fef9c3);
+}
+
+.about-hero h1 {
+  font-size: 52px;
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: #0f172a;
+}
+
+.about-hero p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* -----------------------------
+   GRID CARDS
+------------------------------*/
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 45px;
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.05);
+  transition: 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.08);
+}
+
+.card h2,
+.card h3 {
+  margin-bottom: 15px;
+}
+
+/* -----------------------------
+   TIMELINE
+------------------------------*/
+.timeline {
+  border-left: 4px solid #00d09c;
+  padding-left: 30px;
+  margin-top: 40px;
+}
+
+.timeline-item {
+  margin-bottom: 45px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -38px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: #00d09c;
+  border-radius: 50%;
+}
+
+.timeline-item h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+/* -----------------------------
+   AUTHOR SECTION
+------------------------------*/
+.author-section {
+  background: #f8fafc;
+}
+
+.author-box {
+  display: flex;
+  gap: 45px;
+  align-items: center;
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 22px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+}
+
+.author-box:hover {
+  transform: translateY(-6px);
+}
+
+.author-box img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #00d09c;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.author-box h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #0f172a;
+}
+
+.author-box p {
+  font-size: 16px;
+}
+
+/* -----------------------------
+   FAQ SECTION
+------------------------------*/
+.faq-item {
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.faq-item h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+/* -----------------------------
+   SPECIAL BACKGROUND VARIANTS
+------------------------------*/
+.section-light {
+  background: #f8fafc;
+}
+
+.section-soft {
+  background: #f1f5f9;
+}
+
+/* -----------------------------
+   CTA SECTION
+------------------------------*/
+.cta-section {
+  background: #0f172a;
+  color: #ffffff;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.cta-section h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: auto;
+}
+
+.cta-section a {
+  display: inline-block;
+  margin-top: 30px;
+  background: #00d09c;
+  color: #000;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-section a:hover {
+  background: #00b889;
+  transform: translateY(-3px);
+}
+
+/* -----------------------------
+   RESPONSIVE DESIGN
+------------------------------*/
+@media (max-width: 992px) {
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .author-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .about-hero h1 {
+    font-size: 36px;
+  }
 
 }
 
-@media(max-width:600px){
+@media (max-width: 600px) {
 
-.stats-grid{
-grid-template-columns:1fr;
+  .about-hero {
+    padding: 120px 20px 80px;
+  }
+
+  .about-hero h1 {
+    font-size: 30px;
+  }
+
+  .section {
+    padding: 80px 20px;
+  }
+
 }
 
+/* ===============================
+   SCROLL ANIMATION
+================================ */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease;
+}
+
+.fade-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.counter {
+  font-size: 40px;
+  font-weight: 900;
+  color: #00d09c;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,208,156,0.1) 0%, transparent 60%);
+  top: -100%;
+  left: -100%;
+  transition: 0.6s;
+}
+
+.card:hover::after {
+  top: 0;
+  left: 0;
+}
+
+body.dark-mode .section {
+  background: #0f172a;
+}
+
+body.dark-mode .section h2,
+body.dark-mode .section p,
+body.dark-mode .card {
+  color: #e2e8f0;
+}
+
+body.dark-mode .card {
+  background: #1e293b;
+}
+
+body.dark-mode .author-box {
+  background: #1e293b;
+}
+
 </style>
 
 <!-- HERO -->
 <section class="about-hero">
 <h1>About Smart EMI Hub Pro</h1>
 <p>
-Smart EMI Hub Pro is a modern financial calculator platform built to simplify
-loan and investment decisions with instant, accurate calculations.
+Smart EMI Hub Pro is a precision-driven financial calculator and educational platform
+designed to simplify complex loan calculations, EMI planning, and long-term repayment
+strategies using transparent and industry-standard formulas.
 </p>
 </section>
 
-<!-- MISSION & VISION -->
-<section class="about-section">
-<div class="container">
+<!-- MISSION / VISION -->
+<section class="section">
+<div class="container-narrow grid-2">
 
-<div class="about-grid">
-
-<div class="about-card">
-<h3>🎯 Our Mission</h3>
+<div class="card">
+<h2>🎯 Our Mission</h2>
 <p>
-To make financial planning simple, fast, and accessible for everyone.
-We aim to empower users with intelligent tools for EMI, SIP,
-retirement, and loan comparison decisions.
+To democratize financial knowledge by providing accurate, transparent, and easy-to-use
+EMI and loan comparison tools. We believe every borrower deserves clarity before committing
+to long-term financial obligations.
 </p>
 </div>
 
-<div class="about-card">
-<h3>🚀 Our Vision</h3>
+<div class="card">
+<h2>🚀 Our Vision</h2>
 <p>
-To become India’s most trusted financial calculator platform,
-helping millions make smarter money decisions through clean design
-and powerful calculation engines.
+To become one of India’s most trusted independent financial planning platforms,
+offering advanced calculators, educational resources, and transparent methodologies
+that empower users to make informed financial decisions.
 </p>
 </div>
 
-<div class="about-card">
-<h3>⚡ Why Choose Us?</h3>
+</div>
+</section>
+
+<!-- EDUCATION SECTION -->
+<section class="section" style="background:#f8fafc;">
+<div class="container-narrow">
+
+<h2>Financial Education & Transparency</h2>
+
 <p>
-• Instant EMI calculations<br>
-• Clean, distraction-free UI<br>
-• Advanced amortization schedules<br>
-• Future-ready financial planning tools
+Most borrowers focus only on the monthly EMI amount. However, true financial clarity
+requires understanding total interest outflow, amortization patterns, prepayment impact,
+balance transfer benefits, and rate fluctuation risks.
+</p>
+
+<p>
+Smart EMI Hub Pro integrates educational explanations into every calculation.
+We explain the EMI formula, interest rate conversion logic, and the long-term effect
+of compounding interest.
+</p>
+
+<p>
+Our engine is built on the standard amortization formula:
+<strong>EMI = P × R × (1+R)^N / [(1+R)^N – 1]</strong>.
+This ensures accuracy consistent with financial institutions.
+</p>
+
+<p>
+We also provide detailed amortization schedules that show how interest gradually
+reduces while principal repayment increases over time.
+</p>
+
+</div>
+</section>
+
+<!-- PLATFORM JOURNEY -->
+<section class="section">
+<div class="container-narrow">
+
+<h2>Our Development Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h4>Concept & Research</h4>
+<p>
+Extensive research into loan calculation methods, RBI guidelines, and
+banking EMI standards formed the foundation of the platform.
 </p>
 </div>
 
-<div class="about-card">
-<h3>🔒 Secure & Reliable</h3>
+<div class="timeline-item">
+<h4>Engine Development</h4>
 <p>
-We focus on privacy-first architecture,
-secure infrastructure, and high performance to ensure
-a seamless financial planning experience.
+The calculation engine was designed to ensure precision across long tenures,
+handling floating-point calculations with consistency.
+</p>
+</div>
+
+<div class="timeline-item">
+<h4>User Experience Optimization</h4>
+<p>
+A distraction-free, performance-focused interface was developed to ensure
+clarity and speed.
+</p>
+</div>
+
+<div class="timeline-item">
+<h4>Continuous Improvement</h4>
+<p>
+Regular updates are implemented to maintain alignment with evolving
+financial regulations and interest rate trends.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- AUTHOR -->
+<section class="section author-section">
+<div class="container-narrow">
+<div class="author-box">
+
+<img src="/static/images/author.png" alt="Manoj S - Financial Tools Developer">
+
+<div>
+<h3>About the Creator</h3>
+<p>
+Smart EMI Hub Pro was architected and developed by Manoj S,
+a data analytics professional specializing in financial systems and
+calculation engines. The platform blends mathematical precision
+with intuitive web design to deliver trustworthy financial tools.
+</p>
+<p>
+The objective is not merely to compute numbers, but to educate users
+about the long-term financial implications behind those numbers.
 </p>
 </div>
 
@@ -161,36 +639,251 @@ a seamless financial planning experience.
 </div>
 </section>
 
-<!-- STATS -->
-<section class="stats-section">
-<div class="container">
+<!-- FAQ -->
+<section class="section">
+<div class="container-narrow">
 
-<h2>Growing With Smart Investors</h2>
+<h2>Frequently Asked Questions</h2>
 
-<div class="stats-grid">
+<div class="faq-item">
+<h4>Are the EMI calculations accurate?</h4>
+<p>
+Yes. All calculations use standard amortization formulas adopted by banks.
+</p>
+</div>
 
-<div class="stat">
-<h2>10K+</h2>
+<div class="faq-item">
+<h4>Does the platform store financial data?</h4>
+<p>
+No. Calculations are processed instantly without storing personal data.
+</p>
+</div>
+
+<div class="faq-item">
+<h4>Is Smart EMI Hub Pro affiliated with banks?</h4>
+<p>
+No. The platform operates independently and focuses on financial education.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<h2>Start Planning Smarter Today</h2>
+<p>Explore advanced EMI tools and take control of your financial decisions.</p>
+<a href="/">Explore Tools</a>
+</section>
+
+
+<section class="section" style="background:#f1f5f9;">
+<div class="container-narrow">
+
+<h2>Calculation Methodology & Technical Framework</h2>
+
+<p>
+Smart EMI Hub Pro operates on a precision-driven computational framework designed
+to replicate real-world banking EMI schedules. Our engine converts annual interest
+rates into effective monthly rates, applies amortization logic across tenure duration,
+and dynamically calculates principal and interest components for each repayment cycle.
+</p>
+
+<p>
+Unlike simplified calculators that only display EMI amounts, our platform calculates:
+</p>
+
+<ul>
+<li>Total interest payable over the entire tenure</li>
+<li>Principal vs interest breakdown month-wise</li>
+<li>Impact of tenure reduction on interest savings</li>
+<li>Prepayment simulation and interest adjustment</li>
+<li>Comparison between different loan scenarios</li>
+</ul>
+
+<p>
+We use high-precision floating-point computation logic to avoid rounding inconsistencies
+that often appear in basic online calculators. This ensures reliability across long
+loan tenures such as 20–30 years.
+</p>
+
+</div>
+</section>
+
+<section class="section">
+<div class="container-narrow">
+
+<h2>Our Financial Literacy Initiative</h2>
+
+<p>
+India’s financial growth depends on informed borrowing and responsible repayment planning.
+Smart EMI Hub Pro is committed to improving financial literacy by simplifying complex
+concepts such as compounding interest, amortization, and loan restructuring.
+</p>
+
+<p>
+We believe borrowers should understand:
+</p>
+
+<ul>
+<li>How EMI composition changes over time</li>
+<li>How early prepayment reduces total interest</li>
+<li>How repo rate adjustments influence floating-rate loans</li>
+<li>How balance transfer can optimize repayment</li>
+<li>How tenure selection impacts total borrowing cost</li>
+</ul>
+
+<p>
+Our long-term goal is to build a comprehensive financial education resource center
+covering loans, investments, retirement planning, and inflation-adjusted forecasting.
+</p>
+
+</div>
+</section>
+
+
+<section class="section" style="background:#f8fafc;">
+<div class="container-narrow">
+
+<h2>Independence & Transparency</h2>
+
+<p>
+Smart EMI Hub Pro operates independently and does not provide financial advice
+or loan approvals. We do not manipulate calculation results to promote any specific
+financial product.
+</p>
+
+<p>
+Our platform is built with an educational-first philosophy. Any partnerships
+or promotional content are clearly distinguished from calculation tools.
+</p>
+
+<p>
+We are committed to maintaining transparency in methodology, data usage,
+and platform objectives.
+</p>
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container-narrow">
+
+<h2>Future Roadmap</h2>
+
+<p>
+Smart EMI Hub Pro is continuously evolving. Upcoming developments include:
+</p>
+
+<ul>
+<li>Inflation-adjusted EMI forecasting</li>
+<li>Retirement corpus simulation tools</li>
+<li>Loan stress-testing models</li>
+<li>Advanced financial planning dashboards</li>
+<li>Interactive financial education modules</li>
+</ul>
+
+<p>
+Our roadmap focuses on expanding analytical depth while maintaining simplicity
+and performance.
+</p>
+
+</div>
+</section>
+
+
+<section class="section" style="background:#f1f5f9;">
+<div class="container-narrow">
+
+<h2>Editorial & Content Policy</h2>
+
+<p>
+All content published on Smart EMI Hub Pro is created with a focus on clarity,
+accuracy, and user education. We regularly review information to ensure alignment
+with evolving financial regulations and interest rate standards.
+</p>
+
+<p>
+Our educational material is designed to help users understand financial principles.
+However, the platform does not provide personalized financial advice.
+Users are encouraged to consult certified financial advisors for tailored guidance.
+</p>
+
+<p>
+We maintain strict quality standards in our calculation engine to ensure consistent,
+reliable output aligned with industry practices.
+</p>
+
+</div>
+</section>
+
+<section class="section section-light fade-up">
+<div class="container-narrow text-center">
+
+<h2>Platform Growth Metrics</h2>
+
+<div class="grid-2" style="margin-top:60px;text-align:center;">
+
+<div>
+<h3 class="counter" data-target="10000">0</h3>
 <p>Monthly Users</p>
 </div>
 
-<div class="stat">
-<h2>25+</h2>
+<div>
+<h3 class="counter" data-target="25">0</h3>
 <p>Financial Tools</p>
 </div>
 
-<div class="stat">
-<h2>99.9%</h2>
-<p>Calculation Accuracy</p>
+<div>
+<h3 class="counter" data-target="99">0</h3>
+<p>Accuracy Rate (%)</p>
 </div>
 
-<div class="stat">
-<h2>Fast</h2>
-<p>Performance Focused</p>
+<div>
+<h3 class="counter" data-target="100">0</h3>
+<p>Performance Score</p>
 </div>
 
 </div>
+
 </div>
 </section>
 
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+});
+
+document.querySelectorAll(".fade-up, .fade-left, .fade-right")
+.forEach(el => observer.observe(el));
+</script>
+
+<script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  counter.innerText = '0';
+
+  const updateCounter = () => {
+    const target = +counter.getAttribute('data-target');
+    const c = +counter.innerText;
+
+    const increment = target / 100;
+
+    if(c < target) {
+      counter.innerText = `${Math.ceil(c + increment)}`;
+      setTimeout(updateCounter, 20);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  updateCounter();
+});
+</script>
 {% endblock %}

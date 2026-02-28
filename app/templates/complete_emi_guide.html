@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+/* HERO */
+.guide-hero{
+padding:160px 20px 100px;
+text-align:center;
+background:linear-gradient(135deg,#ecfeff,#f0fdf4,#fef9c3);
+}
+
+.guide-hero h1{
+font-size:46px;
+font-weight:900;
+margin-bottom:20px;
+color:#0f172a;
+}
+
+.guide-hero p{
+max-width:900px;
+margin:auto;
+font-size:18px;
+color:#475569;
+line-height:1.8;
+}
+
+/* CONTENT */
+.guide-section{
+padding:100px 20px;
+}
+
+.guide-container{
+max-width:1100px;
+margin:auto;
+line-height:1.9;
+}
+
+.guide-container h2{
+margin-top:60px;
+margin-bottom:20px;
+font-size:30px;
+font-weight:800;
+color:#0f172a;
+}
+
+.guide-container h3{
+margin-top:40px;
+margin-bottom:15px;
+font-size:22px;
+font-weight:700;
+color:#1e293b;
+}
+
+.guide-container p{
+margin-bottom:20px;
+font-size:16px;
+color:#475569;
+}
+
+.guide-container ul{
+padding-left:20px;
+margin-bottom:20px;
+}
+
+.guide-container li{
+margin-bottom:10px;
+color:#475569;
+}
+
+.highlight-box{
+background:#f1f5f9;
+padding:30px;
+border-radius:16px;
+margin:30px 0;
+}
+
+@media(max-width:768px){
+.guide-hero h1{font-size:32px;}
+}
+
+</style>
+
+<!-- HERO -->
+<section class="guide-hero">
+<h1>Complete Guide to EMI in India (2026)</h1>
+<p>
+A comprehensive educational guide to understanding Equated Monthly Installments (EMI),
+loan interest structures, amortization, prepayment strategies,
+and smart financial planning decisions.
+</p>
+</section>
+
+<section class="guide-section">
+<div class="guide-container">
+
+<h2>1. What is EMI?</h2>
+
+<p>
+EMI (Equated Monthly Installment) is the fixed monthly payment made by a borrower to a lender
+to repay a loan over a specified tenure. It includes both principal repayment and interest.
+EMIs are commonly associated with home loans, car loans, personal loans, and business loans.
+</p>
+
+<p>
+Each EMI consists of two components:
+</p>
+
+<ul>
+<li><strong>Principal:</strong> The original borrowed amount.</li>
+<li><strong>Interest:</strong> The cost charged by the lender.</li>
+</ul>
+
+---
+
+<h2>2. EMI Formula Explained</h2>
+
+<p>
+The EMI formula used by financial institutions:
+</p>
+
+<div class="highlight-box">
+EMI = P × R × (1+R)^N / [(1+R)^N – 1]
+</div>
+
+<p>
+Where:
+</p>
+
+<ul>
+<li>P = Loan Principal</li>
+<li>R = Monthly Interest Rate</li>
+<li>N = Loan Tenure in Months</li>
+</ul>
+
+<p>
+The formula ensures equal monthly payments while gradually reducing interest burden.
+</p>
+
+---
+
+<h2>3. Example EMI Calculation</h2>
+
+<p>
+Consider a ₹25,00,000 home loan at 8.5% annual interest for 20 years.
+</p>
+
+<ul>
+<li>Principal: ₹25,00,000</li>
+<li>Annual Interest: 8.5%</li>
+<li>Monthly Rate: 8.5 / 12</li>
+<li>Tenure: 240 months</li>
+</ul>
+
+<p>
+Using the EMI formula, the monthly EMI would be approximately ₹21,700.
+Total repayment over 20 years exceeds ₹52 lakhs due to interest accumulation.
+</p>
+
+---
+
+<h2>4. Understanding Amortization</h2>
+
+<p>
+Amortization refers to the breakdown of each EMI into principal and interest components.
+In early years, interest forms a larger portion of EMI.
+Over time, principal repayment increases while interest reduces.
+</p>
+
+---
+
+<h2>5. Fixed vs Floating Interest Rates</h2>
+
+<h3>Fixed Rate</h3>
+<p>
+Interest rate remains constant throughout tenure.
+EMI remains stable but may be slightly higher initially.
+</p>
+
+<h3>Floating Rate</h3>
+<p>
+Interest rate changes based on RBI repo rate and bank policies.
+EMI may increase or decrease over time.
+</p>
+
+---
+
+<h2>6. Impact of RBI Repo Rate</h2>
+
+<p>
+The Reserve Bank of India (RBI) controls repo rate which influences lending rates.
+When repo rate increases, loan interest rates often rise,
+leading to higher EMIs in floating-rate loans.
+</p>
+
+---
+
+<h2>7. EMI vs Tenure Strategy</h2>
+
+<p>
+Borrowers must choose between:
+</p>
+
+<ul>
+<li>Higher EMI + Short Tenure = Lower Total Interest</li>
+<li>Lower EMI + Long Tenure = Higher Total Interest</li>
+</ul>
+
+---
+
+<h2>8. Prepayment Benefits</h2>
+
+<p>
+Prepayment reduces principal early,
+which significantly reduces total interest burden.
+Even small yearly lump-sum payments can save lakhs in interest.
+</p>
+
+---
+
+<h2>9. Balance Transfer Strategy</h2>
+
+<p>
+If another bank offers lower interest rate,
+transferring the loan may reduce EMI or total repayment.
+However, processing fees and charges must be evaluated.
+</p>
+
+---
+
+<h2>10. Smart EMI Planning Tips</h2>
+
+<ul>
+<li>Keep EMI below 40% of monthly income</li>
+<li>Maintain emergency fund</li>
+<li>Compare lenders before committing</li>
+<li>Use EMI calculator before applying</li>
+<li>Plan prepayments strategically</li>
+</ul>
+
+---
+
+<h2>11. Frequently Asked Questions</h2>
+
+<h3>Is EMI calculation accurate?</h3>
+<p>
+Yes, EMI calculators use standard amortization formulas.
+However, bank-specific charges may vary.
+</p>
+
+<h3>Can EMI change over time?</h3>
+<p>
+Yes, floating interest loans may result in EMI revisions.
+</p>
+
+<h3>Does early repayment reduce interest?</h3>
+<p>
+Yes. Prepayment significantly lowers total interest payable.
+</p>
+
+---
+
+<h2>12. Final Thoughts</h2>
+
+<p>
+Understanding EMI is essential before taking any loan.
+Smart EMI Hub Pro provides transparent, formula-based tools
+to help users make informed borrowing decisions.
+Always consult financial professionals before final commitments.
+</p>
+
+</div>
+</section>
+
+{% endblock %}
